@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GivskudApp.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,15 @@ namespace GivskudApp.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class NewsDetailsPage : ContentPage
 	{
-		public NewsDetailsPage ()
+        private readonly NewsViewModel vm;
+
+        public NewsDetailsPage ()
 		{
 			InitializeComponent ();
-		}
+
+            DependencyService.Register<NewsViewModel>();
+            vm = DependencyService.Get<NewsViewModel>();
+            BindingContext = vm;
+        }
 	}
 }
