@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GivskudApp.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,12 @@ namespace GivskudApp.Views
 	{
 		public NewsPage ()
 		{
-			InitializeComponent ();
-		}
+            DependencyService.Register<NewsViewModel>();
+
+            InitializeComponent ();
+
+            var vm = DependencyService.Get<NewsViewModel>();
+            NewsList.ItemsSource = vm.News;
+        }
 	}
 }

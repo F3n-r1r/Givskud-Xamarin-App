@@ -10,10 +10,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="MockData\NewsMockData.json" />
     <None Remove="MockData\ProgramMockData.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="MockData\NewsMockData.json" />
     <EmbeddedResource Include="MockData\ProgramMockData.json" />
   </ItemGroup>
 
