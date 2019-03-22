@@ -5,7 +5,7 @@
 
     <ContentPage.Content>
 
-        <ListView x:Name="NewsList" VerticalOptions="FillAndExpand" HasUnevenRows="True" SeparatorVisibility="None" BackgroundColor="#FFFFFF">
+        <ListView x:Name="NewsList" ItemTapped="ItemClicked" VerticalOptions="FillAndExpand" HasUnevenRows="True" SeparatorVisibility="None" BackgroundColor="#FFFFFF">
             <ListView.ItemTemplate VerticalOptions="FillAndExpand">
                 <DataTemplate>
                     <ViewCell>

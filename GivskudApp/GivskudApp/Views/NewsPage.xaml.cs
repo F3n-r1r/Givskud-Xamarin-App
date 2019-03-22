@@ -1,4 +1,5 @@
-﻿using GivskudApp.ViewModel;
+﻿using GivskudApp.Models;
+using GivskudApp.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,5 +23,13 @@ namespace GivskudApp.Views
             var vm = DependencyService.Get<NewsViewModel>();
             NewsList.ItemsSource = vm.News;
         }
-	}
+
+        async void ItemClicked(object sender, ItemTappedEventArgs e)
+        {
+            NewsModel thisNews = (NewsModel)e.Item;
+            var vm = DependencyService.Get<NewsViewModel>();
+            vm.SelectedNews = thisNews;
+            await Navigation.PushAsync(new NewsDetailsPage());
+        }
+    }
 }
