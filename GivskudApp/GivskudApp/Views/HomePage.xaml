@@ -2,11 +2,30 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GivskudApp.Views.HomePage">
+
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Image Source="logo.png" Margin="0,20,0,0" HeightRequest="140"/>
+
+            <Button ClassId="TourPageBtn" Text="START GUIDED TUR" Margin="0,30,0,0" HorizontalOptions="Center" BackgroundColor="#de1f28" TextColor="#FFFFFF" WidthRequest="160" Clicked="Button_Clicked"/>
+            <Button ClassId="MapPageBtn" Text="SE KORT" Margin="0,30,0,0" HorizontalOptions="Center" BackgroundColor="#de1f28" TextColor="#FFFFFF" WidthRequest="160" Clicked="Button_Clicked"/>
+            <Button ClassId="ProgramPageBtn" Text="DAGENS PROGRAM" Margin="0,30,0,0" HorizontalOptions="Center" BackgroundColor="#de1f28" TextColor="#FFFFFF" WidthRequest="160" Clicked="Button_Clicked"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="guideRotated" Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
+
+                <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1" VerticalOptions="End" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10">
+                    <Image Source="denmark.png" HeightRequest="40"/>
+                    <Image Source="germany.png" HeightRequest="40"/>
+                    <Image Source="britain.png" HeightRequest="40"/>
+                </StackLayout>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
+
 </ContentPage>
