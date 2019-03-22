@@ -7,14 +7,22 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using GivskudApp.ViewModel;
+
 namespace GivskudApp.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ProgramPage : ContentPage
 	{
+
 		public ProgramPage ()
 		{
-			InitializeComponent ();
-		}
+            DependencyService.Register<ProgramViewModel>();
+
+            InitializeComponent ();
+
+            var vm = DependencyService.Get<ProgramViewModel>();
+            ProgramList.ItemsSource = vm.Program;
+        }
 	}
 }
