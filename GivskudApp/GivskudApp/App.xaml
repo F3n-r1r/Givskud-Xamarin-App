@@ -4,5 +4,17 @@
              x:Class="GivskudApp.App">
     <Application.Resources>
 
+        <ResourceDictionary>
+            <!--Global Styles-->
+            <Color x:Key="NavigationPrimary">#de1f28</Color>
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="BarTextColor" Value="Blue" />
+                <Setter Property="BackgroundColor" Value="#b7d98e"/>
+            </Style>
+
+        </ResourceDictionary>
+
     </Application.Resources>
 </Application>

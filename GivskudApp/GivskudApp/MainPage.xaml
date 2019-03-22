@@ -1,14 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:GivskudApp"
-             x:Class="GivskudApp.MainPage">
+             x:Class="GivskudApp.MainPage"
+             xmlns:pages="clr-namespace:GivskudApp.Views">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" BackgroundColor="#de1f28">
 
-</ContentPage>
+            <ListView x:Name="menuItemList" RowHeight="60" SeparatorVisibility="None" ItemSelected="OnMenuItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="20,10,0,10" Spacing="20">
+                                <Image Source="{Binding Icon}" WidthRequest="30" HeightRequest="30" VerticalOptions="Center" />
+                                <Label Text="{Binding Title}" FontSize="Medium" VerticalOptions="Center" TextColor="Black"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+
+    <!-- Why need this ? -->
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+
+</MasterDetailPage>
