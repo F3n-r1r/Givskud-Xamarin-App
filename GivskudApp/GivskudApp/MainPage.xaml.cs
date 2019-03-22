@@ -24,13 +24,12 @@ namespace GivskudApp
             {
                 // Adding menu items to menuList and you can define title ,page and icon
                 new NavigationModel() { Title = "Forside", Icon = "home.png", TargetType = typeof(HomePage) },
-                new NavigationModel() { Title = "Spil", Icon = "game.png", TargetType = typeof(HomePage) },
-                // Change these to right pages
-                new NavigationModel() { Title = "Nyheder", Icon = "news.png", TargetType = typeof(HomePage) },
-                new NavigationModel() { Title = "Årskort", Icon = "seasonpass.png", TargetType = typeof(HomePage) },
-                new NavigationModel() { Title = "Dyr", Icon = "animals.png", TargetType = typeof(HomePage) },
-                new NavigationModel() { Title = "Kontakt Os", Icon = "contact.png", TargetType = typeof(HomePage) },
-                new NavigationModel() { Title = "Køb Billetter", Icon = "tickets.png", TargetType = typeof(HomePage) },
+                new NavigationModel() { Title = "Spil", Icon = "game.png", TargetType = typeof(GamePage) },
+                new NavigationModel() { Title = "Nyheder", Icon = "news.png", TargetType = typeof(NewsPage) },
+                new NavigationModel() { Title = "Årskort", Icon = "seasonpass.png", TargetType = typeof(SeasonPassPage) },
+                new NavigationModel() { Title = "Dyr", Icon = "animals.png", TargetType = typeof(AnimalsPage) },
+                new NavigationModel() { Title = "Kontakt Os", Icon = "contact.png", TargetType = typeof(ContactPage) },
+                new NavigationModel() { Title = "Køb Billetter", Icon = "tickets.png", TargetType = typeof(TicketsPage) },
             };
 
             // Setting our list to be ItemSource for ListView in MainPage.xaml
