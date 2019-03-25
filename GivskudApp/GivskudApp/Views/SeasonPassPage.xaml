@@ -12,7 +12,7 @@
     <ContentPage.Content>
         <StackLayout>
             <!-- START PASS INPUT -->
-            <StackLayout x:Name="SeasonPassInput" IsVisible="False" StyleClass="StackLayout">
+            <StackLayout x:Name="SeasonPassInput" IsVisible="False" StyleClass="StackLayoutOverlay">
                 <Label Text="Indlæs dit sæsonkort" Style="{StaticResource GlobalTextHeadline}" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,16"/>
                 <Grid VerticalOptions="Center">
                     <Grid.RowDefinitions>
@@ -29,7 +29,7 @@
             <!-- END PASS INPUT -->
             
             <!-- START PASS DETAILS -->
-            <StackLayout x:Name="SeasonPassDetails" IsVisible="False" StyleClass="StackLayout">
+            <StackLayout x:Name="SeasonPassDetails" IsVisible="False" StyleClass="StackLayoutOverlay">
                 <Label Text="Din årstid passerer" Style="{StaticResource GlobalTextHeadline}" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,16"/>
                 <Frame StyleClass="Master">
                     <Frame.Resources>
@@ -90,7 +90,7 @@
             <!-- END PASS DETAILS -->
             
             <!-- START VERIFYING PASS -->
-            <StackLayout x:Name="SeasonPassWorking" IsVisible="True" StyleClass="StackLayout" VerticalOptions="CenterAndExpand">
+            <StackLayout x:Name="SeasonPassWorking" IsVisible="True" StyleClass="StackLayoutOverlay">
                 <StackLayout.Resources>
                     <Style TargetType="ActivityIndicator" Class="IndicatorClass">
                         <Setter Property="IsRunning" Value="True" />
