@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GivskudApp.Views.TicketsPageCheckout"
+             Style="{StaticResource GlobalApplicationStyle}">
+    <ContentPage.Resources>
+
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <!-- START BUY TICKETS -->
+        <StackLayout Padding="0,20">
+            <StackLayout.Resources>
+                <Style TargetType="Label" Class="StepHeadline">
+                    <Setter Property="HorizontalTextAlignment" Value="Start" />
+                    <Setter Property="VerticalTextAlignment" Value="Center" />
+                    <Setter Property="Margin" Value="0,0,0,16" />
+                    <Setter Property="HeightRequest" Value="100" />
+                </Style>
+                <Style TargetType="Button" Class="EntrySubmit" BasedOn="{StaticResource GlobalButtonStyle}">
+                    <Setter Property="FontSize" Value="13" />
+                    <Setter Property="HeightRequest" Value="45" />
+                </Style>
+            </StackLayout.Resources>
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="90" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.Resources>
+                    <Style TargetType="Frame" Class="Stepper">
+                        <Setter Property="HeightRequest" Value="40" />
+                        <Setter Property="WidthRequest" Value="40" />
+                        <Setter Property="CornerRadius" Value="20" />
+                        <Setter Property="Margin" Value="0" />
+                        <Setter Property="Padding" Value="0" />
+                    </Style>
+                    <Style TargetType="Label" Class="StepperLabel">
+                        <Setter Property="TextColor" Value="White" />
+                        <Setter Property="FontSize" Value="15" />
+                        <Setter Property="HorizontalOptions" Value="Center" />
+                        <Setter Property="VerticalOptions" Value="Center" />
+                        <Setter Property="HorizontalTextAlignment" Value="Center" />
+                        <Setter Property="VerticalTextAlignment" Value="Center" />
+                    </Style>
+                </Grid.Resources>
+
+                <!-- START PURCHASE STATUS -->
+                <Frame StyleClass="Stepper" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" HeightRequest="40" WidthRequest="40" CornerRadius="20" HorizontalOptions="Start" VerticalOptions="Start" Margin="0,30" Padding="0" BackgroundColor="#de1f28">
+                    <Label Text="2" StyleClass="StepperLabel" />
+                </Frame>
+                <Label  StyleClass="StepHeadline" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Text="Betal for billetter" Style="{StaticResource GlobalTextHeadline}" />
+                <!-- END PURCHASE STATUS -->
+
+                <Frame BackgroundColor="White" CornerRadius="6" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Padding="16,8">
+                    <StackLayout>
+                        <!-- START ITEMS TABLE -->
+                        <Grid RowSpacing="6">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="120" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.Resources>
+                                <Style TargetType="Label" Class="TableRow">
+                                    <Setter Property="FontSize" Value="12" />
+                                    <Setter Property="TextColor" Value="Black" />
+                                </Style>
+                            </Grid.Resources>
+
+                            <Label StyleClass="TableRow" Text="Voksenbillet 2019" Grid.Row="0" Grid.Column="0" />
+                            <Label StyleClass="TableRow" Text="3x DKK150" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="End" />
+
+                            <Label StyleClass="TableRow" Text="Bornebillet (3-11 ar) 2019" Grid.Row="1" Grid.Column="0" />
+                            <Label StyleClass="TableRow" Text="5x DKK50" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="End" />
+
+                        </Grid>
+                        <!-- END ITEMS TABLE -->
+
+                        <!-- START TABLE -->
+                        <Grid RowSpacing="6" Margin="0,20,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.Resources>
+                                <Style TargetType="Label" Class="EntryLabel">
+                                    <Setter Property="TextColor" Value="Black" />
+                                    <Setter Property="VerticalTextAlignment" Value="Center" />
+                                </Style>
+                                <Style TargetType="Label" Class="EntryLabelTotal">
+                                    <Setter Property="TextColor" Value="Black" />
+                                    <Setter Property="VerticalTextAlignment" Value="Center" />
+                                    <Setter Property="FontSize" Value="20" />
+                                </Style>
+                                <Style TargetType="Label" Class="EntryValue">
+                                    <Setter Property="TextColor" Value="Black" />
+                                    <Setter Property="FontSize" Value="13" />
+                                    <Setter Property="HorizontalTextAlignment" Value="End" />
+                                    <Setter Property="VerticalTextAlignment" Value="Center" />
+                                </Style>
+                                <Style TargetType="Label" Class="EntryTotal">
+                                    <Setter Property="TextColor" Value="Black" />
+                                    <Setter Property="FontSize" Value="20" />
+                                    <Setter Property="HorizontalTextAlignment" Value="End" />
+                                    <Setter Property="VerticalTextAlignment" Value="Center" />
+                                </Style>
+                            </Grid.Resources>
+
+                            <!-- START OVERVIEW -->
+                            <Label Text="Subtotal" StyleClass="EntryLabel" Grid.Row="0" Grid.Column="0" />
+                            <Label Text="DKK525.00" StyleClass="EntryValue" Grid.Row="0" Grid.Column="1" />
+
+                            <Label Text="Moms" StyleClass="EntryLabel" Grid.Row="1" Grid.Column="0" />
+                            <Label Text="DKK175.00" StyleClass="EntryValue" Grid.Row="1" Grid.Column="1" />
+
+                            <Label Text="Total" StyleClass="EntryLabelTotal" Grid.Row="2" Grid.Column="0" />
+                            <Label Text="DKK700.00" StyleClass="EntryTotal" Grid.Row="2" Grid.Column="1" />
+                            <!-- END OVERVIEW -->
+
+                        </Grid>
+                        <!-- END TABLE -->
+                    </StackLayout>
+                </Frame>
+
+                <!-- START CONTROLS -->
+                <Button VerticalOptions="End" StyleClass="EntrySubmit" Text="Ga til betaling" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" />
+                <!-- END CONTROLS -->
+
+            </Grid>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
+    

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GivskudApp.Views.SeasonPassPageInfopage"
+             Style="{StaticResource GlobalApplicationStyle}">
+    <ContentPage.Resources>
+
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+            <Label Text="Din årstid passerer" Style="{StaticResource GlobalTextHeadline}" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,16"/>
+            <Grid StyleClass="Master">
+                <Grid.Resources>
+                    <ResourceDictionary>
+                        <Style TargetType="Grid" Class="Master">
+                            <Setter Property="BackgroundColor" Value="White" />
+                            <Setter Property="Padding" Value="12,18" />
+                        </Style>
+                        <Style TargetType="Label" x:Key="LabelMasterstyle" Class="LabelMaster">
+                            <Setter Property="TextColor" Value="Black" />
+                            <Setter Property="MinimumHeightRequest" Value="30" />
+                            <Setter Property="VerticalTextAlignment" Value="Center"/>
+                        </Style>
+                        <Style TargetType="Label" Class="Label" BasedOn="{StaticResource LabelMasterstyle}">
+                            <Setter Property="HorizontalTextAlignment" Value="Right" />
+                        </Style>
+                        <Style TargetType="Label" Class="Content" BasedOn="{StaticResource LabelMasterstyle}">
+
+                        </Style>
+                        <Style TargetType="Label" Class="Cardholder" BasedOn="{StaticResource LabelMasterstyle}">
+                            <Setter Property="MinimumHeightRequest" Value="50" />
+                            <Setter Property="FontSize" Value="27" />
+                        </Style>
+                    </ResourceDictionary>
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Medlemsnr.:" Grid.Row="0" Grid.Column="0" StyleClass="Label" />
+                <Label Text="2462735" Grid.Row="0" Grid.Column="1" StyleClass="Content" />
+
+                <Label Text="Kortholder" Grid.Row="1" Grid.Column="0" StyleClass="Label" />
+                <Label Text="Jiri Kralovec" Grid.Row="1" Grid.Column="1" StyleClass="Cardholder" />
+
+                <Label Text="Gældende fra.:" Grid.Row="2" Grid.Column="0" StyleClass="Label" />
+                <Label Text="Fredag 01/01/1990" Grid.Row="2" Grid.Column="1" StyleClass="Content" />
+
+                <Label Text="Gyldig til.:" Grid.Row="3" Grid.Column="0" StyleClass="Label" />
+                <Label Text="Fredag 01/01/1990" Grid.Row="3" Grid.Column="1" StyleClass="Content" />
+
+                <Label Text="Erhvervet den.:" Grid.Row="4" Grid.Column="0" StyleClass="Label" />
+                <Label Text="Fredag 01/01/1990" Grid.Row="4" Grid.Column="1" StyleClass="Content" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    
