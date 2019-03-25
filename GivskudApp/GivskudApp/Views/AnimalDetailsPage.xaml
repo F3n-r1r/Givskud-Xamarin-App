@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GivskudApp.Views.AnimalDetailsPage">
+    <ContentPage.Resources>
+        <Style TargetType="ScrollView" Class="ViewStyle">
+            <Setter Property="BackgroundColor" Value="#B7D98E" />
+            <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="Orientation" Value="Vertical" />
+            <Setter Property="Padding" Value="25" />
+        </Style>
+        <Style TargetType="Image" Class="HeaderImage">
+            <Setter Property="HeightRequest" Value="160" />
+            <Setter Property="Aspect" Value="AspectFill" />
+        </Style>
+        <Style TargetType="Label" Class="ViewHeadline">
+            <Setter Property="Margin" Value="0,8" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="Label" Class="ViewParagraph">
+            <Setter Property="Margin" Value="0,8,0,0" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="10" />
+        </Style>
+        <Style TargetType="Label" Class="InfotableValue">
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="10" />
+        </Style>
+        <Style TargetType="Label" Class="InfotableLabelText">
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="10" />
+            <Setter Property="HeightRequest" Value="17" />
+        </Style>
+        <Style TargetType="Image" Class="InfotableLabelImage">
+            <Setter Property="WidthRequest" Value="30" />
+            <Setter Property="HeightRequest" Value="30" />
+            <Setter Property="Aspect" Value="AspectFit" />
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content Style="{StaticResources ApplicationStyle}">
+        <ScrollView StyleClass="ViewStyle">
+            <Grid x:Name="MainGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Image x:Name="AnimalHeader" Source="{Binding AnimalHeaderImage}" StyleClass="HeaderImage" Grid.Row="0" />
+                <Label Text="{Binding AnimalHeaderTitle}" Grid.Row="1" StyleClass="ViewHeadline" />
+                <Grid
+                    x:Name="AnimalInfotable"
+                    Padding="8"
+                    Grid.Row="2"
+                    BackgroundColor="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="65" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="Infopage/InfotableIcon_Height.png" StyleClass="InfotableLabelImage" Grid.Row="0" Grid.Column="0" />
+                    <Label Text="{Binding AnimalInfoHeight}" Grid.Row="0" Grid.Column="1" StyleClass="InfotableValue" />
+
+                    <Image Source="Infopage/InfotableIcon_Length.png" StyleClass="InfotableLabelImage"  Grid.Row="1" Grid.Column="0" />
+                    <Label Text="{Binding AnimalInfoLength}" Grid.Row="1" Grid.Column="1" StyleClass="InfotableValue" />
+
+                    <Image Source="Infopage/InfotableIcon_Weight.png" StyleClass="InfotableLabelImage" Grid.Row="2" Grid.Column="0" />
+                    <Label Text="{Binding AnimalInfoWeight}" Grid.Row="2" Grid.Column="1" StyleClass="InfotableValue" />
+
+                    <Image Source="Infopage/InfotableIcon_Pregnancy.png" StyleClass="InfotableLabelImage" Grid.Row="3" Grid.Column="0" />
+                    <Label  Text="{Binding AnimalInfoPDays}" Grid.Row="3" Grid.Column="1" StyleClass="InfotableValue" />
+
+                    <Image Source="Infopage/InfotableIcon_Descendants.png" StyleClass="InfotableLabelImage" Grid.Row="4" Grid.Column="0" />
+                    <Label Text="{Binding AnimalInfoDescendants}" Grid.Row="4" Grid.Column="1" StyleClass="InfotableValue" />
+
+                    <Image Source="Infopage/InfotableIcon_Lifetime.png" StyleClass="InfotableLabelImage" Grid.Row="5" Grid.Column="0" />
+                    <Label Text="{Binding AnimalInfoLifetime}" Grid.Row="5" Grid.Column="1" StyleClass="InfotableValue" />
+
+                    <Label Text="Kontinent" Grid.Row="6" Grid.Column="0" StyleClass="InfotableLabelText" />
+                    <Label Text="{Binding AnimalInfoContinent}" Grid.Row="6" Grid.Column="1" StyleClass="InfotableValue" />
+
+                    <Label Text="Art" Grid.Row="7" Grid.Column="0" StyleClass="InfotableLabelText" />
+                    <Label Text="{Binding AnimalInfoSpecies}" Grid.Row="7" Grid.Column="1" StyleClass="InfotableValue" />
+
+                    <Label Text="Status" Grid.Row="8" Grid.Column="0"  StyleClass="InfotableLabelText" />
+                    <Label Text="{Binding AnimalInfoStatus}" Grid.Row="8" Grid.Column="1" StyleClass="InfotableValue" />
+
+                    <Label Text="Føde" Grid.Row="9" Grid.Column="0" StyleClass="InfotableLabelText" />
+                    <Label Text="{Binding AnimalInfoEats}" Grid.Row="9" Grid.Column="1" StyleClass="InfotableValue" />
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
