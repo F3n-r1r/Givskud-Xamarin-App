@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GivskudApp.Models
 {
-    class AnimalModel
+    public class AnimalModel
     {
         public int ID { get; set; }
         public string Icon { get; set; }

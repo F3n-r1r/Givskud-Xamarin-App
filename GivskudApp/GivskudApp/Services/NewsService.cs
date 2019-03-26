@@ -11,7 +11,7 @@ namespace GivskudApp.Services
 {
     public class NewsService
     {
-        public IList<NewsModel> News { get; }
+        public List<NewsModel> News { get; }
 
         // ###
         // In future iteration of the app this data should come from an api

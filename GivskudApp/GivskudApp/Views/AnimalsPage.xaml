@@ -1,12 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
              x:Class="GivskudApp.Views.AnimalsPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    
+    
+
+
+        <controls:FlowListView x:Name="AnimalList" 
+                           FlowColumnCount="3"
+                           SeparatorVisibility="None" 
+                           HasUnevenRows="True"  
+                           Margin="0,20,0,0">
+
+
+            <controls:FlowListView.FlowColumnTemplate>
+                <DataTemplate>
+                    <StackLayout HorizontalOptions="Center" Margin="0,0,0,20">
+                        <Image Source="{Binding Icon}" HeightRequest="75"/>
+                        <Label HorizontalOptions="Center" 
+                                 VerticalOptions="Fill"
+                                 Text="{Binding Name}"/>
+                    </StackLayout>
+                </DataTemplate>
+            </controls:FlowListView.FlowColumnTemplate>
+
+        </controls:FlowListView>
+
+
+   
+    
 </ContentPage>

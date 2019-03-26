@@ -21,7 +21,7 @@ namespace GivskudApp.Views
 
             DependencyService.Register<NewsViewModel>();
             vm = DependencyService.Get<NewsViewModel>();
-            BindingContext = vm;
+            BindingContext = vm.SelectedNews;
         }
 	}
 }

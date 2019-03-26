@@ -1,5 +1,9 @@
-﻿using System;
+﻿using DLToolkit.Forms.Controls;
+using GivskudApp.Models;
+using GivskudApp.ViewModel;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +18,15 @@ namespace GivskudApp.Views
 	{
 		public AnimalsPage ()
 		{
-			InitializeComponent ();
-		}
+            DependencyService.Register<AnimalViewModel>();
+
+            InitializeComponent();
+            FlowListView.Init();
+
+            var vm = DependencyService.Get<AnimalViewModel>();
+            AnimalList.FlowItemsSource = vm.Animals;
+
+
+        }
 	}
 }

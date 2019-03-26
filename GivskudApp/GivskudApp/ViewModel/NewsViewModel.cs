@@ -1,7 +1,9 @@
-﻿using GivskudApp.Models;
+﻿using DLToolkit.Forms.Controls;
+using GivskudApp.Models;
 using GivskudApp.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace GivskudApp.ViewModel
@@ -11,8 +13,9 @@ namespace GivskudApp.ViewModel
         NewsService service = new NewsService();
         int currentNews;
 
-        public IList<NewsModel> News { get { return service.News; } }
+        public List<NewsModel> News { get { return service.News; } }
 
+        // The specific News item that is clicked (Used for -> NewsDetailsPage)
         public NewsModel SelectedNews
         {
             get

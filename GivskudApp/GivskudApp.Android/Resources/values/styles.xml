@@ -17,7 +17,7 @@
     <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
     
-    <!-- Color for tabbar -->
+    <!-- Color for xlabs checkboxes -->
     <item name="colorAccent">#de1f28</item>
     
     <!-- You can also set colorControlNormal, colorControlActivated
