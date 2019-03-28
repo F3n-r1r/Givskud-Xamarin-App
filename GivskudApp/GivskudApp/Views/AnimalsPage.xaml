@@ -10,7 +10,8 @@
         <controls:FlowListView x:Name="AnimalList" 
                            FlowColumnCount="3"
                            SeparatorVisibility="None" 
-                           HasUnevenRows="True"  
+                           HasUnevenRows="True"
+                           FlowItemTapped="ItemClicked"
                            Margin="0,20,0,0">
 
 

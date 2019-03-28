@@ -25,8 +25,14 @@ namespace GivskudApp.Views
 
             var vm = DependencyService.Get<AnimalViewModel>();
             AnimalList.FlowItemsSource = vm.Animals;
-
-
         }
-	}
+
+        async void ItemClicked(object sender, ItemTappedEventArgs e)
+        {
+            AnimalModel thisAnimal = (AnimalModel)e.Item;
+            var vm = DependencyService.Get<AnimalViewModel>();
+            vm.SelectedAnimal = thisAnimal;
+            await Navigation.PushAsync(new AnimalDetailsPage());
+        }
+    }
 }

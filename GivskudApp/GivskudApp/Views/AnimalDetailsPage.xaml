@@ -45,6 +45,8 @@
     </ContentPage.Resources>
     <ContentPage.Content Style="{StaticResources ApplicationStyle}">
         <ScrollView StyleClass="ViewStyle">
+
+
             <Grid x:Name="MainGrid">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -52,8 +54,8 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <Image x:Name="AnimalHeader" Source="{Binding AnimalHeaderImage}" StyleClass="HeaderImage" Grid.Row="0" />
-                <Label Text="{Binding AnimalHeaderTitle}" Grid.Row="1" StyleClass="ViewHeadline" />
+                <Image x:Name="AnimalHeader" Source="{Binding Image}" StyleClass="HeaderImage" Grid.Row="0" />
+                <Label Text="{Binding Name}" Grid.Row="1" StyleClass="ViewHeadline" />
                 <Grid
                     x:Name="AnimalInfotable"
                     Padding="8"
@@ -77,34 +79,34 @@
                     </Grid.ColumnDefinitions>
 
                     <Image Source="Infopage/InfotableIcon_Height.png" StyleClass="InfotableLabelImage" Grid.Row="0" Grid.Column="0" />
-                    <Label Text="{Binding AnimalInfoHeight}" Grid.Row="0" Grid.Column="1" StyleClass="InfotableValue" />
+                    <Label Text="{Binding Height}" Grid.Row="0" Grid.Column="1" StyleClass="InfotableValue" />
 
                     <Image Source="Infopage/InfotableIcon_Length.png" StyleClass="InfotableLabelImage"  Grid.Row="1" Grid.Column="0" />
-                    <Label Text="{Binding AnimalInfoLength}" Grid.Row="1" Grid.Column="1" StyleClass="InfotableValue" />
+                    <Label Text="{Binding Height[1]}" Grid.Row="1" Grid.Column="1" StyleClass="InfotableValue" />
 
                     <Image Source="Infopage/InfotableIcon_Weight.png" StyleClass="InfotableLabelImage" Grid.Row="2" Grid.Column="0" />
-                    <Label Text="{Binding AnimalInfoWeight}" Grid.Row="2" Grid.Column="1" StyleClass="InfotableValue" />
+                    <Label Text="{Binding Height[0]}" Grid.Row="2" Grid.Column="1" StyleClass="InfotableValue" />
 
                     <Image Source="Infopage/InfotableIcon_Pregnancy.png" StyleClass="InfotableLabelImage" Grid.Row="3" Grid.Column="0" />
-                    <Label  Text="{Binding AnimalInfoPDays}" Grid.Row="3" Grid.Column="1" StyleClass="InfotableValue" />
+                    <Label  Text="{Binding }" Grid.Row="3" Grid.Column="1" StyleClass="InfotableValue" />
 
                     <Image Source="Infopage/InfotableIcon_Descendants.png" StyleClass="InfotableLabelImage" Grid.Row="4" Grid.Column="0" />
-                    <Label Text="{Binding AnimalInfoDescendants}" Grid.Row="4" Grid.Column="1" StyleClass="InfotableValue" />
+                    <Label Text="{}" Grid.Row="4" Grid.Column="1" StyleClass="InfotableValue" />
 
                     <Image Source="Infopage/InfotableIcon_Lifetime.png" StyleClass="InfotableLabelImage" Grid.Row="5" Grid.Column="0" />
-                    <Label Text="{Binding AnimalInfoLifetime}" Grid.Row="5" Grid.Column="1" StyleClass="InfotableValue" />
+                    <Label Text="{}" Grid.Row="5" Grid.Column="1" StyleClass="InfotableValue" />
 
                     <Label Text="Kontinent" Grid.Row="6" Grid.Column="0" StyleClass="InfotableLabelText" />
-                    <Label Text="{Binding AnimalInfoContinent}" Grid.Row="6" Grid.Column="1" StyleClass="InfotableValue" />
+                    <Label Text="{}" Grid.Row="6" Grid.Column="1" StyleClass="InfotableValue" />
 
                     <Label Text="Art" Grid.Row="7" Grid.Column="0" StyleClass="InfotableLabelText" />
-                    <Label Text="{Binding AnimalInfoSpecies}" Grid.Row="7" Grid.Column="1" StyleClass="InfotableValue" />
+                    <Label Text="{}" Grid.Row="7" Grid.Column="1" StyleClass="InfotableValue" />
 
                     <Label Text="Status" Grid.Row="8" Grid.Column="0"  StyleClass="InfotableLabelText" />
-                    <Label Text="{Binding AnimalInfoStatus}" Grid.Row="8" Grid.Column="1" StyleClass="InfotableValue" />
+                    <Label Text="{}" Grid.Row="8" Grid.Column="1" StyleClass="InfotableValue" />
 
                     <Label Text="Føde" Grid.Row="9" Grid.Column="0" StyleClass="InfotableLabelText" />
-                    <Label Text="{Binding AnimalInfoEats}" Grid.Row="9" Grid.Column="1" StyleClass="InfotableValue" />
+                    <Label Text="{}" Grid.Row="9" Grid.Column="1" StyleClass="InfotableValue" />
                 </Grid>
             </Grid>
         </ScrollView>

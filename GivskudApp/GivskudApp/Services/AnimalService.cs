@@ -17,7 +17,7 @@ namespace GivskudApp.Services
 
         public List<AnimalModel> Data = new List<AnimalModel>();
 
- 
+
 
 
 
