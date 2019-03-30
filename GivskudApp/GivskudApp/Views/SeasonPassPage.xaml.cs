@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using GivskudApp.ViewModel;
+
 namespace GivskudApp.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -14,7 +16,10 @@ namespace GivskudApp.Views
 	{
 		public SeasonPassPage ()
 		{
+
 			InitializeComponent ();
+            BindingContext = new SeasonPassViewModel();
+
 		}
 	}
 }

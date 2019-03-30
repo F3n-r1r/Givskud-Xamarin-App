@@ -6,6 +6,8 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 
+using System.Diagnostics;
+
 namespace GivskudApp.ResourceControllers {
     class ApiResourceController {
 
@@ -17,6 +19,7 @@ namespace GivskudApp.ResourceControllers {
         private List<RequestHeader> _Headers = new List<RequestHeader>();
 
         public ApiResourceController(string _endpoint, List<RequestHeader> _headers = null, string _accept = null, Encoding _encoding = null) {
+            
             _Endpoint = _endpoint;
             _Headers = _headers ?? new List<RequestHeader>();
             _AcceptFormat = _accept ?? "application/json";
@@ -24,10 +27,11 @@ namespace GivskudApp.ResourceControllers {
             _Client = ClientInit();
         }
         public async Task<string> Get() {
-            HttpResponseMessage Response = await _Client.GetAsync(_Api + _Endpoint);
-            return Response.IsSuccessStatusCode ? await Response.Content.ReadAsStringAsync() : null;
+            HttpResponseMessage Response = await _Client.GetAsync(_Api + _Endpoint).ConfigureAwait(false);
+            return Response.IsSuccessStatusCode ? await Response.Content.ReadAsStringAsync().ConfigureAwait(false) : null;
         }
         private HttpClient ClientInit() {
+
             const string AuthKey = "C4oILgIT7dTqLye9LJZ0Hr9Xedp7RleQAxw5NVHE";
 
             HttpClient C = new HttpClient();
