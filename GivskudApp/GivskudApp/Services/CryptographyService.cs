@@ -10,23 +10,17 @@ namespace GivskudApp.CryptographyService {
         private const string _Key = "gCjK+DZ/GCYbKIGiAt1qCA==";
 
         public static string Hash(string plain) {
+            SHA256 sha256 = SHA256Managed.Create();
+            byte[] bytes = Encoding.UTF8.GetBytes(plain);
+            byte[] hash = sha256.ComputeHash(bytes);
 
-            using(Aes aes = Aes.Create()) {
-                aes.GenerateIV();
-                byte[] IV = aes.IV;
+            StringBuilder Result = new StringBuilder();
 
-                SHA256 sha256 = SHA256Managed.Create();
-                byte[] bytes = Encoding.UTF8.GetBytes(Encoding.UTF8.GetString(IV) + plain);
-                byte[] hash = sha256.ComputeHash(bytes);
-
-                StringBuilder Result = new StringBuilder();
-
-                for(int i = 0; i < hash.Length; i++) {
-                    Result.Append(hash[i].ToString("X2"));
-                }
-
-                return Result.ToString();
+            for(int i = 0; i < hash.Length; i++) {
+                Result.Append(hash[i].ToString("X2"));
             }
+
+            return Result.ToString();
         }
         public static string Encrypt(string plain) {
 
