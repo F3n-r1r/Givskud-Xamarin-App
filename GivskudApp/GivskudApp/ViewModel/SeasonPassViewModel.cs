@@ -80,34 +80,39 @@ namespace GivskudApp.ViewModel
             IsBusy = true;
             OnPropertyChanged(nameof(IsBusy));
 
-            /* FETCH PASS AND VALIDATE */
+
+
+
             List<RequestHeader> RequestHeaders = new List<RequestHeader>();
             RequestHeaders.Add(new RequestHeader() {
                 Key = "PassID",
                 Value = EncDecService.Hash(SeasonPassInput)
             });
-
             ApiResourceController ApiResource = new ApiResourceController("/seasonpass/get", RequestHeaders);
-            string ApiResourceResult = ApiResource.Get().Result;
-            List<SeasonPassModel> ResultParsed = JsonConvert.DeserializeObject<List<SeasonPassModel>>(ApiResourceResult);
 
-            if(ResultParsed.Count > 0) {
-                SeasonPassModel LoadedPass = ResultParsed[0];
-                if(LoadedPass.IsValid()) {
-                    CrossSettings.Current.AddOrUpdateValue(_SeasonPassDataKey, JsonConvert.SerializeObject(LoadedPass));
-                    LoadedPass.Holder = EncDecService.Decrypt(LoadedPass.Holder);
-                    ValidPassData = LoadedPass;
-                    OnPropertyChanged(nameof(ValidPassData));
-                    Valid = true;
+            using(var Response = ApiResource.Get()) {
+                if(Response != null) {
+                    string Data = Response.Result;
+                    List<SeasonPassModel> DataParsed = JsonConvert.DeserializeObject<List<SeasonPassModel>>(Data);
+                    if(DataParsed.Count > 0) {
+                        SeasonPassModel LoadedPass = DataParsed[0];
+                        if(LoadedPass.IsValid()) {
+                            CrossSettings.Current.AddOrUpdateValue(_SeasonPassDataKey, JsonConvert.SerializeObject(LoadedPass));
+                            LoadedPass.Holder = EncDecService.Decrypt(LoadedPass.Holder);
+                            ValidPassData = LoadedPass;
+                            OnPropertyChanged(nameof(ValidPassData));
+                            Valid = true;
+                        } else {
+                            Valid = false;
+                        }
+                    } else {
+                        Valid = false;
+                    }
                 } else {
                     Valid = false;
                 }
-            } else {
-                Valid = false;
             }
-
-            /* FETCH PASS AND VALIDATE */
-
+            
             HasValidPass = Valid;
             OnPropertyChanged(nameof(HasValidPass));
 
