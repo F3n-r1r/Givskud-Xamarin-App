@@ -79,10 +79,7 @@ namespace GivskudApp.ViewModel
 
             IsBusy = true;
             OnPropertyChanged(nameof(IsBusy));
-
-
-
-
+           
             List<RequestHeader> RequestHeaders = new List<RequestHeader>();
             RequestHeaders.Add(new RequestHeader() {
                 Key = "PassID",
