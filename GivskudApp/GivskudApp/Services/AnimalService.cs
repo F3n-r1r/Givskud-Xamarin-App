@@ -25,6 +25,11 @@ namespace GivskudApp.Services
         public AnimalService()
         {
 
+            /* DEV ONLY */
+            // Remove Cache
+            CrossSettings.Current.Remove("applicationAnimalListCacheObject");
+            /* DEV ONLY */
+
             string CachedResource = CrossSettings.Current.GetValueOrDefault("applicationAnimalListCacheObject", null);
 
             if(CachedResource != null) {

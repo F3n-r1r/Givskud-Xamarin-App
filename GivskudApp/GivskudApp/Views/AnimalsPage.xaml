@@ -17,8 +17,14 @@
 
             <controls:FlowListView.FlowColumnTemplate>
                 <DataTemplate>
-                    <StackLayout HorizontalOptions="Center" Margin="0,0,0,20">
-                        <Image Source="{Binding Icon}" HeightRequest="75"/>
+                    <StackLayout HorizontalOptions="Center" Padding="5,0" Margin="0,0,0,20">
+                        <Image HeightRequest="75">
+                            <Image.Source>
+                                <UriImageSource Uri="{Binding Icon}"
+                                                CacheValidity="14"
+                                                CachingEnabled="True" />
+                            </Image.Source>
+                        </Image>
                         <Label HorizontalOptions="Center" 
                                  VerticalOptions="Fill"
                                  Text="{Binding Name}"/>
