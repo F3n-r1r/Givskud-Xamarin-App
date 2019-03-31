@@ -103,9 +103,11 @@ namespace GivskudApp.ViewModel
                             OnPropertyChanged(nameof(ValidPassData));
                             Valid = true;
                         } else {
+                            PopupController.Message("Verification error", "The pass does not seem to be valid. Please check the information entered and try again.", "Dismiss");
                             Valid = false;
                         }
                     } else {
+                        PopupController.Message("Verification error", "The pass does not seem to be valid. Please check the information entered and try again.", "Dismiss");
                         Valid = false;
                     }
                 } else {
@@ -113,6 +115,7 @@ namespace GivskudApp.ViewModel
                 }
             }
             
+
             HasValidPass = Valid;
             OnPropertyChanged(nameof(HasValidPass));
 
