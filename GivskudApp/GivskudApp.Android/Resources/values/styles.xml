@@ -25,6 +25,10 @@
     <item name="windowActionModeOverlay">true</item>
 
     <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
+
+    <!-- Setting any color here disables the highlighted background in the listview navigation drawer -->
+    <item name="android:colorActivatedHighlight">#FFFFFF</item>
+    
   </style>
 
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">

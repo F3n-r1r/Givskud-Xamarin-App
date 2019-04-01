@@ -19,6 +19,7 @@ namespace GivskudApp
         public MainPage()
         {
             InitializeComponent();
+            
 
             MenuList = new List<NavigationModel>
             {
@@ -45,7 +46,6 @@ namespace GivskudApp
         {
             var item = (NavigationModel)e.SelectedItem;
             Type page = item.TargetType;
-
 
             Detail = new NavigationPage((Page)Activator.CreateInstance(page));
             IsPresented = false;

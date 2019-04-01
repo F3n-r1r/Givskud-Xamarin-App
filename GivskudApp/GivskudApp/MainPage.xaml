@@ -8,13 +8,13 @@
     <MasterDetailPage.Master>
         <ContentPage Title="Menu" BackgroundColor="#de1f28">
 
-            <ListView x:Name="menuItemList" RowHeight="60" SeparatorVisibility="None" ItemSelected="OnMenuItemSelected">
+            <ListView x:Name="menuItemList" RowHeight="75" SeparatorVisibility="None" ItemSelected="OnMenuItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="20,10,0,10" Spacing="20">
-                                <Image Source="{Binding Icon}" WidthRequest="30" HeightRequest="30" VerticalOptions="Center" />
-                                <Label Text="{Binding Title}" FontSize="Medium" VerticalOptions="Center" TextColor="Black"/>
+                            <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="20,10,0,10" Spacing="30">
+                                <Image Source="{Binding Icon}" WidthRequest="40" HeightRequest="40" VerticalOptions="Center" />
+                                <Label Text="{Binding Title}" FontSize="Medium" VerticalOptions="Center" TextColor="#FFFFFF"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
