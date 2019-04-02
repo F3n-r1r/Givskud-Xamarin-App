@@ -11,7 +11,7 @@ namespace GivskudApp.ViewModel
     {
         ProgramService service = new ProgramService();
 
-        public IList<ProgramModel> Program { get { return service.Program; } }
+        public List<ProgramModel> Program { get { return service.Program; } }
 
     }
 }

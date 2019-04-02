@@ -23,6 +23,7 @@ namespace GivskudApp.Views
 
             var vm = DependencyService.Get<ProgramViewModel>();
             ProgramList.ItemsSource = vm.Program;
+
         }
 	}
 }
