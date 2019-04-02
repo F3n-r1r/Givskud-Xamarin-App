@@ -7,27 +7,31 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
+using GivskudApp.ResourceControllers;
+
 namespace GivskudApp.Services
 {
     public class NewsService
     {
         public List<NewsModel> News { get; }
 
-        // ###
-        // In future iteration of the app this data should come from an api
-        // ###
-        public NewsService() // Need to use Encoding to make it utf-8 (ø æ å)
+        public NewsService()
         {
-            var assembly = GetType().GetTypeInfo().Assembly;
-            Stream stream = assembly.GetManifestResourceStream("GivskudApp.MockData.NewsMockData.json");
+        
+            ApiResource ApiResource = new ApiResource();
+            string ApiResourceJson = ApiResource.Get("/news/get");
 
-            using (var reader = new StreamReader(stream))
-            {
-                var json = reader.ReadToEnd();
-                List<NewsModel> list = JsonConvert.DeserializeObject<List<NewsModel>>(json);
-
-                News = new List<NewsModel>(list.OrderBy(n => n.PublishDate));
+            if(ApiResourceJson != null) {
+                try {
+                    News = JsonConvert.DeserializeObject<List<NewsModel>>(ApiResourceJson);
+                } catch (Exception e) {
+                    System.Diagnostics.Debug.WriteLine("NewsService: Cannot deserialize object. {0}", e.Message);
+                    News = new List<NewsModel>();
+                }
+            } else {
+                News = new List<NewsModel>();
             }
+
         }
     }
 }

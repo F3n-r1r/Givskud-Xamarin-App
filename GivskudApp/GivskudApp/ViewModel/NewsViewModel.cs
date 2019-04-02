@@ -14,7 +14,7 @@ namespace GivskudApp.ViewModel
         int currentNews;
 
         public List<NewsModel> News { get { return service.News; } }
-
+        
         // The specific News item that is clicked (Used for -> NewsDetailsPage)
         public NewsModel SelectedNews
         {
