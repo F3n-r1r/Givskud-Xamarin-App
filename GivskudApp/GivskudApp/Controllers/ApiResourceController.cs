@@ -15,7 +15,7 @@ namespace GivskudApp.ResourceControllers {
     class ApiResource {
 
         private string AuthenticationToken = "C4oILgIT7dTqLye9LJZ0Hr9Xedp7RleQAxw5NVHE";
-        private string ApiBaseUri = "";
+        private string ApiBaseUri = "https://givskudbackoffice20190402102444.azurewebsites.net/umbraco/api";
 
         public string Get(string Endpoint, Dictionary<string,string> Headers = null) {
 
@@ -31,7 +31,7 @@ namespace GivskudApp.ResourceControllers {
 
                 try {
 
-                    HttpResponseMessage HttpRequest = await Client.GetAsync(ApiBaseUri + Route);
+                    HttpResponseMessage HttpRequest = await Client.GetAsync(ApiBaseUri + Route).ConfigureAwait(false);
                     
                     if(HttpRequest.StatusCode == HttpStatusCode.OK) {
                         
@@ -99,7 +99,7 @@ namespace GivskudApp.ResourceControllers {
     [Obsolete]
     class ApiResourceController {
 
-        private string _Api = "https://givskudbackoffice20190327114413.azurewebsites.net/umbraco/api";
+        private string _Api = "https://givskudbackoffice20190402102444.azurewebsites.net/umbraco/api";
         private string _Endpoint;
         private string _AcceptFormat;
         private Encoding _Encoding;
