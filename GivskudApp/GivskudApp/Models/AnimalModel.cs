@@ -6,12 +6,11 @@ namespace GivskudApp.Models
 {
     public class AnimalModel
     {
-        public string ID { get; set; }
+        public int ID { get; set; }
         public string Icon { get; set; }
         public string Image { get; set; }
         public string Name { get; set; }
         public List<string> Content { get; set; }
-
         public string Height { get; set; }
         public string Length { get; set; }
         public string Weight { get; set; }
@@ -22,5 +21,7 @@ namespace GivskudApp.Models
         public string Status { get; set; }
         public string Eats { get; set; }
         public string Species { get; set; }
+        public int QuizID { get; set; }
+        public int AreaID { get; set; }
     }
 }

@@ -17,57 +17,26 @@ namespace GivskudApp.Services
 {
     public class AnimalService
     {
-
-        public List<AnimalModel> Data = new List<AnimalModel>();
-        
+      
         public List<AnimalModel> Animal { get; }
 
         public AnimalService()
         {
 
-            /* DEV ONLY */
-            // Remove Cache
-            CrossSettings.Current.Remove("applicationAnimalListCacheObject");
-            /* DEV ONLY */
+            ApiResource ApiResource = new ApiResource();
+            string ApiResourceJson = ApiResource.Get("/animals/get");
 
-            string CachedResource = CrossSettings.Current.GetValueOrDefault("applicationAnimalListCacheObject", null);
-
-            if(CachedResource != null) {
-
-                AnimalCache CachedResourceDeserialized = JsonConvert.DeserializeObject <AnimalCache>(CachedResource);
-
-                if(DateTime.Compare(CachedResourceDeserialized.ValidUntil.Date, DateTime.Now.Date) >= 0) {
-                    Animal = CachedResourceDeserialized.List;
-                } else {
-                    Animal = Fetch();
+            if(ApiResourceJson != null) {
+                try {
+                    Animal = JsonConvert.DeserializeObject<List<AnimalModel>>(ApiResourceJson); 
+                } catch (Exception e) {
+                    System.Diagnostics.Debug.WriteLine("NewsService: Cannot deserialize object. {0}", e.Message);
+                    Animal = new List<AnimalModel>();
                 }
-
             } else {
-
-                List<AnimalModel> FetchedData = Fetch();
-                AnimalCache CacheData = new AnimalCache {
-                    ValidUntil = DateTime.Now.AddDays(1),
-                    List = FetchedData
-                };
-                CrossSettings.Current.AddOrUpdateValue("applicationAnimalListCacheObject", JsonConvert.SerializeObject(CacheData)) ;
-                Animal = FetchedData;
-
+                Animal = new List<AnimalModel>();
             }
+
         }
-        
-        private List<AnimalModel> Fetch() {
-            ApiResourceController ApiResource = new ApiResourceController("/animals/get");
-            using(var Response = ApiResource.Get()) {
-                if(Response == null) {
-                    return null;
-                } else {
-                    return JsonConvert.DeserializeObject<List<AnimalModel>>(Response.Result);
-                }
-            }
-        }
-    }
-    public class AnimalCache {
-        public DateTime ValidUntil { get; set; }
-        public List<AnimalModel> List { get; set; }
     }
 }
