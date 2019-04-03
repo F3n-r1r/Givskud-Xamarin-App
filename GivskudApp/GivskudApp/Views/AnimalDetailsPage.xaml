@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
              x:Class="GivskudApp.Views.AnimalDetailsPage">
+    
+
     <ContentPage.Resources>
         <Style TargetType="ScrollView" Class="ViewStyle">
             <Setter Property="BackgroundColor" Value="#B7D98E" />
@@ -44,6 +46,8 @@
             <Setter Property="Aspect" Value="AspectFit" />
         </Style>
     </ContentPage.Resources>
+    
+    
     <ContentPage.Content Style="{StaticResources ApplicationStyle}">
         <ScrollView StyleClass="ViewStyle">
             <StackLayout>
@@ -119,7 +123,7 @@
                     <!-- / Infotable -->
 
                     <!-- Paragraph content -->
-                    <ListView SeparatorVisibility="None" ItemsSource="{Binding Content}" x:Name="AnimalParagraphs" Grid.Row="3">
+                    <ListView SeparatorVisibility="None" IsEnabled="False" ItemsSource="{Binding Content}" x:Name="AnimalParagraphs" Grid.Row="3">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
