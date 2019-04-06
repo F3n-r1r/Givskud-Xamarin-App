@@ -10,126 +10,89 @@
         </Style>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout>
-                <!-- START PASS INPUT -->
-                <StackLayout x:Name="SeasonPassInput" StyleClass="StackLayoutOverlay">
-                    <StackLayout.Triggers>
-                        <DataTrigger TargetType="StackLayout" Binding="{Binding IsBusy}" Value="True">
-                            <Setter Property="IsVisible" Value="False" />
-                        </DataTrigger>
-                        <DataTrigger TargetType="StackLayout" Binding="{Binding HasValidPass}" Value="True">
-                            <Setter Property="IsVisible" Value="False" />
-                        </DataTrigger>
-                    </StackLayout.Triggers>
-                    <Label Text="Indlæs dit sæsonkort" Style="{StaticResource GlobalTextHeadline}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" TextColor="Black" Margin="0,0,0,16"/>
-                    <Grid VerticalOptions="Center">
+        <StackLayout>
+
+            <!-- START WORKING PAGE -->
+            <StackLayout x:Name="SeasonPassWorking" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsBusy}">
+                <ActivityIndicator IsRunning="True" Scale="0.5" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" Color="{DynamicResource NavigationPrimary}" />
+            </StackLayout>
+            <!-- END WORKING PAGE -->
+
+            <!-- START PASS INPUT -->
+            <StackLayout x:Name="SeasonPassInput" IsVisible="{Binding ShowPassInput}" StyleClass="StackLayoutOverlay">
+                <Label Text="Indlæs dit sæsonkort" Style="{StaticResource GlobalTextHeadline}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" TextColor="Black" Margin="0,0,0,16"/>
+                <Grid VerticalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Entry Text="{Binding UserInputValue}" Style="{StaticResource GlobalEntryStyle}" Placeholder="Enter ID" Grid.Row="0" TextColor="Black" />
+                    <Button Command="{Binding FetchPassCommand}" Style="{StaticResource GlobalButtonStyle}" Text="Add Pass" Grid.Row="1" />
+                    <Label Style="{StaticResource GlobalFormFootnote}" Text="This ID can be found on the physical card acquired by purchasing the season pass" Grid.Row="2" TextColor="Black" />
+                </Grid>
+            </StackLayout>
+            <!-- END PASS INPUT -->
+
+            <!-- START PASS DETAILS -->
+            <StackLayout x:Name="SeasonPassDetails" IsVisible="{Binding ShowPassDetails}" StyleClass="StackLayoutOverlay">
+                <Label Text="Din årstid passerer" Style="{StaticResource GlobalTextHeadline}" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,16"/>
+                <Frame StyleClass="Master">
+                    <Frame.Resources>
+                        <Style TargetType="Frame" Class="Master">
+                            <Setter Property="BackgroundColor" Value="White" />
+                            <Setter Property="Padding" Value="12,18" />
+                        </Style>
+                    </Frame.Resources>
+                    <Grid StyleClass="Master">
+                        <Grid.Resources>
+                            <ResourceDictionary>
+                                <Style TargetType="Label" x:Key="LabelMasterstyle" Class="LabelMaster">
+                                    <Setter Property="TextColor" Value="Black" />
+                                    <Setter Property="MinimumHeightRequest" Value="30" />
+                                    <Setter Property="VerticalTextAlignment" Value="Center"/>
+                                </Style>
+                                <Style TargetType="Label" Class="Label" BasedOn="{StaticResource LabelMasterstyle}">
+                                    <Setter Property="HorizontalTextAlignment" Value="Right" />
+                                </Style>
+                                <Style TargetType="Label" Class="Content" BasedOn="{StaticResource LabelMasterstyle}">
+
+                                </Style>
+                                <Style TargetType="Label" Class="Cardholder" BasedOn="{StaticResource LabelMasterstyle}">
+                                    <Setter Property="MinimumHeightRequest" Value="50" />
+                                    <Setter Property="FontSize" Value="27" />
+                                </Style>
+                            </ResourceDictionary>
+                        </Grid.Resources>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
 
-                        <Entry Text="{Binding SeasonPassInput}" Style="{StaticResource GlobalEntryStyle}" Placeholder="Enter ID" Grid.Row="0" TextColor="Black" />
-                        <Button Command="{Binding FetchPassCommand}" Style="{StaticResource GlobalButtonStyle}" Text="Add Pass" Grid.Row="1" />
-                        <Label Style="{StaticResource GlobalFormFootnote}" Text="This ID can be found on the physical card acquired by purchasing the season pass" Grid.Row="2" TextColor="Black" />
+                        <Label Text="{Binding Pass.Holder}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" StyleClass="Cardholder" />
+
+                        <Label Text="Gældende fra.:" Grid.Row="1" Grid.Column="0" StyleClass="Label" />
+                        <Label Text="{Binding Pass.ValidFrom}" Grid.Row="1" Grid.Column="1" StyleClass="Content" />
+
+                        <Label Text="Gyldig til.:" Grid.Row="2" Grid.Column="0" StyleClass="Label" />
+                        <Label Text="{Binding Pass.ValidTo}" Grid.Row="2" Grid.Column="1" StyleClass="Content" />
+
+                        <Label Text="Erhvervet den.:" Grid.Row="3" Grid.Column="0" StyleClass="Label" />
+                        <Label Text="{Binding Pass.AcquiredOn}" Grid.Row="3" Grid.Column="1" StyleClass="Content" />
                     </Grid>
-                </StackLayout>
-                <!-- END PASS INPUT -->
-            
-                <!-- START PASS DETAILS -->
-                <StackLayout x:Name="SeasonPassDetails" StyleClass="StackLayoutOverlay">
-                    <StackLayout.Triggers>
-                        <DataTrigger TargetType="StackLayout" Binding="{Binding IsBusy}" Value="True">
-                            <Setter Property="IsVisible" Value="False" />
-                        </DataTrigger>
-                        <DataTrigger TargetType="StackLayout" Binding="{Binding HasValidPass}" Value="False">
-                            <Setter Property="IsVisible" Value="False" />
-                        </DataTrigger>
-                    </StackLayout.Triggers>
-                    <Label Text="Din årstid passerer" Style="{StaticResource GlobalTextHeadline}" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,16"/>
-                    <Frame StyleClass="Master">
-                        <Frame.Resources>
-                            <Style TargetType="Frame" Class="Master">
-                                <Setter Property="BackgroundColor" Value="White" />
-                                <Setter Property="Padding" Value="12,18" />
-                            </Style>
-                        </Frame.Resources>
-                        <Grid StyleClass="Master">
-                            <Grid.Resources>
-                                <ResourceDictionary>
-                                    <Style TargetType="Label" x:Key="LabelMasterstyle" Class="LabelMaster">
-                                        <Setter Property="TextColor" Value="Black" />
-                                        <Setter Property="MinimumHeightRequest" Value="30" />
-                                        <Setter Property="VerticalTextAlignment" Value="Center"/>
-                                    </Style>
-                                    <Style TargetType="Label" Class="Label" BasedOn="{StaticResource LabelMasterstyle}">
-                                        <Setter Property="HorizontalTextAlignment" Value="Right" />
-                                    </Style>
-                                    <Style TargetType="Label" Class="Content" BasedOn="{StaticResource LabelMasterstyle}">
-
-                                    </Style>
-                                    <Style TargetType="Label" Class="Cardholder" BasedOn="{StaticResource LabelMasterstyle}">
-                                        <Setter Property="MinimumHeightRequest" Value="50" />
-                                        <Setter Property="FontSize" Value="27" />
-                                    </Style>
-                                </ResourceDictionary>
-                            </Grid.Resources>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="100" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-
-                            <Label Text="{Binding ValidPassData.Holder}" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" StyleClass="Cardholder" />
-
-                            <Label Text="Gældende fra.:" Grid.Row="1" Grid.Column="0" StyleClass="Label" />
-                            <Label Text="{Binding ValidPassData.ValidFrom}" Grid.Row="1" Grid.Column="1" StyleClass="Content" />
-
-                            <Label Text="Gyldig til.:" Grid.Row="2" Grid.Column="0" StyleClass="Label" />
-                            <Label Text="{Binding ValidPassData.ValidTo}" Grid.Row="2" Grid.Column="1" StyleClass="Content" />
-
-                            <Label Text="Erhvervet den.:" Grid.Row="3" Grid.Column="0" StyleClass="Label" />
-                            <Label Text="{Binding ValidPassData.AcquiredOn}" Grid.Row="3" Grid.Column="1" StyleClass="Content" />
-                        </Grid>
-                    </Frame>
-                    <Button Command="{Binding RemovePassCommand}" Style="{StaticResource GlobalButtonStyle}" Text="Remove Pass" />
-                </StackLayout>
-                <!-- END PASS DETAILS -->
-            
-                <!-- START VERIFYING PASS -->
-                <StackLayout x:Name="SeasonPassWorking" StyleClass="StackLayoutOverlay">
-                    <StackLayout.Triggers>
-                        <DataTrigger TargetType="StackLayout" Binding="{Binding IsBusy}" Value="False">
-                            <Setter Property="IsVisible" Value="False" />
-                        </DataTrigger>
-                    </StackLayout.Triggers>
-                    <StackLayout.Resources>
-                        <Style TargetType="ActivityIndicator" Class="IndicatorClass">
-                            <Setter Property="IsRunning" Value="True" />
-                            <Setter Property="IsVisible" Value="True" />
-                            <Setter Property="HeightRequest" Value="40" />
-                            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-                            <Setter Property="Color" Value="#de1f28" />
-                        </Style>
-                        <Style TargetType="Label" Class="IndicatorLabel">
-                            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-                            <Setter Property="TextColor" Value="Black" />
-                            <Setter Property="FontSize" Value="16" />
-                            <Setter Property="Margin" Value="0,10,0,0" />
-                        </Style>
-                    </StackLayout.Resources>
-                    <ActivityIndicator StyleClass="IndicatorClass" />
-                    <Label StyleClass="IndicatorLabel" Text="Verifying your pass" />
-                </StackLayout>
-                <!-- END VERIFYING PASS -->
+                </Frame>
+                <Button Command="{Binding RemovePassCommand}" Style="{StaticResource GlobalButtonStyle}" Text="Remove Pass" />
             </StackLayout>
-        </ScrollView>
+            <!-- END PASS DETAILS -->
+
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
     
