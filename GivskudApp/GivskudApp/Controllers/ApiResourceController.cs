@@ -24,7 +24,7 @@ namespace GivskudApp.ResourceControllers {
         }
 
         private async Task<string> GetAsync(string Route, Dictionary<string,string> Headers) {
-
+            
             using(HttpClient Client = GetClient(Headers)) {
 
                 string Result = null;
@@ -84,7 +84,8 @@ namespace GivskudApp.ResourceControllers {
             Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", AuthenticationToken);
 
             // Additional headers
-            if(Headers != null && Headers.Count > 0) {
+
+            if(Headers != null) {
                 foreach(KeyValuePair<string,string> Entry in Headers) {
                     Client.DefaultRequestHeaders.Add(Entry.Key, Entry.Value);
                 }
