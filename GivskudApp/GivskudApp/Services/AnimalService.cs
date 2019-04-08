@@ -15,13 +15,22 @@ using GivskudApp.ResourceControllers;
 
 namespace GivskudApp.Services
 {
+    public class Model {
+        public int Area {get; set;}
+    }
+
     public class AnimalService
     {
-      
-        public List<AnimalModel> Animal { get; }
+
+        public List<AnimalModel> Animal = null;
 
         public AnimalService()
         {
+
+            Animal = null;
+
+        }
+        public void Fetch() {
 
             ApiResource ApiResource = new ApiResource();
             string ApiResourceJson = ApiResource.Get("/animals/get");
@@ -36,6 +45,11 @@ namespace GivskudApp.Services
             } else {
                 Animal = new List<AnimalModel>();
             }
+
+        }
+        public void SortByArea(int AreaID) {
+
+            Animal = Animal == null || Animal.Count == 0 ? Animal : Animal.Where(x => x.AreaID == AreaID).ToList();
 
         }
     }
