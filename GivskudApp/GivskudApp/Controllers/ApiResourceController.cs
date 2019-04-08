@@ -119,11 +119,9 @@ namespace GivskudApp.ResourceControllers {
                     if(Request.StatusCode == System.Net.HttpStatusCode.OK) {
                         return await Request.Content.ReadAsStringAsync();
                     } else {
-                        PopupController.Message("Service error", "Please check your internet connection and try again. If the issue persists, contact our staff.", "OK");
                         return null;
                     }
                 } catch (Exception e) {
-                    PopupController.Message("Unable to connect", "Please check your internet connection and try again.", "Dismiss");
                     return null;
                 }
             }

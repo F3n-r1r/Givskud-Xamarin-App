@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
-using System.Diagnostics;
+using System.Globalization;
 
 using Newtonsoft.Json;
 
 using Plugin.Settings;
 
 using GivskudApp.Models;
-using GivskudApp.Controllers;
 using GivskudApp.ResourceControllers;
 using GivskudApp.CryptographyService;
-using System.Globalization;
+using GivskudApp.Controllers;
 
 namespace GivskudApp.Services {
     class SeasonPassService {
@@ -80,6 +78,7 @@ namespace GivskudApp.Services {
                             return null;
                         }
                     } else {
+                        PopupController.Simple("Invalid pass", "The pass ID you have entered does not seem to be valid. Please try again or contact the staff", "Dismiss");
                         return null;
                     }
                 } catch (Exception e) {
