@@ -1,23 +1,11 @@
-﻿using System;
-using System.Text;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Windows.Input;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Collections.Generic;
 
-using System.Diagnostics;
-
-using Newtonsoft.Json;
-
-using Plugin.Settings;
 using Xamarin.Forms;
 using GivskudApp.Models;
 using GivskudApp.Services;
-using GivskudApp.Controllers;
-using GivskudApp.ResourceControllers;
-using GivskudApp.CryptographyService;
 
 namespace GivskudApp.ViewModel
 {
