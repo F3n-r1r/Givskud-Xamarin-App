@@ -54,6 +54,7 @@ namespace GivskudApp.ViewModel
 
                 });
             });
+
         }
         void OnPropertyChanged([CallerMemberName] string name = "") {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

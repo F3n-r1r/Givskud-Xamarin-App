@@ -16,21 +16,24 @@ namespace GivskudApp.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AnimalsPage : ContentPage
 	{
-		public AnimalsPage ()
+
+        private AnimalViewModel Binding;
+
+		public AnimalsPage (int AreaID = -1)
 		{
-            DependencyService.Register<AnimalViewModel>();
+
+            Binding = new AnimalViewModel(AreaID);
 
             InitializeComponent();
             FlowListView.Init();
+            BindingContext = Binding;
 
-            var vm = DependencyService.Get<AnimalViewModel>();
-            AnimalList.FlowItemsSource = vm.Animals;
         }
 
         async void ItemClicked(object sender, ItemTappedEventArgs e)
         {
             AnimalModel thisAnimal = (AnimalModel)e.Item;
-            var vm = DependencyService.Get<AnimalViewModel>();
+            var vm = Binding;
             vm.SelectedAnimal = thisAnimal;
             await Navigation.PushAsync(new AnimalDetailsPage());
         }

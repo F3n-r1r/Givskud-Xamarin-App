@@ -79,13 +79,13 @@
                         <Label Text="{Binding Pass.Holder}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" StyleClass="Cardholder" />
 
                         <Label Text="Gældende fra.:" Grid.Row="1" Grid.Column="0" StyleClass="Label" />
-                        <Label Text="{Binding Pass.ValidFrom}" Grid.Row="1" Grid.Column="1" StyleClass="Content" />
+                        <Label Text="{Binding Pass.ValidFrom}" HorizontalTextAlignment="End" Grid.Row="1" Grid.Column="1" StyleClass="Content" />
 
                         <Label Text="Gyldig til.:" Grid.Row="2" Grid.Column="0" StyleClass="Label" />
-                        <Label Text="{Binding Pass.ValidTo}" Grid.Row="2" Grid.Column="1" StyleClass="Content" />
+                        <Label Text="{Binding Pass.ValidTo}" HorizontalTextAlignment="End" Grid.Row="2" Grid.Column="1" StyleClass="Content" />
 
                         <Label Text="Erhvervet den.:" Grid.Row="3" Grid.Column="0" StyleClass="Label" />
-                        <Label Text="{Binding Pass.AcquiredOn}" Grid.Row="3" Grid.Column="1" StyleClass="Content" />
+                        <Label Text="{Binding Pass.AcquiredOn}" HorizontalTextAlignment="End" Grid.Row="3" Grid.Column="1" StyleClass="Content" />
                     </Grid>
                 </Frame>
                 <Button Command="{Binding RemovePassCommand}" Style="{StaticResource GlobalButtonStyle}" Text="Remove Pass" />
