@@ -39,17 +39,11 @@ namespace GivskudApp.Services
                 try {
                     Animal = JsonConvert.DeserializeObject<List<AnimalModel>>(ApiResourceJson); 
                 } catch (Exception e) {
-                    System.Diagnostics.Debug.WriteLine("NewsService: Cannot deserialize object. {0}", e.Message);
                     Animal = new List<AnimalModel>();
                 }
             } else {
                 Animal = new List<AnimalModel>();
             }
-
-        }
-        public void SortByArea(int AreaID) {
-
-            Animal = Animal == null || Animal.Count == 0 ? Animal : Animal.Where(x => x.AreaID == AreaID).ToList();
 
         }
     }

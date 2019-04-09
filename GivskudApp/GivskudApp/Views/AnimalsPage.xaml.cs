@@ -17,13 +17,11 @@ namespace GivskudApp.Views
 	public partial class AnimalsPage : ContentPage
 	{
 
-        private AnimalViewModel Binding;
+        private AnimalViewModel Binding = new AnimalViewModel();
 
-		public AnimalsPage (int AreaID = -1)
+		public AnimalsPage ()
 		{
-
-            Binding = new AnimalViewModel(AreaID);
-
+           
             InitializeComponent();
             FlowListView.Init();
             BindingContext = Binding;

@@ -23,12 +23,11 @@ namespace GivskudApp.ViewModel
         public List<AnimalModel> Animals { get { return Service.Animal; } private set { Service.Animal = value; } }
         int currentAnimal;
         
-        public AnimalViewModel(int AreaID = -1) {
+        public AnimalViewModel() {
 
             Task.Run(() => {
 
                 Service.Fetch();
-
                 IsBusy = false;
                 Refresh();
 
