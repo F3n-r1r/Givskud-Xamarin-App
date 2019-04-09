@@ -2,12 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GivskudApp.Views.SeasonPassPage"
-             Style="{StaticResource GlobalApplicationStyle}">
+             Style="{StaticResource GlobalLayoutStyle}">
     <ContentPage.Resources>
-        <Style TargetType="StackLayout" Class="StackLayoutOverlay">
-            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-        </Style>
+
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
@@ -20,7 +17,7 @@
 
             <!-- START PASS INPUT -->
             <StackLayout x:Name="SeasonPassInput" IsVisible="{Binding ShowPassInput}" StyleClass="StackLayoutOverlay">
-                <Label Text="Indlæs dit sæsonkort" Style="{StaticResource GlobalTextHeadline}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" TextColor="Black" Margin="0,0,0,16"/>
+                <Label Text="Indlæs dit sæsonkort" Style="{StaticResource LabelHeadline}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" TextColor="Black" Margin="0,0,0,16"/>
                 <Grid VerticalOptions="Center">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
@@ -29,7 +26,7 @@
                     </Grid.RowDefinitions>
 
                     <Entry Text="{Binding UserInputValue}" Style="{StaticResource GlobalEntryStyle}" Placeholder="Enter ID" Grid.Row="0" TextColor="Black" />
-                    <Button Command="{Binding FetchPassCommand}" Style="{StaticResource GlobalButtonStyle}" Text="Add Pass" Grid.Row="1" />
+                    <Button Command="{Binding FetchPassCommand}" Text="Add Pass" Grid.Row="1" />
                     <Label Style="{StaticResource GlobalFormFootnote}" Text="This ID can be found on the physical card acquired by purchasing the season pass" Grid.Row="2" TextColor="Black" />
                 </Grid>
             </StackLayout>
@@ -37,7 +34,7 @@
 
             <!-- START PASS DETAILS -->
             <StackLayout x:Name="SeasonPassDetails" IsVisible="{Binding ShowPassDetails}" StyleClass="StackLayoutOverlay">
-                <Label Text="Din årstid passerer" Style="{StaticResource GlobalTextHeadline}" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,16"/>
+                <Label Text="Din årstid passerer" Style="{StaticResource LabelHeadline}" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,16"/>
                 <Frame StyleClass="Master">
                     <Frame.Resources>
                         <Style TargetType="Frame" Class="Master">
@@ -88,7 +85,7 @@
                         <Label Text="{Binding Pass.AcquiredOn}" HorizontalTextAlignment="End" Grid.Row="3" Grid.Column="1" StyleClass="Content" />
                     </Grid>
                 </Frame>
-                <Button Command="{Binding RemovePassCommand}" Style="{StaticResource GlobalButtonStyle}" Text="Remove Pass" />
+                <Button Command="{Binding RemovePassCommand}" Text="Remove Pass" />
             </StackLayout>
             <!-- END PASS DETAILS -->
 

@@ -1,15 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GivskudApp.Views.HomePage">
-
+             x:Class="GivskudApp.Views.HomePage"
+             Style="{StaticResource GlobalLayoutStyle}">
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="0,30,0,0" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
             <Image Source="logo.png" Margin="0,20,0,0" HeightRequest="140"/>
 
-            <Button ClassId="TourPageBtn" Text="START GUIDED TUR" Margin="0,30,0,0" HorizontalOptions="Center" BackgroundColor="#de1f28" TextColor="#FFFFFF" WidthRequest="160" Clicked="Button_Clicked"/>
-            <Button ClassId="MapPageBtn" Text="SE KORT" Margin="0,30,0,0" HorizontalOptions="Center" BackgroundColor="#de1f28" TextColor="#FFFFFF" WidthRequest="160" Clicked="Button_Clicked"/>
-            <Button ClassId="ProgramPageBtn" Text="DAGENS PROGRAM" Margin="0,30,0,0" HorizontalOptions="Center" BackgroundColor="#de1f28" TextColor="#FFFFFF" WidthRequest="160" Clicked="Button_Clicked"/>
+            <Button ClassId="TourPageBtn" Text="START GUIDED TUR" Clicked="Button_Clicked"/>
+            <Button ClassId="MapPageBtn" Text="SE KORT" Clicked="Button_Clicked"/>
+            <Button ClassId="ProgramPageBtn" Text="DAGENS PROGRAM" Clicked="Button_Clicked"/>
 
             <Grid>
                 <Grid.ColumnDefinitions>

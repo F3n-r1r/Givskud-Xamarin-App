@@ -5,6 +5,45 @@
     <Application.Resources>
 
         <ResourceDictionary>
+
+            <!-- Colours -->
+            <Color x:Key="ColorPrimary">#DE1F28</Color>
+            <!-- /Colours -->
+            
+            <!-- Layout Styles -->
+            <Style TargetType="ContentPage" x:Key="GlobalLayoutStyle">
+                <Setter Property="BackgroundColor" Value="#b7d98e" />
+                <Setter Property="Padding" Value="15" />
+            </Style>
+            <!-- /Layout Styles -->
+
+            <!-- Elements Styles -->
+            <Style TargetType="Frame" x:Key="ScannerButton">
+                
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource ColorPrimary}" />
+                <Setter Property="TextColor" Value="#FFFFFF" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="MinimumWidthRequest" Value="160" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="CornerRadius" Value="5" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="HeightRequest" Value="60" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+            <!-- /Elements Styles -->
+
+            <!-- Text Styles -->
+            <Style x:Key="LabelHeadline" TargetType="Label">
+                <Setter Property="FontSize" Value="25" />
+            </Style>
+            <!-- /Text Styles -->
+            
             <!--Global Styles-->
             <Color x:Key="NavigationPrimary">#de1f28</Color>
 
@@ -14,32 +53,10 @@
                 <Setter Property="BackgroundColor" Value="#b7d98e"/>
             </Style>
 
-            <Style x:Key="GlobalApplicationStyle" TargetType="ContentPage">
-                <Setter Property="BackgroundColor" Value="#b7d98e" />
-                <Setter Property="Padding" Value="14,8" />
-            </Style>
-            <Style x:Key="GlobalButtonStyle" TargetType="Button">
-                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-                <Setter Property="BorderRadius" Value="0" />
-                <Setter Property="BorderWidth" Value="0" />
-                <Setter Property="TextColor" Value="White" />
-                <Setter Property="HeightRequest" Value="60" />
-                <Setter Property="BackgroundColor" Value="#de1f28" />
-                <Setter Property="FontSize" Value="20" />
-            </Style>
-            <Style x:Key="GlobalEntryStyle" TargetType="Entry">
-                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-                <Setter Property="TextColor" Value="Black" />
-                <Setter Property="HeightRequest" Value="60" />
-                <Setter Property="FontSize" Value="20" />
-            </Style>
             <Style x:Key="GlobalFormFootnote" TargetType="Label">
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="FontSize" Value="13" />
-            </Style>
-            <Style x:Key="GlobalTextHeadline" TargetType="Label">
-                <Setter Property="FontSize" Value="25" />
             </Style>
 
         </ResourceDictionary>

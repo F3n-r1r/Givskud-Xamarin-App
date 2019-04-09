@@ -1,21 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GivskudApp.Views.ContactPage">
+             x:Class="GivskudApp.Views.ContactPage"
+             Style="{StaticResource GlobalLayoutStyle}">
+    <ContentPage.Resources>
 
+    </ContentPage.Resources>
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Padding="20,10,20,10">
-
-
+            <StackLayout>
 
                 <Label Text="Kontakt Os" TextColor="#000000" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center"/>
                 <Label Text="Vi står til rådighed hvis du har nogle spørgsmål" TextColor="#000000" FontSize="Small" HorizontalOptions="Center"/>
 
                 <Frame CornerRadius="10"  
-                   Padding="10"
-                   Margin="0,10,0,10"
-                   BackgroundColor="#FFFFFF">
+                       Padding="10"
+                       Margin="0,10,0,10"
+                       BackgroundColor="#FFFFFF">
 
                     <StackLayout>
                         <Label Text="Telefon Åbningstider" TextColor="#000000"/>
@@ -52,15 +53,13 @@
 
 
                 <Label 
-                Text="Hvis du hellere vil snakke med os ansigt til ansigt, kan du komme til informationen som du kan finde på kortet."
-                HorizontalOptions="CenterAndExpand"
-                HorizontalTextAlignment="Center"
-                Margin="0,10,0,10"/>
-                <Button Text="Gå til kort" BackgroundColor="#de1f28" TextColor="#FFFFFF" WidthRequest="160"/>
+                    Text="Hvis du hellere vil snakke med os ansigt til ansigt, kan du komme til informationen som du kan finde på kortet."
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Margin="0,10,0,10"/>
+                <Button Text="Gå til kort" />
 
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
-
-
 </ContentPage>

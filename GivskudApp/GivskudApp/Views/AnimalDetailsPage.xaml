@@ -2,9 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
-             x:Class="GivskudApp.Views.AnimalDetailsPage">
-    
-
+             x:Class="GivskudApp.Views.AnimalDetailsPage"
+             Style="{StaticResource GlobalLayoutStyle}">
     <ContentPage.Resources>
         <Style TargetType="ScrollView" Class="ViewStyle">
             <Setter Property="BackgroundColor" Value="#B7D98E" />
@@ -46,9 +45,8 @@
             <Setter Property="Aspect" Value="AspectFit" />
         </Style>
     </ContentPage.Resources>
-    
-    
-    <ContentPage.Content Style="{StaticResources ApplicationStyle}">
+
+    <ContentPage.Content>
         <ScrollView StyleClass="ViewStyle">
             <StackLayout>
                 <Grid x:Name="MainGrid">

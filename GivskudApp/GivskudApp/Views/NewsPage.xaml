@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GivskudApp.Views.NewsPage">
+             x:Class="GivskudApp.Views.NewsPage"
+             Style="{StaticResource GlobalLayoutStyle}">
+    <ContentPage.Resources>
 
+    </ContentPage.Resources>
     <ContentPage.Content>
-
         <StackLayout>
             <ScrollView VerticalOptions="FillAndExpand" BackgroundColor="#FFFFFF">
                 <ListView x:Name="NewsList" ItemTapped="ItemClicked" VerticalOptions="FillAndExpand" HasUnevenRows="True" SeparatorVisibility="None">
@@ -27,7 +29,5 @@
                 </ListView>
             </ScrollView>
         </StackLayout>
-
     </ContentPage.Content>
-
 </ContentPage>
