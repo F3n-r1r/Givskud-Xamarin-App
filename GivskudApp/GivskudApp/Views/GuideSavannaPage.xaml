@@ -7,10 +7,35 @@
         
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+
+        <AbsoluteLayout x:Name="ApplicationLayoutTopLevel">
+            
+            <!-- Start: Absolute Elements Below Content -->
+            
+            <!-- Start: Actual Page Content -->
+            <StackLayout x:Name="ApplicationLayoutContentLevel">
+                <ScrollView>
+                    <StackLayout>
+                        <Button Text="Test" />
+                        <Button Text="Test" />
+                        <Button Text="Test" />
+                        <Button Text="Test" />
+                        <Button Text="Test" />
+                        <Button Text="Test" />
+                        <Button Text="Test" />
+                        <Button Text="Test" />
+                        <Button Text="Test" />
+                        <Button Text="Test" />
+                        <Button Text="Test" />
+                        <Button Text="Test" />
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+            <!-- End: Actual Page Content -->
+
+            <!-- Start: Absolute Elements Above Content -->
+            
+        </AbsoluteLayout>
+        
     </ContentPage.Content>
 </ContentPage>

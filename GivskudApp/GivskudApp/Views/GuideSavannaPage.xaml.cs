@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using GivskudApp.Controllers;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,7 +16,10 @@ namespace GivskudApp.Views
 	{
 		public GuideSavannaPage ()
 		{
-			InitializeComponent ();
+
+            InitializeComponent ();
+            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, true);
+
 		}
 	}
 }
