@@ -16,5 +16,21 @@ namespace GivskudApp.Views
 		{
 			InitializeComponent ();
 		}
-	}
+
+        // Handle button click -> Push new page
+        async void Button_Clicked(object sender, EventArgs e)
+        {
+            var btn = (Button)sender;
+            var id = btn.ClassId;
+
+            if (id == "GuideSavannaPageBtn")
+            {
+                await Navigation.PushAsync(new GuideSavannaPage());
+            }
+            else if (id == "QuizPageBtn")
+            {
+                await Navigation.PushAsync(new QuizPage());
+            }
+        }
+    }
 }

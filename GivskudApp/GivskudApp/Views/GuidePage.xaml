@@ -1,12 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GivskudApp.Views.GuidePage">
+             x:Class="GivskudApp.Views.GuidePage"
+             BackgroundImage="guideTour1.png">
+    
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+
+        <RelativeLayout VerticalOptions="FillAndExpand">
+            
+            <!--<StackLayout VerticalOptions="EndAndExpand"
+                   HorizontalOptions="EndAndExpand"
+                         Padding="0,10,0,0"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1,Constant=0}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}">
+
+
+                <Image Source="guideTour1.png" Margin="5,0,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                
+            </StackLayout>-->
+
+            
+            
+            <!-- Attempt to do speech bubble as frame instead of image -> To test: Uncomment this, change guideTour1.png to guide.png and width factor to 0.8 -->
+            <!--<StackLayout Orientation="Horizontal"
+                        VerticalOptions="Start"
+                             HorizontalOptions="End"
+                         Padding="0,20,5,0"
+                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1,Constant=0}"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}">
+
+                <Frame CornerRadius="100" WidthRequest="140" BackgroundColor="#FFFFFF">
+                    <Label Text="Velkommen til Givskud zoo, jeg er jeres guide Anna. Jeg kan hjælp jer på turen igennem Givskud. Hvad vil i prøve først?" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                </Frame>
+
+            </StackLayout>-->
+
+
+            <StackLayout Margin="0,0,20,40"
+                         VerticalOptions="EndAndExpand"
+                         HorizontalOptions="EndAndExpand"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1,Constant=0}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}">
+
+                <Button Text="Parkens Savanner" BackgroundColor="#97BE0D" TextColor="#000000" Padding="10,20,10,20" ClassId="GuideSavannaPageBtn" Clicked="Button_Clicked"/>
+                <Button Text="Quizzer" BackgroundColor="#97BE0D" TextColor="#000000" Padding="10,20,10,20" Margin="0,30,0,0" ClassId="QuizPageBtn" Clicked="Button_Clicked"/>
+            </StackLayout>
+
+        </RelativeLayout>
+        
     </ContentPage.Content>
+    
+    
 </ContentPage>
