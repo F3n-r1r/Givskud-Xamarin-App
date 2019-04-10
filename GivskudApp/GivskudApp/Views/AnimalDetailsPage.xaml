@@ -45,96 +45,108 @@
             <Setter Property="Aspect" Value="AspectFit" />
         </Style>
     </ContentPage.Resources>
-
     <ContentPage.Content>
-        <ScrollView StyleClass="ViewStyle">
-            <StackLayout>
-                <Grid x:Name="MainGrid">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="160" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
+        <AbsoluteLayout x:Name="ApplicationLayoutTopLevel">
 
-                    <!-- Intro image -->
-                    <Image x:Name="AnimalHeader" Source="{Binding Image}" StyleClass="HeaderImage" Grid.Row="0" />
-                    <!-- / Intro image -->
+            <!-- Absolute Elements Below Content -->
 
-                    <!-- Animal title -->
-                    <Label Text="{Binding Name}" Grid.Row="1" StyleClass="ViewHeadline" />
-                    <!-- / Animal title -->
+            <!-- Start: Actual Page Content -->
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel">
+                <ScrollView StyleClass="ViewStyle">
+                    <StackLayout>
+                        <Grid x:Name="MainGrid">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="160" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
 
-                    <!-- Infotable -->
-                    <Grid
-                    x:Name="AnimalInfotable"
-                    Padding="8"
-                    Grid.Row="2"
-                    BackgroundColor="White">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="65" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
+                            <!-- Intro image -->
+                            <Image x:Name="AnimalHeader" Source="{Binding Image}" StyleClass="HeaderImage" Grid.Row="0" />
+                            <!-- / Intro image -->
 
-                        <Image Source="Infopage/InfotableIcon_Height.png" StyleClass="InfotableLabelImage" Grid.Row="0" Grid.Column="0" />
-                        <Label Text="{Binding Height}" Grid.Row="0" Grid.Column="1" StyleClass="InfotableValue" />
+                            <!-- Animal title -->
+                            <Label Text="{Binding Name}" Grid.Row="1" StyleClass="ViewHeadline" />
+                            <!-- / Animal title -->
 
-                        <Image Source="Infopage/InfotableIcon_Length.png" StyleClass="InfotableLabelImage"  Grid.Row="1" Grid.Column="0" />
-                        <Label Text="{Binding Length}" Grid.Row="1" Grid.Column="1" StyleClass="InfotableValue" />
+                            <!-- Infotable -->
+                            <Grid
+                        x:Name="AnimalInfotable"
+                        Padding="8"
+                        Grid.Row="2"
+                        BackgroundColor="White">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="65" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
 
-                        <Image Source="Infopage/InfotableIcon_Weight.png" StyleClass="InfotableLabelImage" Grid.Row="2" Grid.Column="0" />
-                        <Label Text="{Binding Weight}" Grid.Row="2" Grid.Column="1" StyleClass="InfotableValue" />
+                                <Image Source="Infopage/InfotableIcon_Height.png" StyleClass="InfotableLabelImage" Grid.Row="0" Grid.Column="0" />
+                                <Label Text="{Binding Height}" Grid.Row="0" Grid.Column="1" StyleClass="InfotableValue" />
 
-                        <Image Source="Infopage/InfotableIcon_Pregnancy.png" StyleClass="InfotableLabelImage" Grid.Row="3" Grid.Column="0" />
-                        <Label  Text="{Binding PregnancyTime}" Grid.Row="3" Grid.Column="1" StyleClass="InfotableValue" />
+                                <Image Source="Infopage/InfotableIcon_Length.png" StyleClass="InfotableLabelImage"  Grid.Row="1" Grid.Column="0" />
+                                <Label Text="{Binding Length}" Grid.Row="1" Grid.Column="1" StyleClass="InfotableValue" />
 
-                        <Image Source="Infopage/InfotableIcon_Descendants.png" StyleClass="InfotableLabelImage" Grid.Row="4" Grid.Column="0" />
-                        <Label Text="{Binding Descendants}" Grid.Row="4" Grid.Column="1" StyleClass="InfotableValue" />
+                                <Image Source="Infopage/InfotableIcon_Weight.png" StyleClass="InfotableLabelImage" Grid.Row="2" Grid.Column="0" />
+                                <Label Text="{Binding Weight}" Grid.Row="2" Grid.Column="1" StyleClass="InfotableValue" />
 
-                        <Image Source="Infopage/InfotableIcon_Lifetime.png" StyleClass="InfotableLabelImage" Grid.Row="5" Grid.Column="0" />
-                        <Label Text="{Binding Lifetime}" Grid.Row="5" Grid.Column="1" StyleClass="InfotableValue" />
+                                <Image Source="Infopage/InfotableIcon_Pregnancy.png" StyleClass="InfotableLabelImage" Grid.Row="3" Grid.Column="0" />
+                                <Label  Text="{Binding PregnancyTime}" Grid.Row="3" Grid.Column="1" StyleClass="InfotableValue" />
 
-                        <Label Text="Kontinent" Grid.Row="6" Grid.Column="0" StyleClass="InfotableLabelText" />
-                        <Label Text="{Binding Continent}" Grid.Row="6" Grid.Column="1" StyleClass="InfotableValue" />
+                                <Image Source="Infopage/InfotableIcon_Descendants.png" StyleClass="InfotableLabelImage" Grid.Row="4" Grid.Column="0" />
+                                <Label Text="{Binding Descendants}" Grid.Row="4" Grid.Column="1" StyleClass="InfotableValue" />
 
-                        <Label Text="Art" Grid.Row="7" Grid.Column="0" StyleClass="InfotableLabelText" />
-                        <Label Text="{Binding Species}" Grid.Row="7" Grid.Column="1" StyleClass="InfotableValue" />
+                                <Image Source="Infopage/InfotableIcon_Lifetime.png" StyleClass="InfotableLabelImage" Grid.Row="5" Grid.Column="0" />
+                                <Label Text="{Binding Lifetime}" Grid.Row="5" Grid.Column="1" StyleClass="InfotableValue" />
 
-                        <Label Text="Status" Grid.Row="8" Grid.Column="0"  StyleClass="InfotableLabelText" />
-                        <Label Text="{Binding Status}" Grid.Row="8" Grid.Column="1" StyleClass="InfotableValue" />
+                                <Label Text="Kontinent" Grid.Row="6" Grid.Column="0" StyleClass="InfotableLabelText" />
+                                <Label Text="{Binding Continent}" Grid.Row="6" Grid.Column="1" StyleClass="InfotableValue" />
 
-                        <Label Text="Føde" Grid.Row="9" Grid.Column="0" StyleClass="InfotableLabelText" />
-                        <Label Text="{Binding Eats}" Grid.Row="9" Grid.Column="1" StyleClass="InfotableValue" />
-                    </Grid>
-                    <!-- / Infotable -->
+                                <Label Text="Art" Grid.Row="7" Grid.Column="0" StyleClass="InfotableLabelText" />
+                                <Label Text="{Binding Species}" Grid.Row="7" Grid.Column="1" StyleClass="InfotableValue" />
 
-                    <!-- Paragraph content -->
-                    <ListView SeparatorVisibility="None" IsEnabled="False" ItemsSource="{Binding Content}" x:Name="AnimalParagraphs" Grid.Row="3">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <ViewCell.View>
-                                        <Label Text="{Binding}" StyleClass="ViewParagraph" />
-                                    </ViewCell.View>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                    <!-- / Paragraph content -->
-                </Grid>
+                                <Label Text="Status" Grid.Row="8" Grid.Column="0"  StyleClass="InfotableLabelText" />
+                                <Label Text="{Binding Status}" Grid.Row="8" Grid.Column="1" StyleClass="InfotableValue" />
+
+                                <Label Text="Føde" Grid.Row="9" Grid.Column="0" StyleClass="InfotableLabelText" />
+                                <Label Text="{Binding Eats}" Grid.Row="9" Grid.Column="1" StyleClass="InfotableValue" />
+                            </Grid>
+                            <!-- / Infotable -->
+
+                            <!-- Paragraph content -->
+                            <ListView SeparatorVisibility="None" IsEnabled="False" ItemsSource="{Binding Content}" x:Name="AnimalParagraphs" Grid.Row="3">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <ViewCell.View>
+                                                <Label Text="{Binding}" StyleClass="ViewParagraph" />
+                                            </ViewCell.View>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                            <!-- / Paragraph content -->
+                        </Grid>
+                    </StackLayout>
+                </ScrollView>
+
             </StackLayout>
-        </ScrollView>
+            <!-- End: Actual Page Content -->
+
+            <!-- Absolute Elements Above Content -->
+
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using GivskudApp.Controllers;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -23,6 +25,7 @@ namespace GivskudApp.Views
 		{
            
             InitializeComponent();
+            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, false);
             FlowListView.Init();
             BindingContext = Binding;
 

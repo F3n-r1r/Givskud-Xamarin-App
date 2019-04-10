@@ -24,7 +24,6 @@
         </ContentPage>
     </MasterDetailPage.Master>
 
-
     <!-- Why need this ? -->
     <MasterDetailPage.Detail>
         <NavigationPage>

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using GivskudApp.Controllers;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,7 +17,8 @@ namespace GivskudApp.Views
 		public HomePage ()
 		{
 			InitializeComponent ();
-		}
+            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, false);
+        }
 
         // Handle button click -> Push new page
         async void Button_Clicked(object sender, EventArgs e)

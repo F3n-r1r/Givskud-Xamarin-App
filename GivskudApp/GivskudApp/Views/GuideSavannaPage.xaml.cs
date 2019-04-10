@@ -20,6 +20,6 @@ namespace GivskudApp.Views
             InitializeComponent ();
             ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, true);
 
-		}
+        }
 	}
 }

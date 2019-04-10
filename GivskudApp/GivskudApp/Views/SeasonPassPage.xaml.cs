@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using GivskudApp.Controllers;
 using GivskudApp.ViewModel;
 
 namespace GivskudApp.Views
@@ -18,6 +19,7 @@ namespace GivskudApp.Views
 		{
 
 			InitializeComponent ();
+            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, false);
             BindingContext = new SeasonPassViewModel();
 
 		}

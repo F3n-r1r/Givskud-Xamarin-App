@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 using GivskudApp.Models;
 using GivskudApp.Services;
 using GivskudApp.ViewModel;
+using GivskudApp.Controllers;
 
 namespace GivskudApp.Views
 {
@@ -20,7 +21,9 @@ namespace GivskudApp.Views
 
         public AnimalDetailsPage ()
 		{
+
 			InitializeComponent ();
+            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, true);
 
             DependencyService.Register<AnimalViewModel>();
             vm = DependencyService.Get<AnimalViewModel>();

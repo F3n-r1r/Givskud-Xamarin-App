@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using GivskudApp.Controllers;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,7 +17,8 @@ namespace GivskudApp.Views
 		public GuidePage ()
 		{
 			InitializeComponent ();
-		}
+            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, true);
+        }
 
         // Handle button click -> Push new page
         async void Button_Clicked(object sender, EventArgs e)

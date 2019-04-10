@@ -7,30 +7,38 @@
 
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            
-            <Image Source="logo.png" Margin="0,20,0,20" HeightRequest="60" />
+        <AbsoluteLayout x:Name="ApplicationLayoutTopLevel">
 
-            <ListView x:Name="ProgramList" VerticalOptions="FillAndExpand" HasUnevenRows="True" SeparatorVisibility="None">
-                <ListView.ItemTemplate VerticalOptions="FillAndExpand">
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout HorizontalOptions="Center" Margin="0,10,0,0">
-                                <Label HorizontalOptions="Center" Text="Time" FontSize="Medium" TextColor="Black"/>
-                                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                                    <Label Text="Title" FontSize="Medium" TextColor="Black" Margin="25,0,0,0"/>
-                                    <Frame HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Margin="5,0,0,0" Padding="2,2,2,2" BackgroundColor="#de1f28" BorderColor="#FFFFFF" CornerRadius="7">
-                                        <Image Source="pinpoint.png"/>
-                                    </Frame>
-                                </StackLayout>
-                                <BoxView HeightRequest="1" HorizontalOptions="CenterAndExpand" WidthRequest="100" BackgroundColor="#000000" Margin="0,5,0,0"/>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+            <!-- Absolute Elements Below Content -->
+
+            <!-- Start: Actual Page Content -->
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel">
+                <Image Source="logo.png" Margin="0,20,0,20" HeightRequest="60" />
+                <StackLayout VerticalOptions="FillAndExpand">
+                    <ListView x:Name="ProgramList" VerticalOptions="FillAndExpand" HasUnevenRows="True" SeparatorVisibility="None">
+                        <ListView.ItemTemplate VerticalOptions="FillAndExpand">
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout HorizontalOptions="Center" Margin="0,10,0,0">
+                                        <Label HorizontalOptions="Center" Text="Time" FontSize="Medium" TextColor="Black"/>
+                                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                            <Label Text="Title" FontSize="Medium" TextColor="Black" Margin="25,0,0,0"/>
+                                            <Frame HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Margin="5,0,0,0" Padding="2,2,2,2" BackgroundColor="#de1f28" BorderColor="#FFFFFF" CornerRadius="7">
+                                                <Image Source="pinpoint.png"/>
+                                            </Frame>
+                                        </StackLayout>
+                                        <BoxView HeightRequest="1" HorizontalOptions="CenterAndExpand" WidthRequest="100" BackgroundColor="#000000" Margin="0,5,0,0"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+            <!-- End: Actual Page Content -->
+
+            <!-- Absolute Elements Above Content -->
+
+        </AbsoluteLayout>
     </ContentPage.Content>
-    
-    
 </ContentPage>

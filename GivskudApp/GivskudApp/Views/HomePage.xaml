@@ -10,28 +10,39 @@
         </Style>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <Image Source="logo.png" Margin="0,20,0,0" HeightRequest="140"/>
+        <AbsoluteLayout x:Name="ApplicationLayoutTopLevel">
 
-            <Button ClassId="TourPageBtn" Text="START GUIDED TUR" Clicked="Button_Clicked"/>
-            <Button ClassId="MapPageBtn" Text="SE KORT" Clicked="Button_Clicked"/>
-            <Button ClassId="ProgramPageBtn" Text="DAGENS PROGRAM" Clicked="Button_Clicked"/>
+            <!-- Absolute Elements Below Content -->
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+            <!-- Start: Actual Page Content -->
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel">
 
-                <Image Source="guideRotated" Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
+                <Image Source="logo.png" Margin="0,20,0,0" HeightRequest="140"/>
 
-                <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1" VerticalOptions="End" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10">
-                    <Image Source="denmark.png" HeightRequest="40"/>
-                    <Image Source="germany.png" HeightRequest="40"/>
-                    <Image Source="britain.png" HeightRequest="40"/>
-                </StackLayout>
-            </Grid>
-        </StackLayout>
+                <Button ClassId="TourPageBtn" Text="START GUIDED TUR" Clicked="Button_Clicked"/>
+                <Button ClassId="MapPageBtn" Text="SE KORT" Clicked="Button_Clicked"/>
+                <Button ClassId="ProgramPageBtn" Text="DAGENS PROGRAM" Clicked="Button_Clicked"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="guideRotated" Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
+
+                    <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1" VerticalOptions="End" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10">
+                        <Image Source="denmark.png" HeightRequest="40"/>
+                        <Image Source="germany.png" HeightRequest="40"/>
+                        <Image Source="britain.png" HeightRequest="40"/>
+                    </StackLayout>
+                </Grid>
+
+            </StackLayout>
+            <!-- End: Actual Page Content -->
+
+            <!-- Absolute Elements Above Content -->
+
+        </AbsoluteLayout>
     </ContentPage.Content>
-
 </ContentPage>

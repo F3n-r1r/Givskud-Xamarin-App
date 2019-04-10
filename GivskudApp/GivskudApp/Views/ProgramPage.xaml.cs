@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using GivskudApp.Controllers;
 using GivskudApp.ViewModel;
 
 namespace GivskudApp.Views
@@ -20,6 +21,7 @@ namespace GivskudApp.Views
             DependencyService.Register<ProgramViewModel>();
 
             InitializeComponent ();
+            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, true);
 
             var vm = DependencyService.Get<ProgramViewModel>();
             ProgramList.ItemsSource = vm.Program;

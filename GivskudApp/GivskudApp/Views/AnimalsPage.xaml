@@ -7,40 +7,53 @@
     <ContentPage.Resources>
         
     </ContentPage.Resources>
-    <StackLayout>
-        <!-- START WORKING PAGE -->
-        <StackLayout x:Name="WorkingSplashscreen" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsBusy}">
-            <ActivityIndicator IsRunning="True" Scale="0.5" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" Color="{DynamicResource NavigationPrimary}" />
-        </StackLayout>
-        <!-- END WORKING PAGE -->
-        
-        <!-- START LIST -->
-        <controls:FlowListView x:Name="AnimalList" 
-                           FlowColumnCount="3"
-                           SeparatorVisibility="None" 
-                           HasUnevenRows="True"
-                           FlowItemTapped="ItemClicked"
-                           FlowItemsSource="{Binding Animals}"
-                           Margin="0,20,0,0"
-                           IsVisible="{Binding IsLoaded}">
-            <controls:FlowListView.FlowColumnTemplate>
-                <DataTemplate>
-                    <StackLayout HorizontalOptions="Center" Padding="5,0" Margin="0,0,0,20">
-                        <Image HeightRequest="75">
-                            <Image.Source>
-                                <UriImageSource Uri="{Binding Icon}"
-                                                CacheValidity="14"
-                                                CachingEnabled="True" />
-                            </Image.Source>
-                        </Image>
-                        <Label HorizontalOptions="Center" 
-                                 VerticalOptions="Fill"
-                                 Text="{Binding Name}"/>
-                    </StackLayout>
-                </DataTemplate>
-            </controls:FlowListView.FlowColumnTemplate>
-        </controls:FlowListView>
-        <!-- END LIST -->
-    </StackLayout>
+    <ContentPage.Content>   
+        <AbsoluteLayout x:Name="ApplicationLayoutTopLevel">
 
+            <!-- Absolute Elements Below Content -->
+
+            <!-- Start: Actual Page Content -->
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel">
+
+                <!-- START WORKING PAGE -->
+                <StackLayout x:Name="WorkingSplashscreen" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsBusy}">
+                    <ActivityIndicator IsRunning="True" Scale="0.5" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" Color="{DynamicResource NavigationPrimary}" />
+                </StackLayout>
+                <!-- END WORKING PAGE -->
+
+                <!-- START LIST -->
+                <controls:FlowListView x:Name="AnimalList" 
+                                   FlowColumnCount="3"
+                                   SeparatorVisibility="None" 
+                                   HasUnevenRows="True"
+                                   FlowItemTapped="ItemClicked"
+                                   FlowItemsSource="{Binding Animals}"
+                                   Margin="0,20,0,0"
+                                   IsVisible="{Binding IsLoaded}">
+                    <controls:FlowListView.FlowColumnTemplate>
+                        <DataTemplate>
+                            <StackLayout HorizontalOptions="Center" Padding="5,0" Margin="0,0,0,20">
+                                <Image HeightRequest="75">
+                                    <Image.Source>
+                                        <UriImageSource Uri="{Binding Icon}"
+                                                        CacheValidity="14"
+                                                        CachingEnabled="True" />
+                                    </Image.Source>
+                                </Image>
+                                <Label HorizontalOptions="Center" 
+                                         VerticalOptions="Fill"
+                                         Text="{Binding Name}"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </controls:FlowListView.FlowColumnTemplate>
+                </controls:FlowListView>
+                <!-- END LIST -->
+
+            </StackLayout>
+            <!-- End: Actual Page Content -->
+
+            <!-- Absolute Elements Above Content -->
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
 </ContentPage>

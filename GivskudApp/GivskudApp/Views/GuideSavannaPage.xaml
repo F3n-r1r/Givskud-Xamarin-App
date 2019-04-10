@@ -10,30 +10,17 @@
 
         <AbsoluteLayout x:Name="ApplicationLayoutTopLevel">
             
-            <!-- Start: Absolute Elements Below Content -->
+            <!-- Absolute Elements Below Content -->
             
             <!-- Start: Actual Page Content -->
-            <StackLayout x:Name="ApplicationLayoutContentLevel">
-                <ScrollView>
-                    <StackLayout>
-                        <Button Text="Test" />
-                        <Button Text="Test" />
-                        <Button Text="Test" />
-                        <Button Text="Test" />
-                        <Button Text="Test" />
-                        <Button Text="Test" />
-                        <Button Text="Test" />
-                        <Button Text="Test" />
-                        <Button Text="Test" />
-                        <Button Text="Test" />
-                        <Button Text="Test" />
-                        <Button Text="Test" />
-                    </StackLayout>
-                </ScrollView>
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel">
+            
+                
+            
             </StackLayout>
             <!-- End: Actual Page Content -->
 
-            <!-- Start: Absolute Elements Above Content -->
+            <!-- Absolute Elements Above Content -->
             
         </AbsoluteLayout>
         

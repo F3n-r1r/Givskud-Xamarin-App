@@ -1,10 +1,12 @@
-﻿using GivskudApp.Models;
-using GivskudApp.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using GivskudApp.Models;
+using GivskudApp.ViewModel;
+using GivskudApp.Controllers;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -19,6 +21,7 @@ namespace GivskudApp.Views
             DependencyService.Register<NewsViewModel>();
 
             InitializeComponent ();
+            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, true, ApplicationScrollableElement);
 
             var vm = DependencyService.Get<NewsViewModel>();
             NewsList.ItemsSource = vm.News;
