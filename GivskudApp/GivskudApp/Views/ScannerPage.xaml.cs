@@ -4,19 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using GivskudApp.Controllers;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace GivskudApp.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class TicketsPageCheckout : ContentPage
+	public partial class ScannerPage : ContentPage
 	{
-		public TicketsPageCheckout ()
+		public ScannerPage ()
 		{
 			InitializeComponent ();
-        }
+		}
 	}
 }

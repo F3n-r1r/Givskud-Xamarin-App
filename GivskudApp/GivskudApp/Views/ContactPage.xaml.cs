@@ -17,7 +17,7 @@ namespace GivskudApp.Views
 		public ContactPage ()
 		{
 			InitializeComponent ();
-            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, true);
+            ElementsController.RenderScannerIcon(ApplicationLayoutTopLevel, Navigation);
         }
 	}
 }

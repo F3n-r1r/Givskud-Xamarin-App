@@ -17,7 +17,6 @@ namespace GivskudApp.Views
 		public HomePage ()
 		{
 			InitializeComponent ();
-            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, false);
         }
 
         // Handle button click -> Push new page

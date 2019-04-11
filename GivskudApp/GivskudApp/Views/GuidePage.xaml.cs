@@ -17,7 +17,7 @@ namespace GivskudApp.Views
 		public GuidePage ()
 		{
 			InitializeComponent ();
-            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, true);
+            ElementsController.RenderScannerIcon(ApplicationLayoutTopLevel, Navigation);
         }
 
         // Handle button click -> Push new page

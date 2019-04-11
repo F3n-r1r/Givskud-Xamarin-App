@@ -21,7 +21,7 @@ namespace GivskudApp.Views
         public NewsDetailsPage ()
 		{
 			InitializeComponent ();
-            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, true);
+            ElementsController.RenderScannerIcon(ApplicationLayoutTopLevel, Navigation);
 
             DependencyService.Register<NewsViewModel>();
             vm = DependencyService.Get<NewsViewModel>();

@@ -3,24 +3,19 @@ using System.Collections.Generic;
 using System.Text;
 
 using GivskudApp.Controllers;
+using GivskudApp.Models;
+using GivskudApp.Views;
+using GivskudApp.ViewModel;
 
+using DLToolkit.Forms.Controls;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace GivskudApp.Controllers
 {
     class ElementsController
     {
-        public static void InitializeAbsoluteContent(StackLayout ContentLevel, AbsoluteLayout TopLevel, bool ShowScannerIcon = true)
-        {
-
-            // Render icon
-            if(ShowScannerIcon)
-            {
-                TopLevel.Children.Add(GetScannerIcon());
-            }
-
-        }
-        public static Frame GetScannerIcon()
+        public static void RenderScannerIcon(AbsoluteLayout TopLevel, INavigation Navigation)
         {
 
             // Create Frame wrapping element
@@ -31,14 +26,14 @@ namespace GivskudApp.Controllers
                 BackgroundColor = Color.FromHex("#FFDE1F28")
             };
 
-            AbsoluteLayout.SetLayoutBounds(FrameElement, new Rectangle(0,1,60,60));
+            AbsoluteLayout.SetLayoutBounds(FrameElement, new Rectangle(0, 1, 60, 60));
             AbsoluteLayout.SetLayoutFlags(FrameElement, AbsoluteLayoutFlags.PositionProportional);
 
             // Attach event handlers
             TapGestureRecognizer ClickGesture = new TapGestureRecognizer();
             ClickGesture.Tapped += (s, e) =>
             {
-                Application.Current.MainPage.DisplayAlert("Alert!", "You clicked on scanner icon", "Dismiss");
+                Navigation.PushAsync(new ScannerPage());
             };
             FrameElement.GestureRecognizers.Add(ClickGesture);
 
@@ -49,7 +44,8 @@ namespace GivskudApp.Controllers
             };
             FrameElement.Content = IconImage;
 
-            return FrameElement;
+            // Apply to parent
+            TopLevel.Children.Add(FrameElement);
 
         }
         public static int GetScannerIconSize()

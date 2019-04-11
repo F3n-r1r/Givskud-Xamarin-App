@@ -19,7 +19,6 @@ namespace GivskudApp.Views
 		{
 
 			InitializeComponent ();
-            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, false);
             BindingContext = new SeasonPassViewModel();
 
 		}

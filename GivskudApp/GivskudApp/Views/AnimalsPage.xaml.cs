@@ -27,7 +27,6 @@ namespace GivskudApp.Views
             Binding = new AnimalViewModel(areaid);
 
             InitializeComponent();
-            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, false);
             FlowListView.Init();
 
             BindingContext = Binding;

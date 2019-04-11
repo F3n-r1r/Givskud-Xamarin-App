@@ -17,7 +17,6 @@ namespace GivskudApp.Views
 		public TicketsPage ()
 		{
 			InitializeComponent ();
-            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, false);
         }
 	}
 }

@@ -17,7 +17,6 @@ namespace GivskudApp.Views
 		public MapPage ()
 		{
 			InitializeComponent ();
-            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, false);
         }
 	}
 }

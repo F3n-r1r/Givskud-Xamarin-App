@@ -23,7 +23,7 @@ namespace GivskudApp.Views
 		{
 
 			InitializeComponent();
-            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, true);
+            ElementsController.RenderScannerIcon(ApplicationLayoutTopLevel, Navigation);
 
             BindingContext = vm.SelectedAnimal;
 

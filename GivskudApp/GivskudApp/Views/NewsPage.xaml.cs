@@ -25,7 +25,7 @@ namespace GivskudApp.Views
             InitializeComponent();
 
             Device.BeginInvokeOnMainThread(() => {
-                ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, true);
+                ElementsController.RenderScannerIcon(ApplicationLayoutTopLevel, Navigation);
                 NewsList.ItemsSource = vm.News;
             });
 

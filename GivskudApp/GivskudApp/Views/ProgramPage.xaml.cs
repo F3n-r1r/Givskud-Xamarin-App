@@ -21,7 +21,7 @@ namespace GivskudApp.Views
             DependencyService.Register<ProgramViewModel>();
 
             InitializeComponent ();
-            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, true);
+            ElementsController.RenderScannerIcon(ApplicationLayoutTopLevel, Navigation);
 
             var vm = DependencyService.Get<ProgramViewModel>();
             ProgramList.ItemsSource = vm.Program;

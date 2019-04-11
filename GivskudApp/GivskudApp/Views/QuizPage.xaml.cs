@@ -17,7 +17,6 @@ namespace GivskudApp.Views
 		public QuizPage ()
 		{
 			InitializeComponent ();
-            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, false);
 
         }
 	}

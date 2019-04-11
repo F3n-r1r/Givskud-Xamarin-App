@@ -17,7 +17,6 @@ namespace GivskudApp.Views
 		public GamePage ()
 		{
 			InitializeComponent ();
-            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, false);
         }
 	}
 }
