@@ -1,12 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GivskudApp.Views.ScannerPage">
+             x:Class="GivskudApp.Views.ScannerPage"
+             Style="{StaticResource GlobalLayoutStyle}"
+             Padding="0">
+    <ContentPage.Resources>
+
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Scan me"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout x:Name="ScannerActionPage" VerticalOptions="FillAndExpand">
+
+            </StackLayout>
+            <StackLayout x:Name="ScannerInstruction" VerticalOptions="End" Padding="25,30">
+                <StackLayout.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="FontSize" Value="12" />
+                        <Setter Property="TextColor" Value="Black" />
+                        <Setter Property="HorizontalTextAlignment" Value="Center" />
+                    </Style>
+                </StackLayout.Resources>
+                <Label Text="Find koden på en infostander" />
+                <Label Text="Ved at scanne koden kommer du til dit nuværende punkt i tourguiden" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
