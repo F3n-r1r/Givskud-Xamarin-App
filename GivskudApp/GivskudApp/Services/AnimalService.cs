@@ -30,10 +30,12 @@ namespace GivskudApp.Services
             Animal = null;
 
         }
-        public void Fetch() {
+        public void Fetch(string areaid = null) {
 
             ApiResource ApiResource = new ApiResource();
-            string ApiResourceJson = ApiResource.Get("/animals/get");
+
+            string ResourceArg = areaid == null ? "" : "?sortbyarea=" + areaid;
+            string ApiResourceJson = ApiResource.Get("/animals/get" + ResourceArg);
 
             if(ApiResourceJson != null) {
                 try {

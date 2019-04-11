@@ -5,16 +5,6 @@
              x:Class="GivskudApp.Views.AnimalDetailsPage"
              Style="{StaticResource GlobalLayoutStyle}">
     <ContentPage.Resources>
-        <Style TargetType="Image" Class="HeaderImage">
-            <Setter Property="HeightRequest" Value="160" />
-            <Setter Property="Aspect" Value="AspectFill" />
-        </Style>
-        <Style TargetType="Label" Class="ViewHeadline">
-            <Setter Property="Margin" Value="0,8" />
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="TextColor" Value="Black" />
-            <Setter Property="HorizontalTextAlignment" Value="Center" />
-        </Style>
         <Style TargetType="Label" Class="ViewParagraph">
             <Setter Property="Margin" Value="0,8,0,0" />
             <Setter Property="TextColor" Value="Black" />
@@ -56,11 +46,11 @@
                             </Grid.RowDefinitions>
 
                             <!-- Intro image -->
-                            <Image x:Name="AnimalHeader" Source="{Binding Image}" StyleClass="HeaderImage" Grid.Row="0" />
-                             <!-- / Intro image -->
+                            <Image x:Name="AnimalHeader" Source="{Binding Image}" Grid.Row="0" HeightRequest="130" Aspect="AspectFill" />
+                            <!-- / Intro image -->
 
                             <!-- Animal title -->
-                            <Label Text="{Binding Name}" Grid.Row="1" StyleClass="ViewHeadline" />
+                            <Label Text="{Binding Name}" Grid.Row="1" Margin="0,8" FontSize="18" TextColor="Black" HorizontalTextAlignment="Center" />
                             <!-- / Animal title -->
 
                             <!-- Infotable -->

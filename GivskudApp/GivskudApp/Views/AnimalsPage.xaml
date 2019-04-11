@@ -32,7 +32,7 @@
                                    IsVisible="{Binding IsLoaded}">
                     <controls:FlowListView.FlowColumnTemplate>
                         <DataTemplate>
-                            <StackLayout HorizontalOptions="Center" Padding="5,0" Margin="0,0,0,20">
+                            <StackLayout HorizontalOptions="Center" Margin="0,0,0,20">
                                 <Image HeightRequest="75">
                                     <Image.Source>
                                         <UriImageSource Uri="{Binding Icon}"
@@ -41,7 +41,10 @@
                                     </Image.Source>
                                 </Image>
                                 <Label HorizontalOptions="Center" 
-                                         VerticalOptions="Fill"
+                                       HorizontalTextAlignment="Center"
+                                       VerticalOptions="Fill"
+                                       TextColor="Black"
+                                       FontSize="10"
                                          Text="{Binding Name}"/>
                             </StackLayout>
                         </DataTemplate>
