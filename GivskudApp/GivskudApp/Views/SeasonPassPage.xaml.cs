@@ -23,8 +23,5 @@ namespace GivskudApp.Views
             BindingContext = new SeasonPassViewModel();
 
 		}
-        protected override void OnAppearing() {
-            base.OnAppearing();
-        }
     }
 }

@@ -17,18 +17,16 @@ namespace GivskudApp.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AnimalDetailsPage : ContentPage
 	{
-        private readonly AnimalViewModel vm;
+        private readonly AnimalViewModel vm = new AnimalViewModel();
 
         public AnimalDetailsPage ()
 		{
 
-			InitializeComponent ();
+			InitializeComponent();
             ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, true);
 
-            DependencyService.Register<AnimalViewModel>();
-            vm = DependencyService.Get<AnimalViewModel>();
             BindingContext = vm.SelectedAnimal;
-            
+
         }
     }
 }

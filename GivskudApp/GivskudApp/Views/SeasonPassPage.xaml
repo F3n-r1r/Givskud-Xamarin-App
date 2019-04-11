@@ -19,8 +19,8 @@
                 <!-- END WORKING PAGE -->
 
                 <!-- START PASS INPUT -->
-                <StackLayout x:Name="SeasonPassInput" IsVisible="{Binding ShowPassInput}" StyleClass="StackLayoutOverlay">
-                    <Label Text="Indlæs dit sæsonkort" Style="{StaticResource LabelHeadline}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" TextColor="Black" Margin="0,0,0,16"/>
+                <StackLayout x:Name="SeasonPassInput" IsVisible="{Binding ShowPassInput}" StyleClass="StackLayoutOverlay" VerticalOptions="Center">
+                    <Label Text="Indlæs dit sæsonkort" Style="{StaticResource LabelHeadline}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" TextColor="Black" Margin="0,20,0,16"/>
                     <Grid VerticalOptions="Center">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
@@ -28,7 +28,7 @@
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
 
-                        <Entry Text="{Binding UserInputValue}" Style="{StaticResource GlobalEntryStyle}" Placeholder="Enter ID" Grid.Row="0" TextColor="Black" />
+                        <Entry Text="{Binding UserInputValue}" Placeholder="Enter ID" Grid.Row="0" TextColor="Black" />
                         <Button Command="{Binding FetchPassCommand}" Text="Add Pass" Grid.Row="1" />
                         <Label Style="{StaticResource GlobalFormFootnote}" Text="This ID can be found on the physical card acquired by purchasing the season pass" Grid.Row="2" TextColor="Black" />
                     </Grid>
@@ -38,14 +38,14 @@
                 <!-- START PASS DETAILS -->
                 <StackLayout x:Name="SeasonPassDetails" IsVisible="{Binding ShowPassDetails}" StyleClass="StackLayoutOverlay">
                     <Label Text="Din årstid passerer" Style="{StaticResource LabelHeadline}" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,0,0,16"/>
-                    <Frame StyleClass="Master">
+                    <Frame>
                         <Frame.Resources>
                             <Style TargetType="Frame" Class="Master">
                                 <Setter Property="BackgroundColor" Value="White" />
                                 <Setter Property="Padding" Value="12,18" />
                             </Style>
                         </Frame.Resources>
-                        <Grid StyleClass="Master">
+                        <Grid>
                             <Grid.Resources>
                                 <ResourceDictionary>
                                     <Style TargetType="Label" x:Key="LabelMasterstyle" Class="LabelMaster">
@@ -94,8 +94,6 @@
             </StackLayout>
             <!-- End: Actual Page Content -->
 
-            <!-- Absolute Elements Above Content -->
-            
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

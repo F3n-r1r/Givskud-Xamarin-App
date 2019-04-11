@@ -5,13 +5,6 @@
              x:Class="GivskudApp.Views.AnimalDetailsPage"
              Style="{StaticResource GlobalLayoutStyle}">
     <ContentPage.Resources>
-        <Style TargetType="ScrollView" Class="ViewStyle">
-            <Setter Property="BackgroundColor" Value="#B7D98E" />
-            <Setter Property="VerticalOptions" Value="FillAndExpand" />
-            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-            <Setter Property="Orientation" Value="Vertical" />
-            <Setter Property="Padding" Value="25" />
-        </Style>
         <Style TargetType="Image" Class="HeaderImage">
             <Setter Property="HeightRequest" Value="160" />
             <Setter Property="Aspect" Value="AspectFill" />
@@ -52,7 +45,7 @@
 
             <!-- Start: Actual Page Content -->
             <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel">
-                <ScrollView StyleClass="ViewStyle">
+                <ScrollView>
                     <StackLayout Padding="0,0,0,70">
                         <Grid x:Name="MainGrid">
                             <Grid.RowDefinitions>
@@ -64,7 +57,7 @@
 
                             <!-- Intro image -->
                             <Image x:Name="AnimalHeader" Source="{Binding Image}" StyleClass="HeaderImage" Grid.Row="0" />
-                            <!-- / Intro image -->
+                             <!-- / Intro image -->
 
                             <!-- Animal title -->
                             <Label Text="{Binding Name}" Grid.Row="1" StyleClass="ViewHeadline" />
@@ -72,10 +65,10 @@
 
                             <!-- Infotable -->
                             <Grid
-                        x:Name="AnimalInfotable"
-                        Padding="8"
-                        Grid.Row="2"
-                        BackgroundColor="White">
+                                x:Name="AnimalInfotable"
+                                Padding="8"
+                                Grid.Row="2"
+                                BackgroundColor="White">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />
@@ -93,22 +86,22 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <Image Source="Infopage/InfotableIcon_Height.png" StyleClass="InfotableLabelImage" Grid.Row="0" Grid.Column="0" />
+                                <Image Source="AnimalInfotableIcon_Height.png" StyleClass="InfotableLabelImage" Grid.Row="0" Grid.Column="0" />
                                 <Label Text="{Binding Height}" Grid.Row="0" Grid.Column="1" StyleClass="InfotableValue" />
 
-                                <Image Source="Infopage/InfotableIcon_Length.png" StyleClass="InfotableLabelImage"  Grid.Row="1" Grid.Column="0" />
+                                <Image Source="AnimalInfotableIcon_Length.png" StyleClass="InfotableLabelImage"  Grid.Row="1" Grid.Column="0" />
                                 <Label Text="{Binding Length}" Grid.Row="1" Grid.Column="1" StyleClass="InfotableValue" />
 
-                                <Image Source="Infopage/InfotableIcon_Weight.png" StyleClass="InfotableLabelImage" Grid.Row="2" Grid.Column="0" />
+                                <Image Source="AnimalInfotableIcon_Weight.png" StyleClass="InfotableLabelImage" Grid.Row="2" Grid.Column="0" />
                                 <Label Text="{Binding Weight}" Grid.Row="2" Grid.Column="1" StyleClass="InfotableValue" />
 
-                                <Image Source="Infopage/InfotableIcon_Pregnancy.png" StyleClass="InfotableLabelImage" Grid.Row="3" Grid.Column="0" />
+                                <Image Source="AnimalInfotableIcon_Pregnancy.png" StyleClass="InfotableLabelImage" Grid.Row="3" Grid.Column="0" />
                                 <Label  Text="{Binding PregnancyTime}" Grid.Row="3" Grid.Column="1" StyleClass="InfotableValue" />
 
-                                <Image Source="Infopage/InfotableIcon_Descendants.png" StyleClass="InfotableLabelImage" Grid.Row="4" Grid.Column="0" />
+                                <Image Source="AnimalInfotableIcon_Descendants.png" StyleClass="InfotableLabelImage" Grid.Row="4" Grid.Column="0" />
                                 <Label Text="{Binding Descendants}" Grid.Row="4" Grid.Column="1" StyleClass="InfotableValue" />
 
-                                <Image Source="Infopage/InfotableIcon_Lifetime.png" StyleClass="InfotableLabelImage" Grid.Row="5" Grid.Column="0" />
+                                <Image Source="AnimalInfotableIcon_Lifetime.png" StyleClass="InfotableLabelImage" Grid.Row="5" Grid.Column="0" />
                                 <Label Text="{Binding Lifetime}" Grid.Row="5" Grid.Column="1" StyleClass="InfotableValue" />
 
                                 <Label Text="Kontinent" Grid.Row="6" Grid.Column="0" StyleClass="InfotableLabelText" />
@@ -141,7 +134,6 @@
                         </Grid>
                     </StackLayout>
                 </ScrollView>
-
             </StackLayout>
             <!-- End: Actual Page Content -->
 

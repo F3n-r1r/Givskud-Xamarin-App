@@ -40,11 +40,11 @@ namespace GivskudApp.ViewModel
         {
             get
             {
-                return Service.Animal[currentAnimal];
+                return Animals[currentAnimal];
             }
             set
             {
-                int index = Service.Animal.IndexOf(value);
+                int index = Animals.IndexOf(value);
                 if (index >= 0)
                 {
                     currentAnimal = index;

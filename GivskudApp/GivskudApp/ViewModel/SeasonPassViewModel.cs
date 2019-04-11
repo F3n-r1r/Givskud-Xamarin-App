@@ -28,7 +28,7 @@ namespace GivskudApp.ViewModel
         public ICommand FetchPassCommand { get; private set; }
 
         public SeasonPassViewModel() {
-
+            
             Task.Run(() => {
                 Service.Get();
                 IsBusy = false;
