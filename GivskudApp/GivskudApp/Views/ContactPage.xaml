@@ -14,7 +14,7 @@
             <!-- Start: Actual Page Content -->
             <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel">
                 <ScrollView>
-                    <StackLayout>
+                    <StackLayout Padding="0,0,0,70">
 
                         <Label Text="Kontakt Os" TextColor="#000000" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center"/>
                         <Label Text="Vi står til rådighed hvis du har nogle spørgsmål" TextColor="#000000" FontSize="Small" HorizontalOptions="Center"/>

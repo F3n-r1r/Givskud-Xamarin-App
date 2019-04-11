@@ -14,7 +14,7 @@
             <!-- Start: Actual Page Content -->
             <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel">
                 <Image Source="logo.png" Margin="0,20,0,20" HeightRequest="60" />
-                <StackLayout VerticalOptions="FillAndExpand">
+                <StackLayout VerticalOptions="FillAndExpand" Padding="0,0,0,70">
                     <ListView x:Name="ProgramList" VerticalOptions="FillAndExpand" HasUnevenRows="True" SeparatorVisibility="None">
                         <ListView.ItemTemplate VerticalOptions="FillAndExpand">
                             <DataTemplate>

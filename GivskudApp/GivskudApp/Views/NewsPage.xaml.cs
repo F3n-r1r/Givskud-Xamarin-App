@@ -21,7 +21,7 @@ namespace GivskudApp.Views
             DependencyService.Register<NewsViewModel>();
 
             InitializeComponent ();
-            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, true, ApplicationScrollableElement);
+            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, true);
 
             var vm = DependencyService.Get<NewsViewModel>();
             NewsList.ItemsSource = vm.News;

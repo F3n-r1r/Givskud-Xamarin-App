@@ -10,17 +10,17 @@ namespace GivskudApp.Controllers
 {
     class ElementsController
     {
-        public static void InitializeAbsoluteContent(StackLayout ContentLevel, AbsoluteLayout TopLevel, bool ShowScannerIcon = true, ScrollView ScrollableElement = null)
+        public static void InitializeAbsoluteContent(StackLayout ContentLevel, AbsoluteLayout TopLevel, bool ShowScannerIcon = true)
         {
 
             // Render icon
             if(ShowScannerIcon)
             {
-                TopLevel.Children.Add(GetScannerIcon(ScrollableElement));
+                TopLevel.Children.Add(GetScannerIcon());
             }
 
         }
-        public static Frame GetScannerIcon(ScrollView ScrollableElement)
+        public static Frame GetScannerIcon()
         {
 
             // Create Frame wrapping element
@@ -41,25 +41,6 @@ namespace GivskudApp.Controllers
                 Application.Current.MainPage.DisplayAlert("Alert!", "You clicked on scanner icon", "Dismiss");
             };
             FrameElement.GestureRecognizers.Add(ClickGesture);
-
-            // Attach handler for scrolling
-            if(ScrollableElement != null)
-            {
-
-                ScrollableElement.Scrolled += (s, e) =>
-                {
-                    Application.Current.MainPage.DisplayAlert("Alert!", "You scrolled!", "I know");
-                    /*
-                    ScrollView view = s as ScrollView;
-                    double space = view.ContentSize.Height - view.Height;
-
-                    if(space <= e.ScrollY)
-                    {
-                        Application.Current.MainPage.DisplayAlert("Alert!", "You reached bottom", "Dismiss");
-                    }
-                    */
-                };
-            }
 
             // Create inner image
             Image IconImage = new Image

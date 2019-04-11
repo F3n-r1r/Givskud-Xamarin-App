@@ -15,7 +15,7 @@
             <!-- Start: Actual Page Content -->
             <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel">
             
-                
+               
             
             </StackLayout>
             <!-- End: Actual Page Content -->
