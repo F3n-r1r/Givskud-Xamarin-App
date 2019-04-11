@@ -16,17 +16,30 @@ namespace GivskudApp.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class NewsPage : ContentPage
 	{
-		public NewsPage ()
-		{
+
+        public NewsPage()
+        {
             DependencyService.Register<NewsViewModel>();
-
-            InitializeComponent ();
-            ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, true);
-
             var vm = DependencyService.Get<NewsViewModel>();
-            NewsList.ItemsSource = vm.News;
-        }
 
+            InitializeComponent();
+
+            Device.BeginInvokeOnMainThread(() => {
+                ElementsController.InitializeAbsoluteContent(ApplicationLayoutContentLevel, ApplicationLayoutTopLevel, true);
+                NewsList.ItemsSource = vm.News;
+            });
+
+            NewsList.RefreshCommand = new Command(() =>
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    vm.Refresh();
+                    NewsList.ItemsSource = vm.News;
+                    NewsList.EndRefresh();
+                });
+            });
+            
+        }
         async void ItemClicked(object sender, ItemTappedEventArgs e)
         {
             NewsModel thisNews = (NewsModel)e.Item;

@@ -13,17 +13,22 @@ namespace GivskudApp.Services
 {
     public class NewsService
     {
-        public List<NewsModel> News { get; }
+        public List<NewsModel> News { get; private set; }
 
         public NewsService()
         {
-        
+            Get();
+        }
+        public void Get()
+        {
             ApiResource ApiResource = new ApiResource();
             string ApiResourceJson = ApiResource.Get("/news/get");
 
             if(ApiResourceJson != null) {
                 try {
+
                     News = JsonConvert.DeserializeObject<List<NewsModel>>(ApiResourceJson);
+                    
                 } catch (Exception e) {
                     System.Diagnostics.Debug.WriteLine("NewsService: Cannot deserialize object. {0}", e.Message);
                     News = new List<NewsModel>();
@@ -31,7 +36,6 @@ namespace GivskudApp.Services
             } else {
                 News = new List<NewsModel>();
             }
-
         }
     }
 }

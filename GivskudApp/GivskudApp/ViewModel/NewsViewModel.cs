@@ -32,5 +32,10 @@ namespace GivskudApp.ViewModel
             }
         }
 
+        public void Refresh()
+        {
+            service.Get();
+        }
+
     }
 }
