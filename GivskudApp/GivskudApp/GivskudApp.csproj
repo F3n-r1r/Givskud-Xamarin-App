@@ -10,18 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="MockData\AnimalMockData.json" />
-    <None Remove="MockData\NewsMockData.json" />
-    <None Remove="MockData\ProgramMockData.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="MockData\AnimalMockData.json" />
-    <EmbeddedResource Include="MockData\NewsMockData.json" />
-    <EmbeddedResource Include="MockData\ProgramMockData.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
