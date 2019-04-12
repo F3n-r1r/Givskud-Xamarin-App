@@ -30,7 +30,7 @@ namespace GivskudApp.Services
             Animal = null;
 
         }
-        public void Fetch(string areaid = null) {
+        public void Fetch(string areaid) {
 
             ApiResource ApiResource = new ApiResource();
 

@@ -10,7 +10,7 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <StackLayout x:Name="ScannerActionPage" VerticalOptions="FillAndExpand">
-
+                
             </StackLayout>
             <StackLayout x:Name="ScannerInstruction" VerticalOptions="End" Padding="25,30">
                 <StackLayout.Resources>

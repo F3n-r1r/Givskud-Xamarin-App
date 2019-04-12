@@ -21,10 +21,10 @@ namespace GivskudApp.Views
 
         private AnimalViewModel Binding { get; set; }
 
-		public AnimalsPage (string areaid = null)
+		public AnimalsPage ()
 		{
          
-            Binding = new AnimalViewModel(areaid);
+            Binding = new AnimalViewModel();
 
             InitializeComponent();
             FlowListView.Init();

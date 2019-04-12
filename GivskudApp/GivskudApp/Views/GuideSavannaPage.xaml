@@ -11,12 +11,13 @@
         <AbsoluteLayout x:Name="ApplicationLayoutTopLevel">
             
             <!-- Absolute Elements Below Content -->
-            
+            <Image Source="guide.png" BackgroundColor="Red" Aspect="AspectFit" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,0.75,1" />
+
             <!-- Start: Actual Page Content -->
-            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel">
-            
-               
-            
+            <StackLayout VerticalOptions="End" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel">
+                
+                <Button Text="Next Question" />
+
             </StackLayout>
             <!-- End: Actual Page Content -->
 

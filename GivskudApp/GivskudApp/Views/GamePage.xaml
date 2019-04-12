@@ -14,10 +14,7 @@
             <!-- Start: Actual Page Content -->
             <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel">
 
-                <Label
-                    Text="Welcome to Xamarin.Forms!"
-                    VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="CenterAndExpand" />
+                <Button Text="Quizzes" Clicked="ItemClicked" />
 
             </StackLayout>
             <!-- End: Actual Page Content -->

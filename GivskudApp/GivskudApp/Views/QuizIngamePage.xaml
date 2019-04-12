@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             x:Class="GivskudApp.Views.QuizIngamePage"
+             Style="{StaticResource GlobalLayoutStyle}">
+    <ContentPage.Resources>
+        <Style TargetType="Label" Class="Countdown">
+            <Setter Property="TextColor" Value="{StaticResource ColorPrimary}" />
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <AbsoluteLayout x:Name="ApplicationLayoutTopLevel">
+
+            <!-- Absolute Elements Below Content -->
+
+            <!-- Start: Actual Page Content -->
+            <StackLayout VerticalOptions="End" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel">
+
+                <Label Text="{Binding CurrentQuestion.Question}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+
+                <Grid x:Name="QuestionOptionsGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                </Grid>
+               
+                <Button IsVisible="False" x:Name="NextQuestionBtn" Text="Next Question" Clicked="NextQuestion" />
+
+            </StackLayout>
+            <!-- End: Actual Page Content -->
+
+            <!-- Absolute Elements Above Content -->
+
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+</ContentPage>
