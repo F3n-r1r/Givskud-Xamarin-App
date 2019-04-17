@@ -25,6 +25,8 @@ namespace GivskudApp.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
+            // For Scanner
+            ZXing.Net.Mobile.Forms.iOS.Platform.Init();
             return base.FinishedLaunching(app, options);
         }
     }

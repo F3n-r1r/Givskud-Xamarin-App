@@ -9,9 +9,18 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <StackLayout x:Name="ScannerActionPage" VerticalOptions="FillAndExpand">
-                
-            </StackLayout>
+
+
+            <Grid x:Name="ScannerActionPage" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            
+            
             <StackLayout x:Name="ScannerInstruction" VerticalOptions="End" Padding="25,30">
                 <StackLayout.Resources>
                     <Style TargetType="Label">
