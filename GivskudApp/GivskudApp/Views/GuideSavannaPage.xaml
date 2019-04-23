@@ -11,14 +11,17 @@
         <AbsoluteLayout x:Name="ApplicationLayoutTopLevel">
             
             <!-- Absolute Elements Below Content -->
-            <Frame BackgroundColor="Red" VerticalOptions="End" AbsoluteLayout.LayoutFlags="All" Margin="0" Padding="0" IsClippedToBounds="True" AbsoluteLayout.LayoutBounds="0,1,0.6,1">
-                <Image BackgroundColor="Yellow" Source="Graphic_Anna.png" />
+            
+            <!-- START ANNA OVERLAY -->
+            <Frame VerticalOptions="End" AbsoluteLayout.LayoutFlags="All" Margin="0" Padding="0" IsClippedToBounds="True" AbsoluteLayout.LayoutBounds="0,1,0.6,1">
+                <Image Source="Graphic_Anna.png" />
             </Frame>
+            <!-- END ANNA OVERLAY -->
 
             <!-- Start: Actual Page Content -->
             <StackLayout VerticalOptions="Center" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel"  Style="{StaticResource GlobalContentStyle}">
 
-                <Image HorizontalOptions="Center" WidthRequest="100" HeightRequest="100"  Source="newsbird.png" Margin="0,0,0,15" />
+                <Image HorizontalOptions="Center" WidthRequest="200" HeightRequest="120" Source="Icon_Game_AwardLevel4.png" Margin="0,0,0,15" />
 
                 <Label Text="10/10" HorizontalTextAlignment="Center" TextColor="Black" FontSize="50" />
 
