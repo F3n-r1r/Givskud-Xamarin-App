@@ -14,7 +14,7 @@
             <!-- Absolute Elements Below Content -->
 
             <!-- Start: Actual Page Content -->
-            <StackLayout BackgroundColor="Red" AbsoluteLayout.LayoutBounds="1,0,0.6,1" Margin="0,15" AbsoluteLayout.LayoutFlags="All"  x:Name="ApplicationLayoutContentLevel">
+            <StackLayout BackgroundColor="Red" AbsoluteLayout.LayoutBounds="1,0,0.6,1" Margin="0,15" AbsoluteLayout.LayoutFlags="All"  x:Name="ApplicationLayoutContentLevel" Style="{StaticResource GlobalContentStyle}">
 
                 <controls:FlowListView
                     x:Name="QuizList"

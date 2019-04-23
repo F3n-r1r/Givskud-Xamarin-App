@@ -15,9 +15,9 @@
             <!-- Absolute Elements Below Content -->
 
             <!-- Start: Actual Page Content -->
-            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel">
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel"  Style="{StaticResource GlobalContentStyle}">
 
-                <Image Source="logo.png" Margin="0,20,0,0" HeightRequest="140"/>
+                <Image Source="Graphic_Logo.png" Margin="0,20,0,0" HeightRequest="140"/>
 
                 <Button ClassId="TourPageBtn" Text="START GUIDED TUR" Clicked="Button_Clicked"/>
                 <Button ClassId="MapPageBtn" Text="SE KORT" Clicked="Button_Clicked"/>
@@ -32,9 +32,9 @@
                     <Image Source="guideRotated" Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
 
                     <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1" VerticalOptions="End" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10">
-                        <Image Source="denmark.png" HeightRequest="40"/>
-                        <Image Source="germany.png" HeightRequest="40"/>
-                        <Image Source="britain.png" HeightRequest="40"/>
+                        <Image Source="Icon_Flag_DK.png" HeightRequest="40"/>
+                        <Image Source="Icon_Flag_DE.png" HeightRequest="40"/>
+                        <Image Source="Icon_Flag_UK.png" HeightRequest="40"/>
                     </StackLayout>
                 </Grid>
 

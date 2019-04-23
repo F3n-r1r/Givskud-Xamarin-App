@@ -13,6 +13,8 @@
             <!-- Layout Styles -->
             <Style TargetType="ContentPage" x:Key="GlobalLayoutStyle">
                 <Setter Property="BackgroundColor" Value="#b7d98e" />
+            </Style>
+            <Style TargetType="StackLayout" x:Key="GlobalContentStyle">
                 <Setter Property="Padding" Value="10" />
             </Style>
             <!-- /Layout Styles -->

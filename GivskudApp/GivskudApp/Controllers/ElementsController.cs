@@ -40,7 +40,7 @@ namespace GivskudApp.Controllers
             // Create inner image
             Image IconImage = new Image
             {
-                Source = "icon_qrcode.png"
+                Source = "Icon_Uncategorized_QR.png"
             };
             FrameElement.Content = IconImage;
 

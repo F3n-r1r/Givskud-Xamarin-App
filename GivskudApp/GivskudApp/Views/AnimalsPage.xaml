@@ -13,7 +13,7 @@
             <!-- Absolute Elements Below Content -->
 
             <!-- Start: Actual Page Content -->
-            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel">
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel"  Style="{StaticResource GlobalContentStyle}">
 
                 <!-- START WORKING PAGE -->
                 <StackLayout x:Name="WorkingSplashscreen" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsBusy}">

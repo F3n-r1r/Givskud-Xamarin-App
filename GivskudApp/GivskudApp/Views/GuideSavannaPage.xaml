@@ -11,12 +11,20 @@
         <AbsoluteLayout x:Name="ApplicationLayoutTopLevel">
             
             <!-- Absolute Elements Below Content -->
-            <Image Source="guide.png" BackgroundColor="Red" Aspect="AspectFit" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,0.75,1" />
+            <Frame BackgroundColor="Red" VerticalOptions="End" AbsoluteLayout.LayoutFlags="All" Margin="0" Padding="0" IsClippedToBounds="True" AbsoluteLayout.LayoutBounds="0,1,0.6,1">
+                <Image BackgroundColor="Yellow" Source="Graphic_Anna.png" />
+            </Frame>
 
             <!-- Start: Actual Page Content -->
-            <StackLayout VerticalOptions="End" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel">
-                
-                <Button Text="Next Question" />
+            <StackLayout VerticalOptions="Center" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel"  Style="{StaticResource GlobalContentStyle}">
+
+                <Image HorizontalOptions="Center" WidthRequest="100" HeightRequest="100"  Source="newsbird.png" Margin="0,0,0,15" />
+
+                <Label Text="10/10" HorizontalTextAlignment="Center" TextColor="Black" FontSize="50" />
+
+                <Label Text="Great job! You got everything!" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,30,0,20" />
+
+                <Button Text="Back to Games" BackgroundColor="Transparent" TextColor="{StaticResource ColorPrimary}" Padding="0" />
 
             </StackLayout>
             <!-- End: Actual Page Content -->

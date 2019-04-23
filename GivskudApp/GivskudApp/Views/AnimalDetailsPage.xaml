@@ -34,7 +34,7 @@
             <!-- Absolute Elements Below Content -->
 
             <!-- Start: Actual Page Content -->
-            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel">
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel" Style="{StaticResource GlobalContentStyle}">
                 <ScrollView>
                     <StackLayout Padding="0,0,0,70">
                         <Grid x:Name="MainGrid">
@@ -76,22 +76,22 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <Image Source="AnimalInfotableIcon_Height.png" StyleClass="InfotableLabelImage" Grid.Row="0" Grid.Column="0" />
+                                <Image Source="Icon_AnimalPage_Height.png" StyleClass="InfotableLabelImage" Grid.Row="0" Grid.Column="0" />
                                 <Label Text="{Binding Height}" Grid.Row="0" Grid.Column="1" StyleClass="InfotableValue" />
 
-                                <Image Source="AnimalInfotableIcon_Length.png" StyleClass="InfotableLabelImage"  Grid.Row="1" Grid.Column="0" />
+                                <Image Source="Icon_AnimalPage_Length.png" StyleClass="InfotableLabelImage"  Grid.Row="1" Grid.Column="0" />
                                 <Label Text="{Binding Length}" Grid.Row="1" Grid.Column="1" StyleClass="InfotableValue" />
 
-                                <Image Source="AnimalInfotableIcon_Weight.png" StyleClass="InfotableLabelImage" Grid.Row="2" Grid.Column="0" />
+                                <Image Source="Icon_AnimalPage_Weight.png" StyleClass="InfotableLabelImage" Grid.Row="2" Grid.Column="0" />
                                 <Label Text="{Binding Weight}" Grid.Row="2" Grid.Column="1" StyleClass="InfotableValue" />
 
-                                <Image Source="AnimalInfotableIcon_Pregnancy.png" StyleClass="InfotableLabelImage" Grid.Row="3" Grid.Column="0" />
+                                <Image Source="Icon_AnimalPage_Pregnancy.png" StyleClass="InfotableLabelImage" Grid.Row="3" Grid.Column="0" />
                                 <Label  Text="{Binding PregnancyTime}" Grid.Row="3" Grid.Column="1" StyleClass="InfotableValue" />
 
-                                <Image Source="AnimalInfotableIcon_Descendants.png" StyleClass="InfotableLabelImage" Grid.Row="4" Grid.Column="0" />
+                                <Image Source="Icon_AnimalPage_Descendants.png" StyleClass="InfotableLabelImage" Grid.Row="4" Grid.Column="0" />
                                 <Label Text="{Binding Descendants}" Grid.Row="4" Grid.Column="1" StyleClass="InfotableValue" />
 
-                                <Image Source="AnimalInfotableIcon_Lifetime.png" StyleClass="InfotableLabelImage" Grid.Row="5" Grid.Column="0" />
+                                <Image Source="Icon_AnimalPage_Lifetime.png" StyleClass="InfotableLabelImage" Grid.Row="5" Grid.Column="0" />
                                 <Label Text="{Binding Lifetime}" Grid.Row="5" Grid.Column="1" StyleClass="InfotableValue" />
 
                                 <Label Text="Kontinent" Grid.Row="6" Grid.Column="0" StyleClass="InfotableLabelText" />

@@ -17,7 +17,7 @@
             <!-- Absolute Elements Below Content -->
 
             <!-- Start: Actual Page Content -->
-            <StackLayout VerticalOptions="End" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel">
+            <StackLayout VerticalOptions="End" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel" Style="{StaticResource GlobalContentStyle}">
 
                 <StackLayout x:Name="IngameContent">
                     <Label Text="{Binding CurrentQuestion.Question}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
