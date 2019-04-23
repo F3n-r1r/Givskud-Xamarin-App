@@ -10,8 +10,9 @@ namespace GivskudApp.ViewModel
 {
     class QuizIngameViewModel : INotifyPropertyChanged
     {
-
+        private bool _IsGameOver = false;
         private int CurrentQuestionIndex = 0;
+        private int _UserScore = 0;
         public event PropertyChangedEventHandler PropertyChanged;
         public QuizModel Data { get; private set; }
 
@@ -27,12 +28,15 @@ namespace GivskudApp.ViewModel
 
         public QuizQuestionModel CurrentQuestion {
             get {
-                return Data.Questions[CurrentQuestionIndex];
+                return CurrentQuestionIndex + 1 <= Data.Questions.Count ? Data.Questions[CurrentQuestionIndex] : null;
             }
         }
         public bool IsGameOver {
             get {
-                return CurrentQuestionIndex > Data.Questions.Count;
+                return _IsGameOver;
+            }
+            set {
+                _IsGameOver = value;
             }
         }
 
@@ -44,12 +48,39 @@ namespace GivskudApp.ViewModel
                 OnPropertyChanged("CurrentQuestion");
             } else
             {
-                CurrentQuestionIndex++;
+                IsGameOver = true;
+                OnPropertyChanged("IsGameOver");
             }
         }
         public void AddPoint()
         {
-
+            _UserScore++;
+        }
+        public int GetPoints()
+        {
+            return _UserScore;
+        }
+        public string[] MessageFinalScoreDescription {
+            get {
+                switch(GetPoints() / Data.Questions.Count)
+                {
+                    case int n when (n >= 100):
+                        return new string[] { "Wow! Everything correct! (100%)", "img.jpg" };
+                    case int n when (n >= 75):
+                        return new string[] { "Wow! Everything correct! (75-99%)", "img.jpg" };
+                    case int n when (n >= 50):
+                        return new string[] { "Wow! Everything correct! (50-75%)", "img.jpg" };
+                    case int n when (n >= 25):
+                        return new string[] { "Wow! Everything correct! (25-50%)", "img.jpg" };
+                    default:
+                        return new string[] { "Wow! Everything correct! (0-25%)", "img.jpg" };
+                }
+            }
+        }
+        public string MessageFinalScoreOverview {
+            get {
+                return GetPoints().ToString() + "/" + Data.Questions.Count.ToString();
+            }
         }
     }
 }

@@ -19,21 +19,35 @@
             <!-- Start: Actual Page Content -->
             <StackLayout VerticalOptions="End" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel">
 
-                <Label Text="{Binding CurrentQuestion.Question}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                <StackLayout x:Name="IngameContent">
+                    <Label Text="{Binding CurrentQuestion.Question}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
 
-                <Grid x:Name="QuestionOptionsGrid">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="40" />
-                        <RowDefinition Height="40" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="QuestionOptionsGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
 
-                </Grid>
+                    </Grid>
                
-                <Button IsVisible="False" x:Name="NextQuestionBtn" Text="Next Question" Clicked="NextQuestion" />
+                    <Button IsVisible="False" x:Name="NextQuestionBtn" Text="Next Question" Clicked="NextQuestion" />
+                </StackLayout>
+
+                <StackLayout x:Name="AftergameContent" IsVisible="False">
+
+                    <Image WidthRequest="60" HorizontalOptions="Center" HeightRequest="60" Margin="0,0,0,15" Source="{Binding MessageFinalScoreDescription[1]}" />
+
+                    <Label Text="{Binding MessageFinalScoreOverview}" HorizontalTextAlignment="Center" TextColor="Black" FontSize="50" />
+
+                    <Label Text="{Binding MessageFinalScoreDescription[0]}" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,30,0,20" />
+
+                    <Button Text="Back to Games" Clicked="BackToGames" BackgroundColor="Transparent" TextColor="{StaticResource ColorPrimary}" Padding="0" />
+
+                </StackLayout>
 
             </StackLayout>
             <!-- End: Actual Page Content -->

@@ -36,13 +36,19 @@ namespace GivskudApp.Views
 
             if(ViewModel.IsGameOver)
             {
-                Application.Current.MainPage.DisplayAlert("Alert", "Game over", "OK");
+                IngameContent.IsVisible = false;
+                ApplicationLayoutContentLevel.VerticalOptions = LayoutOptions.Center;
+                AftergameContent.IsVisible = true;
             } else
             {
                 RenderQuestionAnswers();
                 IsLocked = false;
                 NextQuestionBtn.IsVisible = false;
             }
+        }
+        public async void BackToGames(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new GamePage());
         }
         public void RenderQuestionAnswers()
         {
