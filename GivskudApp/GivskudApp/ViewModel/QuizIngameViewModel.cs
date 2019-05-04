@@ -54,7 +54,9 @@ namespace GivskudApp.ViewModel
         }
         public void AddPoint()
         {
-            _UserScore++;
+            _UserScore += 1;
+            OnPropertyChanged("MessageFinalScoreDescription");
+            OnPropertyChanged("MessageFinalScoreOverview");
         }
         public int GetPoints()
         {
@@ -64,21 +66,20 @@ namespace GivskudApp.ViewModel
             get {
                 switch(GetPoints() / Data.Questions.Count)
                 {
-                    case int n when (n >= 100):
-                        return new string[] { "Wow! Everything correct! (100%)", "img.jpg" };
                     case int n when (n >= 75):
-                        return new string[] { "Wow! Everything correct! (75-99%)", "img.jpg" };
+                        return new string[] { "Wow! Everything correct! (75-100%)", "Icon_Game_AwardLevel4.png" };
                     case int n when (n >= 50):
-                        return new string[] { "Wow! Everything correct! (50-75%)", "img.jpg" };
+                        return new string[] { "Wow! Everything correct! (50-75%)", "Icon_Game_AwardLevel3.png" };
                     case int n when (n >= 25):
-                        return new string[] { "Wow! Everything correct! (25-50%)", "img.jpg" };
+                        return new string[] { "Wow! Everything correct! (25-50%)", "Icon_Game_AwardLevel2.png" };
                     default:
-                        return new string[] { "Wow! Everything correct! (0-25%)", "img.jpg" };
+                        return new string[] { "Wow! Everything correct! (0-25%)", "Icon_Game_AwardLevel1.png" };
                 }
             }
         }
         public string MessageFinalScoreOverview {
             get {
+                return GetPoints().ToString();
                 return GetPoints().ToString() + "/" + Data.Questions.Count.ToString();
             }
         }

@@ -13,11 +13,12 @@ using Xamarin.Forms.Xaml;
 namespace GivskudApp.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class QuizPage : ContentPage
+	public partial class QuizSelectionPage : ContentPage
 	{
-        public QuizPage()
-        {
-            InitializeComponent();
+		public QuizSelectionPage ()
+		{
+			InitializeComponent ();
+            GuiInstanceController.AnnaGuiInstance AnnaOverlay = new GuiInstanceController.AnnaGuiInstance(ApplicationLayoutTopLevel);
             QuizList.FlowItemsSource = new List<QuizModel> {
                 new QuizModel {
                     ID = 1234,

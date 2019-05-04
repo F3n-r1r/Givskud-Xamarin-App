@@ -14,10 +14,15 @@ namespace GivskudApp.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class GuidePage : ContentPage
 	{
-		public GuidePage ()
+
+        GuiInstanceController.AnnaGuiInstance AnnaOverlay;
+
+        public GuidePage ()
 		{
+
 			InitializeComponent ();
-            ElementsController.RenderScannerIcon(ApplicationLayoutTopLevel, Navigation);
+            AnnaOverlay = new GuiInstanceController.AnnaGuiInstance(ApplicationLayoutTopLevel, "Velkommen til Givskud zoo, jeg er jeres guide Anna. Jeg kan hjælp jer på turen igennem Givskud.Hvad vil i prøve først?");
+
         }
 
         // Handle button click -> Push new page
@@ -28,12 +33,13 @@ namespace GivskudApp.Views
 
             if (id == "GuideSavannaPageBtn")
             {
-                await Navigation.PushAsync(new GuideSavannaPage());
+                await Navigation.PushAsync(new GuideSavannaSelectionPage());
             }
             else if (id == "QuizPageBtn")
             {
-                await Navigation.PushAsync(new QuizPage());
+                await Navigation.PushAsync(new QuizSelectionPage());
             }
         }
+
     }
 }

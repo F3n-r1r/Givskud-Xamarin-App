@@ -14,7 +14,7 @@ namespace GivskudApp.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class GuideSavannaPage : ContentPage
 	{
-		public GuideSavannaPage ()
+		public GuideSavannaPage (int id)
 		{
 
             InitializeComponent ();

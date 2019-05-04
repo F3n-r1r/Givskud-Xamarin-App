@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             x:Class="GivskudApp.Views.QuizSelectionPage"
+             Style="{StaticResource GlobalLayoutStyle}">
+    <ContentPage.Resources>
+
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <AbsoluteLayout x:Name="ApplicationLayoutTopLevel">
+
+            <!-- Absolute Elements Below Content -->
+
+            <!-- Start: Actual Page Content -->
+            <StackLayout AbsoluteLayout.LayoutBounds="1,0,0.6,1" Margin="0,15" AbsoluteLayout.LayoutFlags="All"  x:Name="ApplicationLayoutContentLevel" Style="{StaticResource GlobalContentStyle}">
+
+                <controls:FlowListView
+                    x:Name="QuizList"
+                    FlowColumnCount="2"
+                    SeparatorVisibility="None"
+                    HasUnevenRows="True"
+                    FlowItemTapped="ItemClicked">
+                    <controls:FlowListView.FlowColumnTemplate>
+                        <DataTemplate>
+                            <StackLayout Margin="0,0,0,20" Padding="7">
+
+                                <AbsoluteLayout HorizontalOptions="Center" HeightRequest="55">
+                                    <Frame BackgroundColor="Transparent" Padding="0" Margin="0" IsClippedToBounds="True" CornerRadius="6" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1" AbsoluteLayout.LayoutFlags="PositionProportional" WidthRequest="55" HeightRequest="55">
+                                        <Image Source="{Binding Image}" Aspect="AspectFill" WidthRequest="55" HeightRequest="55" />
+                                    </Frame>
+                                    <Image AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1" AbsoluteLayout.LayoutFlags="PositionProportional" IsVisible="{Binding IsLockedByDefault}" Source="Icon_Uncategorized_Lock.png" />
+                                </AbsoluteLayout>
+
+                                <Label Text="{Binding Title}" FontSize="Small" TextColor="Black" HorizontalTextAlignment="Center" />
+
+                            </StackLayout>
+                        </DataTemplate>
+                    </controls:FlowListView.FlowColumnTemplate>
+                </controls:FlowListView>
+
+            </StackLayout>
+            <!-- End: Actual Page Content -->
+
+            <!-- Absolute Elements Above Content -->
+
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+</ContentPage>

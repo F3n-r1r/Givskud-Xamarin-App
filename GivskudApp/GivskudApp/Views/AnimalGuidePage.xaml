@@ -1,21 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GivskudApp.Views.GuidePage"
+             x:Class="GivskudApp.Views.AnimalGuidePage"
              Style="{StaticResource GlobalLayoutStyle}">
     <ContentPage.Resources>
 
     </ContentPage.Resources>
     <ContentPage.Content>
         <AbsoluteLayout x:Name="ApplicationLayoutTopLevel">
-
-            <!-- Absolute Elements Below Content -->
-
-            <!-- Start: Actual Page Content -->
             <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel"  Style="{StaticResource GlobalContentStyle}">
                 <StackLayout Margin="0,0,15,15"
-                         VerticalOptions="EndAndExpand"
-                         HorizontalOptions="EndAndExpand">
+                             VerticalOptions="EndAndExpand"
+                             HorizontalOptions="EndAndExpand">
                     <StackLayout.Resources>
                         <Style TargetType="Button">
                             <Setter Property="BackgroundColor" Value="#97BE0D" />
@@ -23,16 +19,12 @@
                             <Setter Property="Padding" Value="15,0" />
                         </Style>
                     </StackLayout.Resources>
-                    
-                    <Button Text="Parkens Savanner" ClassId="GuideSavannaPageBtn" Clicked="Button_Clicked"/>
-                    <Button Text="Quizzer" Margin="0,15,0,0" ClassId="QuizPageBtn" Clicked="Button_Clicked"/>
 
+                    <Button Text="Animal information" ClassId="AnimalInfoBtn" Clicked="BtnClicked"  />
+                    <Button Text="Show on map" Margin="0,15,0,0" ClassId="AnimalMapBtn" Clicked="BtnClicked" />
+                    <Button Text="Quiz" Margin="0,15,0,0" ClassId="AnimalQuizBtn" Clicked="BtnClicked" IsVisible="{Binding IsQuizAvailable}" />
                 </StackLayout>
             </StackLayout>
-            <!-- End: Actual Page Content -->
-
-            <!-- Absolute Elements Above Content -->
-
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

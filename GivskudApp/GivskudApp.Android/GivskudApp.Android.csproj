@@ -229,5 +229,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Icon_Uncategorized_QR.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Icon_Uncategorized_Lock.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

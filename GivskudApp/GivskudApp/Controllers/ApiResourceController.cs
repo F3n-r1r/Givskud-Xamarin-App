@@ -15,7 +15,7 @@ namespace GivskudApp.ResourceControllers {
     class ApiResource {
 
         private string AuthenticationToken = "C4oILgIT7dTqLye9LJZ0Hr9Xedp7RleQAxw5NVHE";
-        private string ApiBaseUri = "https://givskudbackoffice20190402102444.azurewebsites.net/umbraco/api";
+        private string ApiBaseUri = "https://givskud-app-admin20190504114828.azurewebsites.net/umbraco/api";
 
         public string Get(string Endpoint, Dictionary<string,string> Headers = null) {
 

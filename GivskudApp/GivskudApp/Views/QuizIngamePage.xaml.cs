@@ -8,6 +8,7 @@ using DLToolkit.Forms.Controls;
 
 using GivskudApp.Models;
 using GivskudApp.ViewModel;
+using GivskudApp.Controllers;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,6 +18,7 @@ namespace GivskudApp.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class QuizIngamePage : ContentPage
 	{
+        private GuiInstanceController.AnnaGuiInstance AnnaOverlay;
         private QuizIngameViewModel ViewModel;
         private bool IsLocked = false;
 		public QuizIngamePage (QuizModel Data)
@@ -24,7 +26,9 @@ namespace GivskudApp.Views
             ViewModel = new QuizIngameViewModel(Data);
 
             InitializeComponent ();
-        
+
+            AnnaOverlay = new GuiInstanceController.AnnaGuiInstance(ApplicationLayoutTopLevel, ViewModel.CurrentQuestion.Question);
+
             RenderQuestionAnswers();
             BindingContext = ViewModel;
         
@@ -36,6 +40,7 @@ namespace GivskudApp.Views
 
             if(ViewModel.IsGameOver)
             {
+                AnnaOverlay.HideTextBubble();
                 IngameContent.IsVisible = false;
                 ApplicationLayoutContentLevel.VerticalOptions = LayoutOptions.Center;
                 AftergameContent.IsVisible = true;
@@ -52,6 +57,9 @@ namespace GivskudApp.Views
         }
         public void RenderQuestionAnswers()
         {
+
+            AnnaOverlay.ChangeTextBubble(ViewModel.CurrentQuestion.Question);
+
             QuestionOptionsGrid.Children.Clear();
             int CorrectAnswer = ViewModel.CurrentQuestion.CorrectAnswer;
 

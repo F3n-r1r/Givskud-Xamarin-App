@@ -20,7 +20,7 @@ namespace GivskudApp.Views
         }
         public async void ItemClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new QuizPage());
+            await Navigation.PushAsync(new QuizSelectionPage());
         }
     }
 }
