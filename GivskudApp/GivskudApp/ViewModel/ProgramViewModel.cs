@@ -9,6 +9,7 @@ namespace GivskudApp.ViewModel
 {
     public class ProgramViewModel
     {
+
         ProgramService service = new ProgramService();
 
         public List<ProgramModel> Program { get { return service.Program; } }

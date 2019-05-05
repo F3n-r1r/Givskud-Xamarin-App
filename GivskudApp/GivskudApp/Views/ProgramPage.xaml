@@ -13,22 +13,29 @@
 
             <!-- Start: Actual Page Content -->
             <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel" Style="{StaticResource GlobalContentStyle}">
-                <Image Source="logo.png" Margin="0,20,0,20" HeightRequest="60" />
+                <StackLayout Padding="20,0" Margin="0,15" Spacing="0" VerticalOptions="Start">
+                    <Image Source="Graphic_Logo.png" Margin="0" HeightRequest="70" Aspect="AspectFit" />
+                </StackLayout>
+
                 <StackLayout VerticalOptions="FillAndExpand" Padding="0,0,0,70">
                     <ListView x:Name="ProgramList" VerticalOptions="FillAndExpand" HasUnevenRows="True" SeparatorVisibility="None">
-                        <ListView.ItemTemplate VerticalOptions="FillAndExpand">
+                        <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-                                    <StackLayout HorizontalOptions="Center" Margin="0,10,0,0">
-                                        <Label HorizontalOptions="Center" Text="Time" FontSize="Medium" TextColor="Black"/>
-                                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                                            <Label Text="Title" FontSize="Medium" TextColor="Black" Margin="25,0,0,0"/>
-                                            <Frame HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Margin="5,0,0,0" Padding="2,2,2,2" BackgroundColor="#de1f28" BorderColor="#FFFFFF" CornerRadius="7">
-                                                <Image Source="pinpoint.png"/>
+                                    <Frame BackgroundColor="White" CornerRadius="6" Padding="0" Margin="0,0,0,5">
+                                        <AbsoluteLayout Padding="16">
+                                            <Frame AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1,0" WidthRequest="20" HeightRequest="20" CornerRadius="20" IsClippedToBounds="True" Padding="10" BackgroundColor="{StaticResource ColorPrimary}">
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="OnMapPointClick" />
+                                                </Frame.GestureRecognizers>
+                                                <Image Source="Icon_Uncategorized_Pinpoint.png" WidthRequest="20" HeightRequest="20" Aspect="AspectFit" />
                                             </Frame>
-                                        </StackLayout>
-                                        <BoxView HeightRequest="1" HorizontalOptions="CenterAndExpand" WidthRequest="100" BackgroundColor="#000000" Margin="0,5,0,0"/>
-                                    </StackLayout>
+                                            <StackLayout Spacing="0" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Padding="0,0,45,0">
+                                                <Label TextColor="Black" Text="Time of the event" />
+                                                <Label TextColor="Black" Text="{Binding Title}" MaxLines="1" FontAttributes="Bold" FontSize="Large" />
+                                            </StackLayout>
+                                        </AbsoluteLayout>
+                                    </Frame>
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>

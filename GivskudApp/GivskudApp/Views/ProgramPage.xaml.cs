@@ -27,5 +27,10 @@ namespace GivskudApp.Views
             ProgramList.ItemsSource = vm.Program;
 
         }
-	}
+        public async void OnMapPointClick(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MapPage());
+        }
+
+    }
 }
