@@ -6,15 +6,22 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-
-using GivskudApp.Controllers;
 using System.Diagnostics;
+
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+using Plugin.Connectivity;
+using Plugin.Connectivity.Abstractions;
+
+using GivskudApp.Views;
+using GivskudApp.Controllers;
 
 namespace GivskudApp.ResourceControllers {
 
     class ApiResource {
 
-        private string AuthenticationToken = "C4oILgIT7dTqLye9LJZ0Hr9Xedp7RleQAxw5NVHE";
+        private string AuthenticationToken = "C4oILgIT7dTqLye9LJZ0Hr9Xedp7RleQAxw5NVHE";    
         private string ApiBaseUri = "https://givskud-app-admin20190504114828.azurewebsites.net/umbraco/api";
 
         public string Get(string Endpoint, Dictionary<string,string> Headers = null) {
@@ -93,6 +100,17 @@ namespace GivskudApp.ResourceControllers {
 
             return Client;
 
+        }
+
+        public bool IsConnected()
+        {
+            if(CrossConnectivity.Current.IsConnected)
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
         }
 
     }
