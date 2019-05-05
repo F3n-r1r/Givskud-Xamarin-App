@@ -16,28 +16,38 @@
 
             <!-- Start: Actual Page Content -->
             <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel"  Style="{StaticResource GlobalContentStyle}">
+                <StackLayout Padding="20,0" Spacing="0" VerticalOptions="EndAndExpand">
+                    <Image Source="Graphic_Logo.png" Margin="0" Aspect="AspectFit" />
+                </StackLayout>
+                
+                <StackLayout Spacing="6" VerticalOptions="EndAndExpand">
+                    <StackLayout.Resources>
+                        <Style TargetType="Button">
+                            <Setter Property="Margin" Value="0" />
+                            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                        </Style>
+                    </StackLayout.Resources>
 
-                <Image Source="Graphic_Logo.png" Margin="0,20,0,0" HeightRequest="140"/>
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Row="0" Grid.Column="0" ClassId="TourPageBtn" Text="START GUIDED TUR" Clicked="Button_Clicked" />
+                        <Button Grid.Row="0" Grid.Column="1" ClassId="MapPageBtn" Text="SE KORT" Clicked="Button_Clicked" />
+                        <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ClassId="ProgramPageBtn" Text="DAGENS PROGRAM" Clicked="Button_Clicked" />
+                    </Grid>
 
-                <Button ClassId="TourPageBtn" Text="START GUIDED TUR" Clicked="Button_Clicked"/>
-                <Button ClassId="MapPageBtn" Text="SE KORT" Clicked="Button_Clicked"/>
-                <Button ClassId="ProgramPageBtn" Text="DAGENS PROGRAM" Clicked="Button_Clicked"/>
-
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-
-                    <Image Source="guideRotated" Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
-
-                    <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1" VerticalOptions="End" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HorizontalOptions="End" Margin="0,15,0,10">
                         <Image Source="Icon_Flag_DK.png" HeightRequest="40"/>
                         <Image Source="Icon_Flag_DE.png" HeightRequest="40"/>
                         <Image Source="Icon_Flag_UK.png" HeightRequest="40"/>
                     </StackLayout>
-                </Grid>
-
+                </StackLayout>
             </StackLayout>
             <!-- End: Actual Page Content -->
 
