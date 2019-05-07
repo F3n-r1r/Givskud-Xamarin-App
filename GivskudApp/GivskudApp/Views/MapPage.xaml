@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" 
+             xmlns:components="clr-namespace:GivskudApp.Custom"
              x:Class="GivskudApp.Views.MapPage"
              Style="{StaticResource GlobalLayoutStyle}">
     <ContentPage.Resources>
@@ -13,60 +13,204 @@
             <!-- Absolute Elements Below Content -->
 
             <!-- Start: Actual Page Content -->
-            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel" Style="{StaticResource GlobalContentStyle}">
-                <Image Source="map.png" />
-                <Grid VerticalOptions="CenterAndExpand">
+            <StackLayout Padding="0" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel"  Style="{StaticResource GlobalContentStyle}">
+
+                <Grid RowSpacing="0">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="315" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
 
-                    <StackLayout Grid.Row="0" Grid.Column="0">
-                        <Image Source="Icon_Map_Defibrilator.png" />
-                        <controls:CheckBox HorizontalOptions="Center" Scale="1.2"/>
+                    <AbsoluteLayout Grid.Row="0">
+
+                        <AbsoluteLayout.Resources>
+                            <Style TargetType="Image" Class="MapPinpoint">
+                                <Setter Property="AbsoluteLayout.LayoutFlags" Value="PositionProportional" />
+                                <Setter Property="Source" Value="Icon_Map_Pinpoint.png" />
+                                <Setter Property="HeightRequest" Value="30" />
+                            </Style>
+                        </AbsoluteLayout.Resources>
+                        
+                        <!-- Map base -->
+                        <Image Opacity="0.8" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Source="Graphic_Map.jpg" Aspect="AspectFill" />
+                        
+                        <!-- Map pinpoints -->
+                        <!--
+                        <Image StyleClass="MapPinpoint" IsVisible="{Binding MapOverlayState[0]}" AbsoluteLayout.LayoutBounds=".40,.063" />
+                        <Image StyleClass="MapPinpoint" IsVisible="{Binding MapOverlayState[1]}" AbsoluteLayout.LayoutBounds=".57,.35" />
+                        <Image StyleClass="MapPinpoint" IsVisible="{Binding MapOverlayState[2]}" AbsoluteLayout.LayoutBounds=".69,.52" />
+                        <Image StyleClass="MapPinpoint" IsVisible="{Binding MapOverlayState[3]}" AbsoluteLayout.LayoutBounds=".6,.6" />
+                        <Image StyleClass="MapPinpoint" IsVisible="{Binding MapOverlayState[4]}" AbsoluteLayout.LayoutBounds=".71,.79" />
+                        <Image StyleClass="MapPinpoint" IsVisible="{Binding MapOverlayState[5]}" AbsoluteLayout.LayoutBounds=".55,.86" />
+                        <Image StyleClass="MapPinpoint" IsVisible="{Binding MapOverlayState[6]}" AbsoluteLayout.LayoutBounds=".225,.73" />
+                        <Image StyleClass="MapPinpoint" IsVisible="{Binding MapOverlayState[7]}" AbsoluteLayout.LayoutBounds=".052,.63" />
+                        -->
+                        <!-- Animals overlay -->
+                        <AbsoluteLayout IsVisible="{Binding MapOverlayState[8]}" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                            <AbsoluteLayout.Resources>
+                                <Style TargetType="StackLayout">
+                                    <Setter Property="AbsoluteLayout.LayoutFlags" Value="PositionProportional" />
+                                    <Setter Property="Orientation" Value="Horizontal" />
+                                </Style>
+                                <Style TargetType="Label">
+                                    <Setter Property="TextColor" Value="White" />
+                                    <Setter Property="FontSize" Value="11" />
+                                    <Setter Property="FontAttributes" Value="Bold" />
+                                </Style>
+                                <Style TargetType="Frame">
+                                    <Setter Property="Padding" Value="5,3" />
+                                    <Setter Property="IsClippedToBounds" Value="True" />
+                                    <Setter Property="CornerRadius" Value="5" />
+                                    <Setter Property="BackgroundColor" Value="{StaticResource ColorPrimary}" />
+                                    <Setter Property="VerticalOptions" Value="Center" />
+                                </Style>
+                            </AbsoluteLayout.Resources>
+                            
+                            <StackLayout AbsoluteLayout.LayoutBounds=".28,.35">
+                                <Frame>
+                                    <Label Text="Lions" />
+                                </Frame>
+                                <Image StyleClass="MapPinpoint" />
+                            </StackLayout>
+
+                            <StackLayout AbsoluteLayout.LayoutBounds=".4,.2">
+                                <Frame>
+                                    <Label Text="Rhinoceros" />
+                                </Frame>
+                                <Image StyleClass="MapPinpoint" />
+                            </StackLayout>
+
+                            <StackLayout AbsoluteLayout.LayoutBounds=".55,.03">
+                                <Frame>
+                                    <Label Text="Lemurs" />
+                                </Frame>
+                                <Image StyleClass="MapPinpoint" />
+                            </StackLayout>
+
+                            <StackLayout AbsoluteLayout.LayoutBounds=".88,0">
+                                <Image StyleClass="MapPinpoint" />
+                                <Frame>
+                                    <Label Text="Gorilas" />
+                                </Frame>
+                            </StackLayout>
+
+                            <StackLayout AbsoluteLayout.LayoutBounds=".751,.12">
+                                <Frame>
+                                    <Label Text="Giraffes" />
+                                </Frame>
+                                <Image StyleClass="MapPinpoint" />
+                            </StackLayout>
+
+                            <StackLayout AbsoluteLayout.LayoutBounds=".65,.41">
+                                <Frame>
+                                    <Label Text="Wolves" />
+                                </Frame>
+                                <Image StyleClass="MapPinpoint" />
+                            </StackLayout>
+
+                            <StackLayout AbsoluteLayout.LayoutBounds=".4,.52">
+                                <Frame>
+                                    <Label Text="Otters" />
+                                </Frame>
+                                <Image StyleClass="MapPinpoint" />
+                            </StackLayout>
+
+                            <StackLayout AbsoluteLayout.LayoutBounds=".68,.7">
+                                <Frame>
+                                    <Label Text="Elephants" />
+                                </Frame>
+                                <Image StyleClass="MapPinpoint" />
+                            </StackLayout>
+
+                        </AbsoluteLayout>
+
+                        <!-- Map cutout -->
+                        <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Source="Graphic_MapCutout.png" Aspect="AspectFill" />
+
+                    </AbsoluteLayout>
+
+                    <StackLayout Grid.Row="1" Padding="10,20,10,70">
+  
+                        <Grid>
+                            <Grid.Resources>
+                                <Style TargetType="StackLayout">
+                                    <Setter Property="Spacing" Value="0" />
+                                    <Setter Property="Margin" Value="0,0,0,6" />
+                                </Style>
+                                <Style TargetType="Image">
+                                    <Setter Property="HorizontalOptions" Value="Center" />
+                                    <Setter Property="WidthRequest" Value="35" />
+                                    <Setter Property="HeightRequest" Value="35" />
+                                    <Setter Property="Aspect" Value="AspectFit" />
+                                    <Setter Property="Margin" Value="0,5" />
+                                </Style>
+                                <Style TargetType="components:Checkbox">
+                                    <Setter Property="HorizontalOptions" Value="Center" />
+                                    <Setter Property="WidthRequest" Value="30" />
+                                    <Setter Property="HeightRequest" Value="30" />
+                                    <Setter Property="OutlineColor" Value="Black" />
+                                    <Setter Property="CheckColor" Value="{StaticResource ColorPrimary}" />
+                                    <Setter Property="CheckedOutlineColor" Value="{StaticResource ColorPrimary}" />
+                                    <Setter Property="CheckedCommand" Value="{Binding MapControlCommand}" />
+                                </Style>
+                            </Grid.Resources>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <StackLayout Grid.Row="0" Grid.Column="0">
+                                <Image Source="Icon_Map_AnimalPaw.png" />
+                                <components:Checkbox CheckedCommandParameter="Animals" />
+                            </StackLayout>
+
+                            <StackLayout Grid.Row="0" Grid.Column="1">
+                                <Image Source="Icon_Map_Defibrilator.png" />
+                                <components:Checkbox CheckedCommandParameter="Defibrilator" />
+                            </StackLayout>
+
+                            <StackLayout Grid.Row="0" Grid.Column="2">
+                                <Image Source="Icon_Map_Information.png" />
+                                <components:Checkbox CheckedCommandParameter="Information" />
+                            </StackLayout>
+
+                            <StackLayout Grid.Row="0" Grid.Column="3">
+                                <Image Source="Icon_Map_Parking.png" />
+                                <components:Checkbox CheckedCommandParameter="Parking" />
+                            </StackLayout>
+
+                            <StackLayout Grid.Row="1" Grid.Column="0">
+                                <Image Source="Icon_Map_Playground.png" />
+                                <components:Checkbox CheckedCommandParameter="Playground" />
+                            </StackLayout>
+
+                            <StackLayout Grid.Row="1" Grid.Column="1">
+                                <Image Source="Icon_Map_Restaurant.png" />
+                                <components:Checkbox CheckedCommandParameter="Restaurant" />
+                            </StackLayout>
+
+                            <StackLayout Grid.Row="1" Grid.Column="2">
+                                <Image Source="Icon_Map_Toilet.png" />
+                                <components:Checkbox CheckedCommandParameter="Toilet" />
+                            </StackLayout>
+
+                            <StackLayout Grid.Row="1" Grid.Column="3">
+                                <Image Source="Icon_Map_Tour.png" />
+                                <components:Checkbox CheckedCommandParameter="Tour" />
+                            </StackLayout>
+
+                        </Grid>
+
                     </StackLayout>
 
-                    <StackLayout Grid.Row="0" Grid.Column="1">
-                        <Image Source="Icon_Map_Parking.png" />
-                        <controls:CheckBox HorizontalOptions="Center" Scale="1.2"/>
-                    </StackLayout>
-
-                    <StackLayout Grid.Row="0" Grid.Column="2">
-                        <Image Source="Icon_Map_Playground.png" />
-                        <controls:CheckBox HorizontalOptions="Center" Scale="1.2"/>
-                    </StackLayout>
-
-                    <StackLayout Grid.Row="0" Grid.Column="3">
-                        <Image Source="Icon_Map_Restaurant.png" />
-                        <controls:CheckBox HorizontalOptions="Center" Scale="1.2"/>
-                    </StackLayout>
-
-                    <StackLayout Grid.Row="1" Grid.Column="0">
-                        <Image Source="Icon_Map_AnimalPaw.png" />
-                        <controls:CheckBox HorizontalOptions="Center" Scale="1.2"/>
-                    </StackLayout>
-
-                    <StackLayout Grid.Row="1" Grid.Column="1">
-                        <Image Source="Icon_Map_Toilet.png" />
-                        <controls:CheckBox HorizontalOptions="Center" Scale="1.2"/>
-                    </StackLayout>
-
-                    <StackLayout Grid.Row="1" Grid.Column="2">
-                        <Image Source="Icon_Map_Tour.png" />
-                        <controls:CheckBox HorizontalOptions="Center" Scale="1.2"/>
-                    </StackLayout>
-
-                    <StackLayout Grid.Row="1" Grid.Column="3">
-                        <Image Source="Icon_Map_Information.png" />
-                        <controls:CheckBox HorizontalOptions="Center" Scale="1.2"/>
-                    </StackLayout>
                 </Grid>
+
             </StackLayout>
             <!-- End: Actual Page Content -->
 
