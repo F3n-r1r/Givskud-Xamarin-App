@@ -19,9 +19,24 @@
             <!-- Start: Actual Page Content -->
             <StackLayout VerticalOptions="End" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel" Style="{StaticResource GlobalContentStyle}">
 
-                <StackLayout x:Name="IngameContent">
+                <StackLayout x:Name="Gameboard" IsVisible="{Binding IsGameInProgress}">
 
                     <Grid x:Name="QuestionOptionsGrid">
+                        <Grid.Resources>
+                        <Style TargetType="Button">
+                            <Setter Property="FontSize" Value="11" />
+                            <Setter Property="TextColor" Value="Black" />
+                            <Setter Property="BackgroundColor" Value="#FF97BE" />
+                        </Style>
+                        <Style TargetType="Button" Class="BtnCorrectAnswer">
+                            <Setter Property="BackgroundColor" Value="Green" />
+                            <Setter Property="TextColor" Value="White" />
+                        </Style>
+                        <Style TargetType="Button" Class="BtnIncorrectAnswer">
+                            <Setter Property="BackgroundColor" Value="Red" />
+                            <Setter Property="TextColor" Value="White" />
+                        </Style>
+                        </Grid.Resources>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="40" />
                             <RowDefinition Height="40" />
@@ -31,18 +46,34 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
+                        <Button Grid.Row="0" Grid.Column="0" Text="{Binding Question.Answers[0]}" ClassId="1" Clicked="AnswerBtnClicked" Command="{Binding AnswerCommand}" CommandParameter="1" />
+                        <Button Grid.Row="0" Grid.Column="1" Text="{Binding Question.Answers[1]}" ClassId="2" Clicked="AnswerBtnClicked" Command="{Binding AnswerCommand}" CommandParameter="2" />
+                        <Button Grid.Row="1" Grid.Column="0" Text="{Binding Question.Answers[2]}" ClassId="3" Clicked="AnswerBtnClicked" Command="{Binding AnswerCommand}" CommandParameter="3" />
+                        <Button Grid.Row="1" Grid.Column="1" Text="{Binding Question.Answers[3]}" ClassId="4" Clicked="AnswerBtnClicked" Command="{Binding AnswerCommand}" CommandParameter="4" />
+                      
                     </Grid>
                
-                    <Button IsVisible="False" x:Name="NextQuestionBtn" Text="Next Question" Clicked="NextQuestion" />
+                    <Button IsVisible="False" x:Name="NextQuestionBtn" Text="Next Question" StyleId="MoveForwardBtn" Clicked="BtnClicked" Command="{Binding NextQuestionCommand}" />
+                
                 </StackLayout>
 
-                <StackLayout x:Name="AftergameContent" IsVisible="False">
+                <StackLayout x:Name="Scoreboard" IsVisible="{Binding IsGameOver}">
 
-                    <Image VerticalOptions="Start" Aspect="AspectFit" HeightRequest="100" Source="{Binding MessageFinalScoreDescription[1]}" Margin="0" />
+                    <StackLayout.Resources>
+                        <Style TargetType="Button">
+                            <Setter Property="VerticalOptions" Value="End" />
+                            <Setter Property="HorizontalOptions" Value="Center" />
+                            <Setter Property="CornerRadius" Value="30" />
+                            <Setter Property="BackgroundColor" Value="White" />
+                            <Setter Property="TextColor" Value="{StaticResource ColorPrimary}" />
+                            <Setter Property="Margin" Value="0,5,0,0" />
+                            <Setter Property="Padding" Value="12,6" />
+                        </Style>
+                    </StackLayout.Resources>
 
-                    <Label VerticalOptions="Center" Text="{Binding MessageFinalScoreOverview}" HorizontalTextAlignment="Center" TextColor="Black" FontSize="40" />
-
-                    <Button VerticalOptions="End" Text="Back to Games" Clicked="BackToGames" BackgroundColor="Transparent" TextColor="{StaticResource ColorPrimary}" Padding="0" />
+                    <Image VerticalOptions="Start" Aspect="AspectFit" HeightRequest="100" Source="" Margin="0" />
+                    <Label VerticalOptions="Center" Text="Score" HorizontalTextAlignment="Center" TextColor="Black" FontSize="40" />
+                    <Button Clicked="BtnClicked" StyleId="CloseGameBtn" Text="Back to games" />
 
                 </StackLayout>
 

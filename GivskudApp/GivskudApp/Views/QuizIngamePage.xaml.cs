@@ -18,84 +18,57 @@ namespace GivskudApp.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class QuizIngamePage : ContentPage
 	{
-        private GuiInstanceController.AnnaGuiInstance AnnaOverlay;
-        private QuizIngameViewModel ViewModel;
+        private GuiInstanceController.AnnaGuiInstance AnnaOverlay { get; set; }
+        private QuizIngameViewModel ViewModel { get; set; }
+
         private bool IsLocked = false;
+
 		public QuizIngamePage (QuizModel Data)
 		{
+
+            InitializeComponent();
+
             ViewModel = new QuizIngameViewModel(Data);
+            AnnaOverlay = new GuiInstanceController.AnnaGuiInstance(ApplicationLayoutTopLevel, ViewModel.Question.Question);
 
-            InitializeComponent ();
-
-            AnnaOverlay = new GuiInstanceController.AnnaGuiInstance(ApplicationLayoutTopLevel, ViewModel.CurrentQuestion.Question);
-
-            RenderQuestionAnswers();
             BindingContext = ViewModel;
-        
+
         }
-        public void NextQuestion(object sender = null, EventArgs e = null)
+        public async void BtnClicked(object sender, EventArgs e)
         {
-
-            ViewModel.NextQuestion();
-
-            if(ViewModel.IsGameOver)
+            Button s = sender as Button;
+            
+            switch(s.ClassId)
             {
-                AnnaOverlay.HideTextBubble();
-                IngameContent.IsVisible = false;
-                ApplicationLayoutContentLevel.VerticalOptions = LayoutOptions.Center;
-                AftergameContent.IsVisible = true;
-            } else
-            {
-                RenderQuestionAnswers();
-                IsLocked = false;
-                NextQuestionBtn.IsVisible = false;
+                case "MoveForwardBtn":
+                    NextQuestionBtn.IsVisible = false;
+                    if(ViewModel.IsGameOver)
+                    {
+                        AnnaOverlay.HideTextBubble();
+                    }
+                    break;
+                case "CloseGameBtn":
+                    await Navigation.PopAsync();
+                    break;
             }
         }
-        public async void BackToGames(object sender, EventArgs e)
+        public void AnswerBtnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new GamePage());
-        }
-        public void RenderQuestionAnswers()
-        {
+            Button s = sender as Button;
+            Int32.TryParse(s.ClassId, out int AnswerId);
 
-            AnnaOverlay.ChangeTextBubble(ViewModel.CurrentQuestion.Question);
-
-            QuestionOptionsGrid.Children.Clear();
-            int CorrectAnswer = ViewModel.CurrentQuestion.CorrectAnswer;
-
-            Dictionary<int, string> Answers = ViewModel.CurrentQuestion.Answers;
-            foreach(KeyValuePair<int,string> Answer in Answers)
+            if(AnswerId != 0 && IsLocked == false)
             {
-                int Index = Answer.Key - 1;
 
-                Button AnswerBtn = new Button {
-                    BackgroundColor = Color.FromHex("#FF97BE0D"),
-                    TextColor = Color.Black,
-                    Text = Answer.Value,
-                    FontSize = 11
-                };
+                IsLocked = true;
 
-                AnswerBtn.Clicked += (s, e) =>
+                if(AnswerId == ViewModel.Question.CorrectAnswer)
                 {
-                    if(IsLocked == false) {
-
-                        IsLocked = true;
-
-                        if(Answer.Key == CorrectAnswer)
-                        {
-                            AnswerBtn.BackgroundColor = Color.Green;
-                            ViewModel.AddPoint();
-                        } else
-                        {
-                            AnswerBtn.BackgroundColor = Color.Red;
-                        }
-
-                        NextQuestionBtn.IsVisible = true;
-
-                    } 
-                };
-
-                QuestionOptionsGrid.Children.Add(AnswerBtn, Index <= 1 ? Index : Index - 2, Index <= 1 ? 0 : 1);
+                    s.BackgroundColor = Color.Green;
+                } else
+                {
+                    s.BackgroundColor = Color.Red;
+                }
             }
         }
     }

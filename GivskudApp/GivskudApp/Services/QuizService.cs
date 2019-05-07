@@ -15,11 +15,13 @@ namespace GivskudApp.Services
     class QuizService
     {
         public List<QuizModel> Data { get; private set; }
-        public QuizService(string id = null)
+
+        public QuizService()
         {
-            Get(id);
+            Data = new List<QuizModel>();
         }
-        public void Get(string id)
+
+        public void Get(string id = null)
         {
             ApiResource ApiResource = new ApiResource();
             string ApiResourceUrl = "/quiz/get" + (id == null ? "" : "?id=" + id);
