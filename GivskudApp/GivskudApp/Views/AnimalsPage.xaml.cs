@@ -36,9 +36,7 @@ namespace GivskudApp.Views
         async void ItemClicked(object sender, ItemTappedEventArgs e)
         {
             AnimalModel thisAnimal = (AnimalModel)e.Item;
-            var vm = Binding;
-            vm.SelectedAnimal = thisAnimal;
-            await Navigation.PushAsync(new AnimalDetailsPage());
+            await Navigation.PushAsync(new AnimalDetailsPage(thisAnimal));
         }
     }
 }
