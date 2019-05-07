@@ -15,19 +15,27 @@
             <!-- Start: Actual Page Content -->
             <StackLayout AbsoluteLayout.LayoutBounds="1,0,0.6,1" Margin="0,15" AbsoluteLayout.LayoutFlags="All"  x:Name="ApplicationLayoutContentLevel" Style="{StaticResource GlobalContentStyle}">
 
+                <!-- START WORKING PAGE -->
+                <StackLayout x:Name="WorkingSplashscreen" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsBusy}">
+                    <ActivityIndicator IsRunning="True" Scale="0.5" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" Color="{DynamicResource NavigationPrimary}" />
+                </StackLayout>
+                <!-- END WORKING PAGE -->
+
                 <controls:FlowListView
                     x:Name="QuizList"
                     FlowColumnCount="2"
                     SeparatorVisibility="None"
                     HasUnevenRows="True"
-                    FlowItemTapped="ItemClicked">
+                    FlowItemTapped="ItemClicked"
+                    IsVisible="{Binding IsLoaded}"
+                    FlowItemsSource="{Binding Data}">
                     <controls:FlowListView.FlowColumnTemplate>
                         <DataTemplate>
-                            <StackLayout Margin="0,0,0,20" Padding="7">
+                            <StackLayout Margin="0,0,0,20" Padding="3">
 
                                 <AbsoluteLayout HorizontalOptions="Center" HeightRequest="55">
                                     <Frame BackgroundColor="Transparent" Padding="0" Margin="0" IsClippedToBounds="True" CornerRadius="6" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1" AbsoluteLayout.LayoutFlags="PositionProportional" WidthRequest="55" HeightRequest="55">
-                                        <Image Source="{Binding Image}" Aspect="AspectFill" WidthRequest="55" HeightRequest="55" />
+                                        <Image Source="{Binding Image}" Aspect="AspectFill" WidthRequest="65" HeightRequest="65" />
                                     </Frame>
                                     <Image AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1" AbsoluteLayout.LayoutFlags="PositionProportional" IsVisible="{Binding IsLockedByDefault}" Source="Icon_Uncategorized_Lock.png" />
                                 </AbsoluteLayout>
