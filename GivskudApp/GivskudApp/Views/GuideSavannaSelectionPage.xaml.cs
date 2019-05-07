@@ -26,14 +26,14 @@ namespace GivskudApp.Views
 
             if (id == "sav01")
             {
-                await Navigation.PushAsync(new GuideSavannaPage(1000));
+                await Navigation.PushAsync(new GuideSavannaPage(1136));
             }
             else if (id == "sav02")
             {
-                await Navigation.PushAsync(new GuideSavannaPage(1000));
-            } else if (id == "sav30")
+                await Navigation.PushAsync(new GuideSavannaPage(1137));
+            } else if (id == "sav3")
             {
-                await Navigation.PushAsync(new GuideSavannaPage(1000));
+                await Navigation.PushAsync(new GuideSavannaPage(1138));
             }
         }
     }

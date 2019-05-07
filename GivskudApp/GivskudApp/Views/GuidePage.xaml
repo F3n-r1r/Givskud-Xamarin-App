@@ -12,10 +12,10 @@
             <!-- Absolute Elements Below Content -->
 
             <!-- Start: Actual Page Content -->
-            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel"  Style="{StaticResource GlobalContentStyle}">
+            <StackLayout AbsoluteLayout.LayoutBounds="1,0,0.6,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel"  Style="{StaticResource GlobalContentStyle}">
                 <StackLayout Margin="0,0,15,15"
-                         VerticalOptions="EndAndExpand"
-                         HorizontalOptions="EndAndExpand">
+                             VerticalOptions="EndAndExpand"
+                             HorizontalOptions="EndAndExpand">
                     <StackLayout.Resources>
                         <Style TargetType="Button">
                             <Setter Property="BackgroundColor" Value="#97BE0D" />
@@ -23,7 +23,7 @@
                             <Setter Property="Padding" Value="15,0" />
                         </Style>
                     </StackLayout.Resources>
-                    
+
                     <Button Text="Parkens Savanner" ClassId="GuideSavannaPageBtn" Clicked="Button_Clicked"/>
                     <Button Text="Quizzer" Margin="0,15,0,0" ClassId="QuizPageBtn" Clicked="Button_Clicked"/>
 

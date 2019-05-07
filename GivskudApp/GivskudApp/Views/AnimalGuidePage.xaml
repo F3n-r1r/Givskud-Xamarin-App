@@ -8,7 +8,8 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <AbsoluteLayout x:Name="ApplicationLayoutTopLevel">
-            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel"  Style="{StaticResource GlobalContentStyle}">
+
+            <StackLayout AbsoluteLayout.LayoutBounds="1,0,0.6,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel"  Style="{StaticResource GlobalContentStyle}">
                 <StackLayout Margin="0,0,15,15"
                              VerticalOptions="EndAndExpand"
                              HorizontalOptions="EndAndExpand">
@@ -22,9 +23,10 @@
 
                     <Button Text="Animal information" ClassId="AnimalInfoBtn" Clicked="BtnClicked"  />
                     <Button Text="Show on map" Margin="0,15,0,0" ClassId="AnimalMapBtn" Clicked="BtnClicked" />
-                    <Button Text="Quiz" Margin="0,15,0,0" ClassId="AnimalQuizBtn" Clicked="BtnClicked" IsVisible="{Binding IsQuizAvailable}" />
+                    <Button Text="Quiz" Margin="0,15,0,0" ClassId="AnimalQuizBtn" Clicked="BtnClicked" x:Name="BtnGoToQuiz" />
                 </StackLayout>
             </StackLayout>
+            
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

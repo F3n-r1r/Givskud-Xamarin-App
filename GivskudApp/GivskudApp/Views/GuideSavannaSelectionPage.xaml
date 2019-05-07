@@ -10,37 +10,38 @@
         <AbsoluteLayout x:Name="ApplicationLayoutTopLevel">
 
             <!-- Absolute Elements Below Content -->
+            <StackLayout Padding="0" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel"  Style="{StaticResource GlobalContentStyle}">
 
-            <!-- Start: Actual Page Content -->
-            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel"  Style="{StaticResource GlobalContentStyle}">
+                <ScrollView>
+                    <Grid RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="315" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
 
-                <Grid VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
+                        <AbsoluteLayout Grid.Row="0">
 
-                    <StackLayout Grid.Row="0">
-                        <Image Source="map.png" />
-                    </StackLayout>
+                            <Image Opacity="0.8" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Source="Graphic_Map.jpg" Aspect="AspectFill" />
+                            <Image Opacity="0.8" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Source="Graphic_Map_SavanaOverlay.jpg" Aspect="AspectFill" />
 
-                    <Label Text="Choose part of our park" Grid.Row="1" TextColor="Black" FontSize="Large" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            <Label Text="Savanna 1" TextColor="Black" FontAttributes="Bold" FontSize="Large" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.1,0.65" />
+                            <Label Text="Savanna 2" TextColor="Black" FontAttributes="Bold" FontSize="Large" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.6,0.20" />
+                            <Label Text="Savanna 3" TextColor="Black" FontAttributes="Bold" FontSize="Large" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.9,0.65" />
 
-                    <StackLayout Grid.Row="2">
-                        <StackLayout.Resources>
-                            <Style TargetType="Button">
-                                <Setter Property="BackgroundColor" Value="#97BE0D" />
-                                <Setter Property="TextColor" Value="#000000" />
-                                <Setter Property="Padding" Value="15,0" />
-                            </Style>
-                        </StackLayout.Resources>
+                            <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Source="Graphic_MapCutout.png" Aspect="AspectFill" />
 
-                        <Button Text="Savanna 1" ClassId="sav01" Clicked="BtnClicked_GoToSavanna" />
-                        <Button Text="Savanna 2" ClassId="sav02" Clicked="BtnClicked_GoToSavanna" />
-                        <Button Text="Savanna 3" ClassId="sav03" Clicked="BtnClicked_GoToSavanna" />
-                    </StackLayout>
-                </Grid>
+                        </AbsoluteLayout>
+
+                        <StackLayout Grid.Row="1" Padding="10,20,10,70">
+
+                            <Button Text="Savanna 1" ClassId="sav01" Clicked="BtnClicked_GoToSavanna" />
+                            <Button Text="Savanna 2" ClassId="sav02" Clicked="BtnClicked_GoToSavanna" />
+                            <Button Text="Savanna 3" ClassId="sav03" Clicked="BtnClicked_GoToSavanna" />
+                            
+                        </StackLayout>
+
+                    </Grid>
+                </ScrollView>
 
             </StackLayout>
             <!-- End: Actual Page Content -->
