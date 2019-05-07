@@ -78,7 +78,6 @@ namespace GivskudApp.Services {
                             return null;
                         }
                     } else {
-                        PopupController.Simple("Invalid pass", "The pass ID you have entered does not seem to be valid. Please try again or contact the staff", "Dismiss");
                         return null;
                     }
                 } catch (Exception e) {

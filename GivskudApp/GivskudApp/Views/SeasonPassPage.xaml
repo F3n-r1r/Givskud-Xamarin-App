@@ -54,7 +54,7 @@
                                         <Setter Property="VerticalTextAlignment" Value="Center"/>
                                     </Style>
                                     <Style TargetType="Label" Class="Label" BasedOn="{StaticResource LabelMasterstyle}">
-                                        <Setter Property="HorizontalTextAlignment" Value="Right" />
+                                        <Setter Property="HorizontalTextAlignment" Value="Left" />
                                     </Style>
                                     <Style TargetType="Label" Class="Content" BasedOn="{StaticResource LabelMasterstyle}">
 

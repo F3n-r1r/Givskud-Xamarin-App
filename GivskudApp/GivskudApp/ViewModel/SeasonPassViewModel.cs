@@ -4,6 +4,9 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 using Xamarin.Forms;
+
+using GivskudApp.Helpers;
+using GivskudApp.Views;
 using GivskudApp.Models;
 using GivskudApp.Services;
 
@@ -27,8 +30,8 @@ namespace GivskudApp.ViewModel
         public ICommand RemovePassCommand { get; private set; }
         public ICommand FetchPassCommand { get; private set; }
 
-        public SeasonPassViewModel() {
-            
+        public SeasonPassViewModel(INavigation Nav) {
+
             Task.Run(() => {
                 Service.Get();
                 IsBusy = false;
@@ -38,11 +41,11 @@ namespace GivskudApp.ViewModel
             RemovePassCommand = new Command(() => {
                 Task.Run(() => {
                     Service.Remove();
-                    Refresh();    
+                    Refresh();
                 });
             });
             FetchPassCommand = new Command(() => {
-                Task.Run(() => {
+                Task.Run(async () => {
 
                     IsBusy = true;
                     Refresh();

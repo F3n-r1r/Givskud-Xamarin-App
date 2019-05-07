@@ -19,7 +19,7 @@ namespace GivskudApp.Views
 		{
 
 			InitializeComponent ();
-            BindingContext = new SeasonPassViewModel();
+            BindingContext = new SeasonPassViewModel(Navigation);
 
 		}
     }
