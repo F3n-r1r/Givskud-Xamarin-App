@@ -21,8 +21,8 @@ namespace GivskudApp.Views
 
         private AnimalViewModel Binding { get; set; }
 
-		public AnimalsPage ()
-		{
+	public AnimalsPage ()
+	{
          
             Binding = new AnimalViewModel();
 
