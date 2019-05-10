@@ -23,7 +23,7 @@
 
                     <Button Text="Animal information" ClassId="AnimalInfoBtn" Clicked="BtnClicked"  />
                     <Button Text="Show on map" Margin="0,15,0,0" ClassId="AnimalMapBtn" Clicked="BtnClicked" />
-                    <Button Text="Quiz" Margin="0,15,0,0" ClassId="AnimalQuizBtn" Clicked="BtnClicked" x:Name="BtnGoToQuiz" />
+                    <Button Text="Quiz" IsEnabled="{Binding HasQuiz}" Margin="0,15,0,0" ClassId="AnimalQuizBtn" Clicked="BtnClicked" x:Name="BtnGoToQuiz" />
                 </StackLayout>
             </StackLayout>
             
