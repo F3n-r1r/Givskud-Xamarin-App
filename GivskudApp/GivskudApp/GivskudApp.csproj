@@ -7,6 +7,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>pdbonly</DebugType>
     <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,7 +25,7 @@
     <EmbeddedResource Update="Views\AnimalDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AnimalGuidePage.xaml">
+    <EmbeddedResource Update="Views\GuideAnimalDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\AnimalsPage.xaml">
@@ -33,16 +34,13 @@
     <EmbeddedResource Update="Views\ContactPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\DemoView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\GamePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\GuidePage.xaml">
+    <EmbeddedResource Update="Views\GuideIntroductionPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\GuideSavannaPage.xaml">
+    <EmbeddedResource Update="Views\GuideAnimalSelectionPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\GuideSavannaSelectionPage.xaml">
@@ -85,6 +83,17 @@
 
   <ItemGroup>
     <Folder Include="Properties\" />
-    <Folder Include="Resources\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\GuideAnimalDetailsPage.xaml.cs">
+      <DependentUpon>GuideAnimalDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\GuideIntroductionPage.xaml.cs">
+      <DependentUpon>GuideIntroductionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\GuideAnimalSelectionPage.xaml.cs">
+      <DependentUpon>GuideAnimalSelectionPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

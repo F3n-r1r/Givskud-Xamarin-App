@@ -50,5 +50,10 @@ namespace GivskudApp
             Detail = new NavigationPage((Page)Activator.CreateInstance(page));
             IsPresented = false;
         }
+
+        public void InvokeNavigationChange()
+        {
+            System.Diagnostics.Debug.WriteLine("Invokation on MainPage instance");
+        }
     }
 }
