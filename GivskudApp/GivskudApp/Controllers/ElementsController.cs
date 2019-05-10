@@ -55,112 +55,51 @@ namespace GivskudApp.Controllers
         {
             return 80;
         }
-
-        public static void RenderAnnaOverlay(AbsoluteLayout TopLevel, string Msg = null)
-        {
-            // Inner Wrapper
-            AbsoluteLayout InnerWrappingElement = new AbsoluteLayout
-            {
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
-            };
-
-            // Bubble
-            if (Msg != null)
-            {
-                Frame SpeachBubble = CreateAnnaSpeachBubble(Msg);
-                InnerWrappingElement.Children.Add(SpeachBubble);
-            }
-
-            // Anna
-            Image AnnaImage = new Image
-            {
-                Source = "Graphic_Anna.png",
-                VerticalOptions = LayoutOptions.End
-            };
-
-            Frame AnnaWrapper = new Frame
-            {
-                BackgroundColor = Color.Transparent,
-                Margin = new Thickness(0),
-                Padding = new Thickness(0),
-                IsClippedToBounds = true
-            };
-
-            AbsoluteLayout.SetLayoutFlags(AnnaWrapper, AbsoluteLayoutFlags.All);
-            AbsoluteLayout.SetLayoutBounds(AnnaWrapper, new Rectangle(0, 1, 0.6, 1));
-
-            AnnaWrapper.Content = AnnaImage;
-            InnerWrappingElement.Children.Add(AnnaWrapper);
-
-            // Outer Wrapper
-            StackLayout GlobalWrappingElement = new StackLayout
-            {
-                Padding = new Thickness(0),
-                IsClippedToBounds = true
-            };
-            AbsoluteLayout.SetLayoutFlags(GlobalWrappingElement, AbsoluteLayoutFlags.All);
-            AbsoluteLayout.SetLayoutBounds(GlobalWrappingElement, new Rectangle(0, 0, 1, 1));
-
-            GlobalWrappingElement.Children.Add(InnerWrappingElement);
-
-            // Render on the pagelo
-            TopLevel.Children.Insert(0,GlobalWrappingElement);
-        }
-        public static Frame CreateAnnaSpeachBubble(string Msg)
+        public static void RenderNotification(AbsoluteLayout TopLevel, string Message, string EventProperty, string BindingProperty, bool IsWarning)
         {
 
-            Label MessageElement = new Label
+            string TapToCloseMsg = "(Tap to close)";
+
+            StackLayout Wrapper = new StackLayout
             {
-                MaxLines = 5,
-                LineBreakMode = LineBreakMode.WordWrap,
-                Text = Msg,
-                FontSize = 12,
-                TextColor = Color.Black,
-                ClassId = "backgroundOverlayBubbleLabel"
-            };
-            Frame MessageBubble = new Frame
-            {
-                CornerRadius = 14,
                 IsClippedToBounds = true,
-                Padding = new Thickness(10,12),
-                Margin = new Thickness(0),
-                BackgroundColor = Color.White
+                Padding = new Thickness(7)
             };
-            MessageBubble.Content = MessageElement;
+            AbsoluteLayout.SetLayoutBounds(Wrapper, new Rectangle(0, 0, 1, .15));
+            AbsoluteLayout.SetLayoutFlags(Wrapper, AbsoluteLayoutFlags.All);
 
-            StackLayout InnerWrapper = new StackLayout
+            Wrapper.SetBinding(StackLayout.IsVisibleProperty, BindingProperty);
+
+            Frame NotificationFrame = new Frame
             {
-                Spacing = 0,
-                VerticalOptions = LayoutOptions.Start,
-                Margin = new Thickness(0),
-                Padding = new Thickness(0, 0, 4, 0),
-                IsClippedToBounds = true
+                BackgroundColor = IsWarning ? Color.FromRgb(255, 91, 101) : Color.FromRgb(82, 61, 56),
+                IsClippedToBounds = true,
+                CornerRadius = 6
             };
-            InnerWrapper.Children.Add(MessageBubble);
+            
+            TapGestureRecognizer ClickedRecognizer = new TapGestureRecognizer();
 
-            Frame GlobalWrapper = new Frame
+            ClickedRecognizer.SetBinding(TapGestureRecognizer.CommandProperty, "VMCloseOverlayCommand");
+            ClickedRecognizer.CommandParameter = EventProperty;
+            
+            NotificationFrame.GestureRecognizers.Add(ClickedRecognizer);
+
+            Label NotificationMessage = new Label
             {
-                CornerRadius = 0,
-                BackgroundColor = Color.Transparent,
-                Margin = new Thickness(0),
-                Padding = new Thickness(0),
-                IsClippedToBounds = true
+                VerticalOptions = LayoutOptions.Center,
+                FontSize = 11,
+                FontAttributes = FontAttributes.Bold,
+                TextColor = Color.White,
+                Text = Message + " " + TapToCloseMsg
             };
-            AbsoluteLayout.SetLayoutFlags(GlobalWrapper, AbsoluteLayoutFlags.All);
-            AbsoluteLayout.SetLayoutBounds(GlobalWrapper, new Rectangle(1,0.05,0.55,0.7));
 
-            GlobalWrapper.Content = InnerWrapper;
+            NotificationFrame.Content = NotificationMessage;
 
-            return GlobalWrapper;
-        }
-        public static void ChangeAnnaOverlayContent(string msg)
-        {
-            Label Output = Application.Current.FindByName<Label>("backgroundOverlayBubbleLabel");
-            if(Output != null)
-            {
-                Output.Text = msg;
-            };
+            Wrapper.Children.Add(NotificationFrame);
+
+            // Apply to parent
+            TopLevel.Children.Add(Wrapper);
+
         }
     }
 }
