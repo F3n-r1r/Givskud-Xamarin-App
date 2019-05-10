@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using GivskudApp.Resources;
 using GivskudApp.Controllers;
 
 using Xamarin.Forms;
@@ -21,15 +22,20 @@ namespace GivskudApp.Views
 
         private AnimalViewModel Binding { get; set; }
 
-	public AnimalsPage ()
-	{
+	    public AnimalsPage ()
+	    {
          
-            Binding = new AnimalViewModel();
+            Binding = new AnimalViewModel(ConfigurationManager.RemoteResources.Local.Animals, ConfigurationManager.RemoteResources.Remote.Animals);
 
             InitializeComponent();
             FlowListView.Init();
 
             BindingContext = Binding;
+
+            ElementsController.RenderNotification(ApplicationLayoutTopLevel, "There was a problem with your internet connection. Please connect your device to the internet", "lost-connection-notification", "_VMIsDeviceOfflineNotification", true);
+            ElementsController.RenderNotification(ApplicationLayoutTopLevel, "The content used is outdated. Please connect your device to the internet to see the newest content", "cached-content-notification", "_VMIsContentOutdatedNotification", false);
+
+            Binding.InitializeService();
 
         }
 
@@ -39,4 +45,5 @@ namespace GivskudApp.Views
             await Navigation.PushAsync(new AnimalDetailsPage(thisAnimal));
         }
     }
+
 }

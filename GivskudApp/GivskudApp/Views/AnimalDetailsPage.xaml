@@ -13,18 +13,18 @@
         <Style TargetType="Label" Class="InfotableValue">
             <Setter Property="VerticalTextAlignment" Value="Center" />
             <Setter Property="TextColor" Value="Black" />
-            <Setter Property="FontSize" Value="10" />
+            <Setter Property="FontSize" Value="12" />
         </Style>
         <Style TargetType="Label" Class="InfotableLabelText">
             <Setter Property="VerticalTextAlignment" Value="Center" />
             <Setter Property="HorizontalTextAlignment" Value="Start" />
             <Setter Property="TextColor" Value="Black" />
-            <Setter Property="FontSize" Value="10" />
+            <Setter Property="FontSize" Value="12" />
             <Setter Property="HeightRequest" Value="17" />
         </Style>
         <Style TargetType="Image" Class="InfotableLabelImage">
-            <Setter Property="WidthRequest" Value="30" />
-            <Setter Property="HeightRequest" Value="30" />
+            <Setter Property="WidthRequest" Value="50" />
+            <Setter Property="HeightRequest" Value="50" />
             <Setter Property="Aspect" Value="AspectFit" />
         </Style>
     </ContentPage.Resources>
@@ -46,7 +46,14 @@
                             </Grid.RowDefinitions>
 
                             <!-- Intro image -->
-                            <Image x:Name="AnimalHeader" Source="{Binding Image}" Grid.Row="0" HeightRequest="130" Aspect="AspectFill" />
+                            <Image x:Name="AnimalHeader" Grid.Row="0" HeightRequest="130" Aspect="AspectFill">
+                                <Image.Source>
+                                    <UriImageSource Uri="{Binding Image}"
+                                                    CacheValidity="14"
+                                                    CachingEnabled="True" />
+                                </Image.Source>
+                            </Image>
+                            
                             <!-- / Intro image -->
 
                             <!-- Animal title -->
