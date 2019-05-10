@@ -8,6 +8,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Diagnostics;
 
+using Xamarin;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -36,46 +37,56 @@ namespace GivskudApp.ResourceControllers {
 
                 string Result = null;
 
-                try {
+                if (IsConnected()) { 
 
-                    HttpResponseMessage HttpRequest = await Client.GetAsync(ApiBaseUri + Route).ConfigureAwait(false);
+                    try {
+
+                        HttpResponseMessage HttpRequest = await Client.GetAsync(ApiBaseUri + Route).ConfigureAwait(false);
                     
-                    if(HttpRequest.StatusCode == HttpStatusCode.OK) {
+                        if(HttpRequest.StatusCode == HttpStatusCode.OK) {
                         
-                        if(HttpRequest.Content != null) {
-                            HttpContentHeaders ContentHeaders = HttpRequest.Content.Headers;
-                            if(ContentHeaders.ContentType.MediaType == "application/json") {
+                            if(HttpRequest.Content != null) {
+                                HttpContentHeaders ContentHeaders = HttpRequest.Content.Headers;
+                                if(ContentHeaders.ContentType.MediaType == "application/json") {
 
-                                Result = await HttpRequest.Content.ReadAsStringAsync();
-                                Console.WriteLine("Test success");
+                                    Result = await HttpRequest.Content.ReadAsStringAsync();
+                                    Console.WriteLine("Test success");
 
+                                } else {
+                                    Console.WriteLine("Test failure: Response body is expected to be in 'application/json' format.");
+                                }
                             } else {
-                                Console.WriteLine("Test failure: Response body is expected to be in 'application/json' format.");
+                                Console.WriteLine("Test failure: Request content is null");
                             }
+
                         } else {
-                            Console.WriteLine("Test failure: Request content is null");
+                            switch(HttpRequest.StatusCode) {
+                                case HttpStatusCode.Unauthorized:
+                                    Console.WriteLine("Test failure: Unauthorized");
+                                    break;
+                                case HttpStatusCode.NotFound:
+                                    Console.WriteLine("Test failure: Resource not found");
+                                    break;
+                                default:
+                                    Console.WriteLine("Test failure: Status code");
+                                    break;
+                            }
                         }
 
-                    } else {
-                        switch(HttpRequest.StatusCode) {
-                            case HttpStatusCode.Unauthorized:
-                                Console.WriteLine("Test failure: Unauthorized");
-                                break;
-                            case HttpStatusCode.NotFound:
-                                Console.WriteLine("Test failure: Resource not found");
-                                break;
-                            default:
-                                Console.WriteLine("Test failure: Status code");
-                                break;
-                        }
+                    } catch (Exception e) {
+                        Console.WriteLine("Unhandled exception: {0}", e.Message);
                     }
 
-                } catch (Exception e) {
-                    Console.WriteLine("Unhandled exception: {0}", e.Message);
+                    return Result;
+
+                } else
+                {
+                    
+                    Debug.WriteLine("There was a problem with your internet connection");
+                    
+                    return null;
+
                 }
-
-                return Result;
-
             }
 
         }
