@@ -13,14 +13,36 @@
      
             <!-- Start: Actual Page Content -->
             <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel">
-                <StackLayout Padding="0,0,0,70">
-                    <ListView x:Name="NewsList" IsPullToRefreshEnabled="True" ItemTapped="ItemClicked" VerticalOptions="FillAndExpand" HasUnevenRows="True" SeparatorVisibility="None">
+
+                <!-- START WORKING PAGE -->
+                <StackLayout x:Name="WorkingSplashscreen" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsBusy}">
+                    <ActivityIndicator IsRunning="True" Scale="0.5" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" Color="{DynamicResource NavigationPrimary}" />
+                </StackLayout>
+                <!-- END WORKING PAGE -->
+
+                <StackLayout Padding="10,10,10,70">
+                    <ListView
+                        x:Name="NewsList"
+                        IsPullToRefreshEnabled="True"
+                        ItemTapped="ItemClicked"
+                        VerticalOptions="FillAndExpand"
+                        HasUnevenRows="True"
+                        SeparatorVisibility="None"
+                        ItemsSource="{Binding Data}"
+                        IsVisible="{Binding IsContentLoaded}"
+                        >
                         <ListView.ItemTemplate VerticalOptions="FillAndExpand">
                             <DataTemplate>
                                 <ViewCell>
                                     <Frame CornerRadius="1" Padding="0" Margin="0,0,0,5" BackgroundColor="White" HorizontalOptions="FillAndExpand">
                                         <StackLayout Orientation="Horizontal" Padding="5">
-                                            <Image Aspect="AspectFill" HeightRequest="70" WidthRequest="100" Source="{Binding Image}" />
+                                            <Image Aspect="AspectFill" HeightRequest="70" WidthRequest="100">
+                                                <Image.Source>
+                                                    <UriImageSource Uri="{Binding Image}"
+                                                                    CacheValidity="14"
+                                                                    CachingEnabled="True" />
+                                                </Image.Source>
+                                            </Image>
                                             <StackLayout Padding="5,0,0,0">
                                                 <Label MaxLines="3" Text="{Binding Title}" FontSize="Small" FontAttributes="Bold" VerticalOptions="Start" TextColor="Black"/>
                                                 <Label Text="{Binding PublishedOn, StringFormat='{}{0:MM/dd/yyyy}'}" FontSize="Micro" TextColor="#B0B0B0" VerticalOptions="Start"/>

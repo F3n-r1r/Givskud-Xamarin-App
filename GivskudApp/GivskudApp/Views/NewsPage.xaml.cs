@@ -8,6 +8,8 @@ using GivskudApp.Models;
 using GivskudApp.ViewModel;
 using GivskudApp.Controllers;
 
+using GivskudApp.Resources;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,35 +19,33 @@ namespace GivskudApp.Views
 	public partial class NewsPage : ContentPage
 	{
 
+        private NewsViewModel Binding { get; set; }
+
         public NewsPage()
         {
-            DependencyService.Register<NewsViewModel>();
-            var vm = DependencyService.Get<NewsViewModel>();
+
+            Binding = new NewsViewModel(ConfigurationManager.RemoteResources.Local.News, ConfigurationManager.RemoteResources.Remote.News);
 
             InitializeComponent();
+            BindingContext = Binding;
+            
+            ElementsController.RenderScannerIcon(ApplicationLayoutTopLevel, Navigation);
+            ElementsController.RenderNotification(ApplicationLayoutTopLevel, "There was a problem with your internet connection. Please connect your device to the internet", "lost-connection-notification", "_VMIsDeviceOfflineNotification", true);
+            ElementsController.RenderNotification(ApplicationLayoutTopLevel, "The content used is outdated. Please connect your device to the internet to see the newest content", "cached-content-notification", "_VMIsContentOutdatedNotification", false);
 
-            Device.BeginInvokeOnMainThread(() => {
-                ElementsController.RenderScannerIcon(ApplicationLayoutTopLevel, Navigation);
-                NewsList.ItemsSource = vm.News;
-            });
+            Binding.InitializeService();
 
             NewsList.RefreshCommand = new Command(() =>
             {
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    vm.Refresh();
-                    NewsList.ItemsSource = vm.News;
-                    NewsList.EndRefresh();
-                });
+                Binding.InitializeService();
+                NewsList.EndRefresh();
             });
-            
+
         }
         async void ItemClicked(object sender, ItemTappedEventArgs e)
         {
-            NewsModel thisNews = (NewsModel)e.Item;
-            var vm = DependencyService.Get<NewsViewModel>();
-            vm.SelectedNews = thisNews;
-            await Navigation.PushAsync(new NewsDetailsPage());
+            NewsModel SelectedItem = e.Item as NewsModel;
+            await Navigation.PushAsync(new NewsDetailsPage(SelectedItem));
         }
     }
 }

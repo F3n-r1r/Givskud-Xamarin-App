@@ -18,14 +18,13 @@ namespace GivskudApp.Views
 	{
         private readonly NewsViewModel vm;
 
-        public NewsDetailsPage ()
+        public NewsDetailsPage (NewsModel Item)
 		{
 			InitializeComponent ();
+
             ElementsController.RenderScannerIcon(ApplicationLayoutTopLevel, Navigation);
 
-            DependencyService.Register<NewsViewModel>();
-            vm = DependencyService.Get<NewsViewModel>();
-            BindingContext = vm.SelectedNews;
+            BindingContext = Item;
         }
 	}
 }
