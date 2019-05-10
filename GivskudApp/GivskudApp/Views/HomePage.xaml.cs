@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using GivskudApp.ViewModel;
 using GivskudApp.Controllers;
 
 using Xamarin.Forms;
