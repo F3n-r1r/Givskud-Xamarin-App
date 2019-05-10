@@ -27,7 +27,7 @@
                     SeparatorVisibility="None"
                     HasUnevenRows="True"
                     FlowItemTapped="ItemClicked"
-                    IsVisible="{Binding IsLoaded}"
+                    IsVisible="{Binding IsContentLoaded}"
                     FlowItemsSource="{Binding Data}">
                     <controls:FlowListView.FlowColumnTemplate>
                         <DataTemplate>
@@ -35,7 +35,13 @@
 
                                 <AbsoluteLayout HorizontalOptions="Center" HeightRequest="55">
                                     <Frame BackgroundColor="Transparent" Padding="0" Margin="0" IsClippedToBounds="True" CornerRadius="6" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1" AbsoluteLayout.LayoutFlags="PositionProportional" WidthRequest="55" HeightRequest="55">
-                                        <Image Source="{Binding Image}" Aspect="AspectFill" WidthRequest="65" HeightRequest="65" />
+                                        <Image Aspect="AspectFill" WidthRequest="65" HeightRequest="65">
+                                            <Image.Source>
+                                                <UriImageSource Uri="{Binding Image}"
+                                                                CacheValidity="14"
+                                                                CachingEnabled="True" />
+                                            </Image.Source>
+                                        </Image>
                                     </Frame>
                                     <Image AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1" AbsoluteLayout.LayoutFlags="PositionProportional" IsVisible="{Binding IsLockedByDefault}" Source="Icon_Uncategorized_Lock.png" />
                                 </AbsoluteLayout>

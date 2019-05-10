@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using DLToolkit.Forms.Controls;
 
 using GivskudApp.Models;
+using GivskudApp.Resources;
 using GivskudApp.Controllers;
 using GivskudApp.ViewModel;
 
@@ -19,20 +20,26 @@ namespace GivskudApp.Views
 	public partial class QuizSelectionPage : ContentPage
 	{
 
-        private QuizSelectionViewModel vm { get; set; }
-
+        private QuizViewModel Binding { get; set; }
+        
 		public QuizSelectionPage ()
 		{
 
-            vm = new QuizSelectionViewModel();
+            Binding = new QuizViewModel(ConfigurationManager.RemoteResources.Local.Quizes, ConfigurationManager.RemoteResources.Remote.Quizes);
 
-			InitializeComponent ();
-            GuiInstanceController.AnnaGuiInstance AnnaOverlay = new GuiInstanceController.AnnaGuiInstance(ApplicationLayoutTopLevel);
-            ElementsController.RenderScannerIcon(ApplicationLayoutTopLevel, Navigation);
-
+            InitializeComponent();
             FlowListView.Init();
 
-            BindingContext = vm;
+            BindingContext = Binding;
+
+            GuiInstanceController.AnnaGuiInstance AnnaOverlay = new GuiInstanceController.AnnaGuiInstance(ApplicationLayoutTopLevel);
+
+            ElementsController.RenderScannerIcon(ApplicationLayoutTopLevel, Navigation);
+            ElementsController.RenderNotification(ApplicationLayoutTopLevel, "There was a problem with your internet connection. Please connect your device to the internet", "lost-connection-notification", "_VMIsDeviceOfflineNotification", true);
+            ElementsController.RenderNotification(ApplicationLayoutTopLevel, "The content used is outdated. Please connect your device to the internet to see the newest content", "cached-content-notification", "_VMIsContentOutdatedNotification", false);
+
+            Binding.InitializeService();
+
         }
         public async void ItemClicked(object sender, ItemTappedEventArgs e)
         {
