@@ -6,25 +6,28 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
+using Newtonsoft.Json;
+
 using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace GivskudApp.ViewModel
 {
-    class MapViewModel : INotifyPropertyChanged
+    class MapViewModel
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged([CallerMemberName] string name = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
 
         public ICommand MapControlCommand { get; private set; }
 
         public List<bool> MapOverlayState { get; private set; }
 
         private Dictionary<string, MapOverlay> StatePresets { get; set; }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        void OnPropertyChanged([CallerMemberName] string name = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
 
         public MapViewModel()
         {
@@ -75,11 +78,12 @@ namespace GivskudApp.ViewModel
                 });
             });
         }
+
         private void SetOverlays()
         {
             StatePresets = new Dictionary<string, MapOverlay>();
             Dictionary<string, List<bool>> Presets = new Dictionary<string, List<bool>> {
-                { "Animals", new List<bool>          { false,    false,  false,  false,  false,  false,  false,  false,  true   } },
+                { "Animals", new List<bool>         { false,    false,  false,  false,  false,  false,  false,  false,  true    } },
                 { "Defibrilator", new List<bool>    { false,    false,  false,  false,  false,  false,  false,  false,  false   } },
                 { "Information", new List<bool>     { false,    false,  false,  false,  true,   true,   false,  false,  false   } },
                 { "Parking", new List<bool>         { true,     false,  false,  false,  true,   false,  false,  false,  false   } },

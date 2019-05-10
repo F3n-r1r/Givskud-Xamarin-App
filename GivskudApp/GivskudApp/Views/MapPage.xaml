@@ -35,7 +35,6 @@
                         <Image Opacity="0.8" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Source="Graphic_Map.jpg" Aspect="AspectFill" />
                         
                         <!-- Map pinpoints -->
-                        <!--
                         <Image StyleClass="MapPinpoint" IsVisible="{Binding MapOverlayState[0]}" AbsoluteLayout.LayoutBounds=".40,.063" />
                         <Image StyleClass="MapPinpoint" IsVisible="{Binding MapOverlayState[1]}" AbsoluteLayout.LayoutBounds=".57,.35" />
                         <Image StyleClass="MapPinpoint" IsVisible="{Binding MapOverlayState[2]}" AbsoluteLayout.LayoutBounds=".69,.52" />
@@ -44,7 +43,7 @@
                         <Image StyleClass="MapPinpoint" IsVisible="{Binding MapOverlayState[5]}" AbsoluteLayout.LayoutBounds=".55,.86" />
                         <Image StyleClass="MapPinpoint" IsVisible="{Binding MapOverlayState[6]}" AbsoluteLayout.LayoutBounds=".225,.73" />
                         <Image StyleClass="MapPinpoint" IsVisible="{Binding MapOverlayState[7]}" AbsoluteLayout.LayoutBounds=".052,.63" />
-                        -->
+
                         <!-- Animals overlay -->
                         <AbsoluteLayout IsVisible="{Binding MapOverlayState[8]}" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
                             <AbsoluteLayout.Resources>
