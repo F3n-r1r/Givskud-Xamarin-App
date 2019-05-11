@@ -29,8 +29,8 @@
                         <Setter Property="HorizontalTextAlignment" Value="Center" />
                     </Style>
                 </StackLayout.Resources>
-                <Label Text="Find koden på en infostander" />
-                <Label Text="Ved at scanne koden kommer du til dit nuværende punkt i tourguiden" />
+                <Label Text="Find the code on an info stand" />
+                <Label Text="By scanning the code you get to your current point in the tour guide" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

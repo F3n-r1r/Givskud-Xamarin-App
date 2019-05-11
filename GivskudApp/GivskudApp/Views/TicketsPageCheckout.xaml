@@ -56,7 +56,7 @@
                     <Frame StyleClass="Stepper" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" HeightRequest="40" WidthRequest="40" CornerRadius="20" HorizontalOptions="Start" VerticalOptions="Start" Margin="0,30" Padding="0" BackgroundColor="#de1f28">
                         <Label Text="2" StyleClass="StepperLabel" />
                     </Frame>
-                    <Label  StyleClass="StepHeadline" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Text="Betal for billetter" Style="{StaticResource LabelHeadline}" />
+                    <Label  StyleClass="StepHeadline" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Text="Payment" Style="{StaticResource LabelHeadline}" />
                     <!-- END PURCHASE STATUS -->
 
                     <Frame BackgroundColor="White" CornerRadius="6" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Padding="16,8">
@@ -78,10 +78,10 @@
                                     </Style>
                                 </Grid.Resources>
 
-                                <Label StyleClass="TableRow" Text="Voksenbillet 2019" Grid.Row="0" Grid.Column="0" />
+                                <Label StyleClass="TableRow" Text="Adults 2019" Grid.Row="0" Grid.Column="0" />
                                 <Label StyleClass="TableRow" Text="3x DKK150" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="End" />
 
-                                <Label StyleClass="TableRow" Text="Bornebillet (3-11 ar) 2019" Grid.Row="1" Grid.Column="0" />
+                                <Label StyleClass="TableRow" Text="Kids (3-11 years) 2019" Grid.Row="1" Grid.Column="0" />
                                 <Label StyleClass="TableRow" Text="5x DKK50" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="End" />
 
                             </Grid>

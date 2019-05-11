@@ -56,7 +56,7 @@
                         <Frame StyleClass="Stepper" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" HeightRequest="40" WidthRequest="40" CornerRadius="20" HorizontalOptions="Start" VerticalOptions="Start" Margin="0,30" Padding="0" BackgroundColor="#de1f28">
                             <Label Text="1" StyleClass="StepperLabel" />
                         </Frame>
-                        <Label  StyleClass="StepHeadline" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Text="Vælg antal billeter" Style="{StaticResource LabelHeadline}" />
+                        <Label  StyleClass="StepHeadline" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Text="Buy tickets" Style="{StaticResource LabelHeadline}" />
                         <!-- END PURCHASE STATUS -->
 
                         <!-- START TABLE -->
@@ -96,17 +96,17 @@
                             </Grid.Resources>
 
                             <!-- START OPTIONS SELECT -->
-                            <Label Text="Voksenbillet 2019" StyleClass="EntryLabel" Grid.Row="0" Grid.Column="0" />
+                            <Label Text="Adults 2019" StyleClass="EntryLabel" Grid.Row="0" Grid.Column="0" />
                             <Frame StyleClass="EntryWrapper" Grid.Row="0" Grid.Column="1">
                                 <Entry Text="0" StyleClass="EntryInput" />
                             </Frame>
 
-                            <Label Text="Børnebillet (3-11 år) 2019" StyleClass="EntryLabel" Grid.Row="1" Grid.Column="0" />
+                            <Label Text="Children (3-11 years) 2019" StyleClass="EntryLabel" Grid.Row="1" Grid.Column="0" />
                             <Frame StyleClass="EntryWrapper" Grid.Row="1" Grid.Column="1">
                                 <Entry Text="0" StyleClass="EntryInput" />
                             </Frame>
 
-                            <Label Text="Børnebillet (0-2 år)" StyleClass="EntryLabel" Grid.Row="2" Grid.Column="0" />
+                            <Label Text="Newborns (0-2 years)" StyleClass="EntryLabel" Grid.Row="2" Grid.Column="0" />
                             <Frame StyleClass="EntryWrapper" Grid.Row="2" Grid.Column="1">
                                 <Entry Text="0" StyleClass="EntryInput" />
                             </Frame>
@@ -136,7 +136,7 @@
                         <!-- END TABLE -->
 
                         <!-- START CONTROLS -->
-                        <Button Text="Forsæt" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" />
+                        <Button Text="Checkout" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" />
                         <!-- END CONTROLS -->
 
                     </Grid>

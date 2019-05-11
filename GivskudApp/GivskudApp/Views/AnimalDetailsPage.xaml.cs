@@ -26,6 +26,18 @@ namespace GivskudApp.Views
 
             BindingContext = SelectedAnimal;
 
+            if(SelectedAnimal.Content.Count > 0)
+            {
+                foreach(string Paragraph in SelectedAnimal.Content)
+                {
+                    InfopageContentWrapper.Children.Add(new Label
+                    {
+                        Text = Paragraph,
+                        StyleClass = new List<string> { "ViewParagraph" }
+                    });
+                }
+            }
+
         }
     }
 }

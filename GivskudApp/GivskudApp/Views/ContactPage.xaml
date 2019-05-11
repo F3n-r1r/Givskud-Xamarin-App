@@ -16,8 +16,8 @@
                 <ScrollView>
                     <StackLayout Padding="0,0,0,70">
 
-                        <Label Text="Kontakt Os" TextColor="#000000" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center"/>
-                        <Label Text="Vi står til rådighed hvis du har nogle spørgsmål" TextColor="#000000" FontSize="Small" HorizontalOptions="Center"/>
+                        <Label Text="Contact us" TextColor="#000000" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        <Label Text="We are available if you have any questions" TextColor="#000000" FontSize="Small" HorizontalOptions="Center"/>
 
                         <Frame CornerRadius="10"  
                            Padding="10"
@@ -25,42 +25,42 @@
                            BackgroundColor="#FFFFFF">
 
                             <StackLayout>
-                                <Label Text="Telefon Åbningstider" TextColor="#000000"/>
-                                <Label Text="Man-Tors: kl. 8:30 - 15:30" Margin="40,5,0,0"/>
-                                <Label Text="Fre: kl. 8:30 - 15:00" Margin="40,0,0,0"/>
-                                <Label Text="*Telefonerne er lukket fra den 22. december til den 1. januar" FontSize="Micro" Margin="0,10,0,0"/>
+                                <Label Text="Phone hours" TextColor="#000000"/>
+                                <Label Text="Mon - Thu: kl. 8:30 - 15:30" Margin="40,5,0,0"/>
+                                <Label Text="Fri: kl. 8:30 - 15:00" Margin="40,0,0,0"/>
+                                <Label Text="*The phones are unavailable from December 22 to January 1" FontSize="Micro" Margin="0,10,0,0"/>
                             </StackLayout>
                         </Frame>
 
-                        <Label Text="Omstilling, information og billetsalg" TextColor="#000000" Margin="0,10,0,0"/>
+                        <Label Text="Information and tickets" TextColor="#000000" Margin="0,10,0,0"/>
                         <StackLayout Orientation="Horizontal" Padding="40,0,0,0" Margin="0,5,0,0">
                             <Image Source="Icon_Uncategorized_Phone.png" HeightRequest="25" Margin="0,0,10,0"/>
                             <Label Text="75 73 02 22" VerticalTextAlignment="Center" VerticalOptions="Center"/>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" Padding="40,0,0,0">
                             <Image Source="Icon_Uncategorized_Mail.png" HeightRequest="25" Margin="0,0,10,0"/>
-                            <Label Text="Random@mail.com" VerticalTextAlignment="Center" VerticalOptions="Center"/>
+                            <Label Text="tickets@givskud.dk" VerticalTextAlignment="Center" VerticalOptions="Center"/>
                         </StackLayout>
                         <BoxView HeightRequest="1" BackgroundColor="#000000" Margin="0,10,0,0"/>
 
-                        <Label Text="Gruppearrangementer, undervisning og overnatning" TextColor="#000000" Margin="0,10,0,0"/>
+                        <Label Text="Group events, schools and accommodation" TextColor="#000000" Margin="0,10,0,0"/>
                         <StackLayout Orientation="Horizontal" Padding="40,0,0,0" Margin="0,5,0,0">
                             <Image Source="Icon_Uncategorized_Phone.png" HeightRequest="25" Margin="0,0,10,0"/>
                             <Label Text="76 71 02 57" VerticalTextAlignment="Center" VerticalOptions="Center"/>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" Padding="40,0,0,0">
                             <Image Source="Icon_Uncategorized_Mail.png" HeightRequest="25" Margin="0,0,10,0"/>
-                            <Label Text="Random@mail.com" VerticalTextAlignment="Center" VerticalOptions="Center" />
+                            <Label Text="info@givskud.dk" VerticalTextAlignment="Center" VerticalOptions="Center" />
                         </StackLayout>
                         <BoxView HeightRequest="1" BackgroundColor="#000000" Margin="0,10,0,0"/>
 
 
                         <Label 
-                            Text="Hvis du hellere vil snakke med os ansigt til ansigt, kan du komme til informationen som du kan finde på kortet."
+                            Text="If you would rather talk to us face to face, you can get to the information that you can find on the map."
                             HorizontalOptions="CenterAndExpand"
                             HorizontalTextAlignment="Center"
                             Margin="0,10,0,10"/>
-                        <Button Text="Gå til kort" />
+                        <Button Text="See map" />
 
                     </StackLayout>
                 </ScrollView>

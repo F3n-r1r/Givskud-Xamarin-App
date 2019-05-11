@@ -8,19 +8,19 @@
         <Style TargetType="Label" Class="ViewParagraph">
             <Setter Property="Margin" Value="0,8,0,0" />
             <Setter Property="TextColor" Value="Black" />
-            <Setter Property="FontSize" Value="10" />
+            <Setter Property="FontSize" Value="14" />
         </Style>
         <Style TargetType="Label" Class="InfotableValue">
             <Setter Property="VerticalTextAlignment" Value="Center" />
             <Setter Property="TextColor" Value="Black" />
-            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontSize" Value="17" />
         </Style>
         <Style TargetType="Label" Class="InfotableLabelText">
             <Setter Property="VerticalTextAlignment" Value="Center" />
             <Setter Property="HorizontalTextAlignment" Value="Start" />
             <Setter Property="TextColor" Value="Black" />
-            <Setter Property="FontSize" Value="12" />
-            <Setter Property="HeightRequest" Value="17" />
+            <Setter Property="FontSize" Value="17" />
+            <Setter Property="HeightRequest" Value="25" />
         </Style>
         <Style TargetType="Image" Class="InfotableLabelImage">
             <Setter Property="WidthRequest" Value="50" />
@@ -36,36 +36,38 @@
             <!-- Start: Actual Page Content -->
             <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel" Style="{StaticResource GlobalContentStyle}">
                 <ScrollView>
-                    <StackLayout Padding="0,0,0,70">
+                    <StackLayout x:Name="InfopageContentWrapper" Padding="0,0,0,70">
                         <Grid x:Name="MainGrid">
+
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="160" />
+                                <RowDefinition Height="180" />
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
 
                             <!-- Intro image -->
-                            <Image x:Name="AnimalHeader" Grid.Row="0" HeightRequest="130" Aspect="AspectFill">
+                            <Image x:Name="AnimalHeader" Grid.Row="0" HeightRequest="180" Aspect="AspectFill">
                                 <Image.Source>
                                     <UriImageSource Uri="{Binding Image}"
                                                     CacheValidity="14"
                                                     CachingEnabled="True" />
                                 </Image.Source>
                             </Image>
-                            
+
                             <!-- / Intro image -->
 
                             <!-- Animal title -->
-                            <Label Text="{Binding Name}" Grid.Row="1" Margin="0,8" FontSize="18" TextColor="Black" HorizontalTextAlignment="Center" />
+                            <Label Text="{Binding Name}" Grid.Row="1" Margin="0,12" FontSize="25" TextColor="Black" HorizontalTextAlignment="Center" LineBreakMode="WordWrap" MaxLines="1" />
                             <!-- / Animal title -->
 
                             <!-- Infotable -->
                             <Grid
                                 x:Name="AnimalInfotable"
-                                Padding="8"
+                                Padding="10"
                                 Grid.Row="2"
                                 BackgroundColor="White">
+
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />
@@ -78,6 +80,7 @@
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
+
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="65" />
                                     <ColumnDefinition Width="*" />
@@ -115,19 +118,6 @@
                             </Grid>
                             <!-- / Infotable -->
 
-                            <!-- Paragraph content -->
-                            <ListView SeparatorVisibility="None" IsEnabled="False" ItemsSource="{Binding Content}" x:Name="AnimalParagraphs" Grid.Row="3">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <ViewCell>
-                                            <ViewCell.View>
-                                                <Label Text="{Binding}" StyleClass="ViewParagraph" />
-                                            </ViewCell.View>
-                                        </ViewCell>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                            <!-- / Paragraph content -->
                         </Grid>
                     </StackLayout>
                 </ScrollView>

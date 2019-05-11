@@ -24,8 +24,8 @@
                         </Style>
                     </StackLayout.Resources>
 
-                    <Button Text="Parkens Savanner" ClassId="GuideSavannaPageBtn" Clicked="Button_Clicked"/>
-                    <Button Text="Quizzer" Margin="0,15,0,0" ClassId="QuizPageBtn" Clicked="Button_Clicked"/>
+                    <Button Text="Park areas" ClassId="GuideSavannaPageBtn" Clicked="Button_Clicked"/>
+                    <Button Text="Quizzes" Margin="0,15,0,0" ClassId="QuizPageBtn" Clicked="Button_Clicked"/>
 
                 </StackLayout>
             </StackLayout>

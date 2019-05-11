@@ -24,13 +24,13 @@ namespace GivskudApp
             MenuList = new List<NavigationModel>
             {
                 // Adding menu items to menuList and you can define title ,page and icon
-                new NavigationModel() { Title = "Forside", Icon = "Icon_Navigation_Home.png", TargetType = typeof(HomePage) },
-                new NavigationModel() { Title = "Spil", Icon = "Icon_Navigation_Games.png", TargetType = typeof(GamePage) },
-                new NavigationModel() { Title = "Nyheder", Icon = "Icon_Navigation_News.png", TargetType = typeof(NewsPage) },
-                new NavigationModel() { Title = "Årskort", Icon = "Icon_Navigation_SeasonPass.png", TargetType = typeof(SeasonPassPage) },
-                new NavigationModel() { Title = "Dyr", Icon = "Icon_Navigation_Animals.png", TargetType = typeof(AnimalsPage) },
-                new NavigationModel() { Title = "Kontakt Os", Icon = "Icon_Navigation_Contact.png", TargetType = typeof(ContactPage) },
-                new NavigationModel() { Title = "Køb Billetter", Icon = "Icon_Navigation_Tickets.png", TargetType = typeof(TicketsPage) },
+                new NavigationModel() { Title = "Homepage", Icon = "Icon_Navigation_Home.png", TargetType = typeof(HomePage) },
+                new NavigationModel() { Title = "Games", Icon = "Icon_Navigation_Games.png", TargetType = typeof(GamePage) },
+                new NavigationModel() { Title = "News", Icon = "Icon_Navigation_News.png", TargetType = typeof(NewsPage) },
+                new NavigationModel() { Title = "Season Pass", Icon = "Icon_Navigation_SeasonPass.png", TargetType = typeof(SeasonPassPage) },
+                new NavigationModel() { Title = "Animals", Icon = "Icon_Navigation_Animals.png", TargetType = typeof(AnimalsPage) },
+                new NavigationModel() { Title = "Contact Us", Icon = "Icon_Navigation_Contact.png", TargetType = typeof(ContactPage) },
+                new NavigationModel() { Title = "Buy Tickets", Icon = "Icon_Navigation_Tickets.png", TargetType = typeof(TicketsPage) },
             };
 
             // Setting our list to be ItemSource for ListView in MainPage.xaml

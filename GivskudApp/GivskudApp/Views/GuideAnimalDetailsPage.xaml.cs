@@ -33,10 +33,10 @@ namespace GivskudApp.Views
             ElementsController.RenderNotification(ApplicationLayoutTopLevel, "There was a problem with your internet connection. Please connect your device to the internet", "lost-connection-notification", "_VMIsDeviceOfflineNotification", true);
             ElementsController.RenderNotification(ApplicationLayoutTopLevel, "The content used is outdated. Please connect your device to the internet to see the newest content", "cached-content-notification", "_VMIsContentOutdatedNotification", false);
             ElementsController.RenderScannerIcon(ApplicationLayoutTopLevel, Navigation);
-
-            GuiInstanceController.AnnaGuiInstance AnnaOverlay = new GuiInstanceController.AnnaGuiInstance(ApplicationLayoutTopLevel);
-
+            
             Binding.InitializeService();
+
+            GuiInstanceController.AnnaGuiInstance AnnaOverlay = new GuiInstanceController.AnnaGuiInstance(ApplicationLayoutTopLevel, "You have chosen the " + Binding.AnimalData.Name + ". What would you like to know first about this animal?");
 
         }
         async void BtnClicked(object sender, EventArgs e)
