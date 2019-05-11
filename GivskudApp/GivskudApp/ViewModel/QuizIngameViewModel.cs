@@ -20,36 +20,53 @@ namespace GivskudApp.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
+        public ICommand BackToGamesCommand { get; private set; }
         public ICommand AnswerCommand { get; private set; }
         public ICommand NextQuestionCommand { get; private set; }
 
         public QuizModel Data { get; set; }
         public QuizQuestionModel Question { get { return Data.Questions[QuestionIndex]; } }
 
+        public event EventHandler ReturnToGamesEvent;
+        public event EventHandler EndGameSessionEvent;
+        public event EventHandler RefreshGameboardEvent;
+
         public bool IsGameInProgress { get; private set; }
         public bool IsGameOver { get; private set; }
+
+        public bool IsGamePaused { get; private set; }
+
+        public List<string> Result { get; private set; }
 
         public int QuestionIndex { get; private set; }
         public int Points { get; set; }
 
         public QuizIngameViewModel(QuizModel _Data)
         {
+
             Data = _Data;
             QuestionIndex = 0;
 
+            IsGameInProgress = true;
+            IsGameOver = false;
+            IsGamePaused = false;
+
+            // Back to games command
+            BackToGamesCommand = new Command(() =>
+            {
+                ReturnToGamesEvent?.Invoke(this, EventArgs.Empty);
+            });
             // Question answer command
             AnswerCommand = new Command<string>((answer) =>
             {
-                Int32.TryParse(answer, out int AnswerId);
-                if(AnswerId != 0)
+                if(!IsGamePaused && Int32.TryParse(answer, out int AnswerId))
                 {
+                    IsGamePaused = true;
+                    OnPropertyChanged(nameof(IsGamePaused));
+
                     if(AnswerId == Question.CorrectAnswer)
                     {
                         Points++;
-                        System.Diagnostics.Debug.WriteLine("Correct answer");
-                    } else
-                    {
-                        System.Diagnostics.Debug.WriteLine("Incorrect answer");
                     }
                 }
             });
@@ -58,18 +75,64 @@ namespace GivskudApp.ViewModel
             {
                 if(QuestionIndex + 1 == Data.Questions.Count)
                 {
+
                     IsGameInProgress = false;
                     IsGameOver = true;
 
+                    VerifyResult();
+
                     OnPropertyChanged(nameof(IsGameInProgress));
                     OnPropertyChanged(nameof(IsGameOver));
+
+                    EndGameSessionEvent?.Invoke(this, EventArgs.Empty);
+
                 } else
                 {
+
                     QuestionIndex++;
                     OnPropertyChanged(nameof(Question));
+
                 }
+
+                IsGamePaused = false;
+                OnPropertyChanged(nameof(IsGamePaused));
+                RefreshGameboardEvent?.Invoke(this, EventArgs.Empty);
+
             }); 
         }
+        private void VerifyResult()
+        {
 
+            Result = new List<string>();
+
+            // Message
+            Result.Add(Points.ToString() + " / " + Data.Questions.Count.ToString());
+
+            // Image
+            int Percentage = Data.Questions.Count / Points;
+            if (Percentage >= 80)
+            {
+                Result.Add("Icon_Game_AwardLevel4.png");
+                Result.Add("Congratulations! Your score is perfect!");
+            }
+            else if (Percentage >= 60)
+            {
+                Result.Add("Icon_Game_AwardLevel3.png");
+                Result.Add("That is very good result! You are a smart monkey!");
+            }
+            else if (Percentage >= 40)
+            {
+                Result.Add("Icon_Game_AwardLevel2.png");
+                Result.Add("Admirable! Take one of our guided tours to make your knowledge better.");
+            }
+            else
+            {
+                Result.Add("Icon_Game_AwardLevel1.png");
+                Result.Add("That is not bad! You will get them next time, do not worry!");
+            }
+
+            OnPropertyChanged(nameof(Result));
+            
+        }
     }
 }

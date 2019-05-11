@@ -20,9 +20,7 @@ namespace GivskudApp.Views
 	{
         private GuiInstanceController.AnnaGuiInstance AnnaOverlay { get; set; }
         private QuizIngameViewModel ViewModel { get; set; }
-
-        private bool IsLocked = false;
-
+        
 		public QuizIngamePage (QuizModel Data)
 		{
 
@@ -33,43 +31,26 @@ namespace GivskudApp.Views
 
             BindingContext = ViewModel;
 
-        }
-        public async void BtnClicked(object sender, EventArgs e)
-        {
-            Button s = sender as Button;
-            
-            switch(s.ClassId)
+            ViewModel.RefreshGameboardEvent += (sender, e) =>
             {
-                case "MoveForwardBtn":
-                    NextQuestionBtn.IsVisible = false;
-                    if(ViewModel.IsGameOver)
-                    {
-                        AnnaOverlay.HideTextBubble();
-                    }
-                    break;
-                case "CloseGameBtn":
-                    await Navigation.PopAsync();
-                    break;
-            }
-        }
-        public void AnswerBtnClicked(object sender, EventArgs e)
-        {
-            Button s = sender as Button;
-            Int32.TryParse(s.ClassId, out int AnswerId);
-
-            if(AnswerId != 0 && IsLocked == false)
-            {
-
-                IsLocked = true;
-
-                if(AnswerId == ViewModel.Question.CorrectAnswer)
+                if(ViewModel.IsGameOver)
                 {
-                    s.BackgroundColor = Color.Green;
+                    AnnaOverlay.HideTextBubble();
                 } else
                 {
-                    s.BackgroundColor = Color.Red;
+                    System.Diagnostics.Debug.WriteLine(ViewModel.Question.Question);
+                    AnnaOverlay.ChangeTextBubble(ViewModel.Question.Question);
                 }
-            }
+            };
+            ViewModel.EndGameSessionEvent += (sender, e) =>
+            {
+                AnnaOverlay.HideOverlay();
+                ApplicationLayoutContentLevel.VerticalOptions = LayoutOptions.Center;
+            };
+            ViewModel.ReturnToGamesEvent += async (sender, e) =>
+            {
+                await Navigation.PopAsync();
+            };
         }
     }
 }
