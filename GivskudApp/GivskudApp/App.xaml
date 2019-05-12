@@ -8,11 +8,12 @@
 
             <!-- Colours -->
             <Color x:Key="ColorPrimary">#DE1F28</Color>
+            <Color x:Key="ApplicationBackgroundColor">#B7D98E</Color>
             <!-- /Colours -->
             
             <!-- Layout Styles -->
             <Style TargetType="ContentPage" x:Key="GlobalLayoutStyle">
-                <Setter Property="BackgroundColor" Value="#b7d98e" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource ApplicationBackgroundColor}" />
             </Style>
             <Style TargetType="StackLayout" x:Key="GlobalContentStyle">
                 <Setter Property="Padding" Value="10" />

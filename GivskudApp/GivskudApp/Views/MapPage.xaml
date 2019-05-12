@@ -22,7 +22,6 @@
                     </Grid.RowDefinitions>
 
                     <AbsoluteLayout Grid.Row="0">
-
                         <AbsoluteLayout.Resources>
                             <Style TargetType="Image" Class="MapPinpoint">
                                 <Setter Property="AbsoluteLayout.LayoutFlags" Value="PositionProportional" />
@@ -32,7 +31,7 @@
                         </AbsoluteLayout.Resources>
                         
                         <!-- Map base -->
-                        <Image Opacity="0.8" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Source="Graphic_Map.jpg" Aspect="AspectFill" />
+                        <Image Opacity=".8" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Source="Graphic_Map.jpg" Aspect="AspectFill" />
                         
                         <!-- Map pinpoints -->
                         <Image StyleClass="MapPinpoint" IsVisible="{Binding MapOverlayState[0]}" AbsoluteLayout.LayoutBounds=".40,.063" />

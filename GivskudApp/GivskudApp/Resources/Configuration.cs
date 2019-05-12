@@ -13,18 +13,20 @@ namespace GivskudApp.Resources
                 public const string Animals = "/animals/get";
                 public const string News = "/news/get";
                 public const string Quizes = "/quiz/get";
+                public const string Pass = "/seasonpass/get";
             }
             public class Local
             {
                 public const string Animals = "applicationResourceCacheAnimals";
                 public const string News = "applicationResourceCacheNews";
                 public const string Quizes = "applicationResourceCacheQuiz";
+                public const string Pass = "applicationResourceCachePass";
             }
         }
         public class ApiConfiguration
         {
             // public const string ApiRoot = "https://givskud-app-admin20190504114828.azurewebsites.net/umbraco/api";
-            public const string ApiRoot = "https://5583b7ff.ngrok.io/umbraco/api";
+            public const string ApiRoot = "https://3d512fd8.ngrok.io/umbraco/api";
             public const string ApiAuth = "C4oILgIT7dTqLye9LJZ0Hr9Xedp7RleQAxw5NVHE";
         }
     };

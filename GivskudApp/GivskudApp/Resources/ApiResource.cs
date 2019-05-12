@@ -25,6 +25,7 @@ namespace GivskudApp.Resources
         }
         public override ResourceResponse Get()
         {
+
             var AsyncRequest = GetAsync();
 
             return new ResourceResponse
@@ -45,8 +46,6 @@ namespace GivskudApp.Resources
 
                 try
                 {
-
-                    System.Diagnostics.Debug.WriteLine(GetApiBase() + Path + Attribute);
 
                     HttpResponseMessage HttpRequest = await Client.GetAsync(GetApiBase() + Path + Attribute).ConfigureAwait(false);
 
