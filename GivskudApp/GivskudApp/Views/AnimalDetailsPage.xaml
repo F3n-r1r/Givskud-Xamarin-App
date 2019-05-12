@@ -82,7 +82,7 @@
                                 </Grid.RowDefinitions>
 
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="65" />
+                                    <ColumnDefinition Width="100" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
@@ -96,13 +96,13 @@
                                 <Label Text="{Binding Weight}" Grid.Row="2" Grid.Column="1" StyleClass="InfotableValue" />
 
                                 <Image Source="Icon_AnimalPage_Pregnancy.png" StyleClass="InfotableLabelImage" Grid.Row="3" Grid.Column="0" />
-                                <Label  Text="{Binding PregnancyTime}" Grid.Row="3" Grid.Column="1" StyleClass="InfotableValue" />
+                                <Label  Text="{Binding PregnancyTime, StringFormat='{0:N} days'}" Grid.Row="3" Grid.Column="1" StyleClass="InfotableValue" />
 
                                 <Image Source="Icon_AnimalPage_Descendants.png" StyleClass="InfotableLabelImage" Grid.Row="4" Grid.Column="0" />
-                                <Label Text="{Binding Descendants}" Grid.Row="4" Grid.Column="1" StyleClass="InfotableValue" />
+                                <Label Text="{Binding Descendants, StringFormat='{0:N} youngs'}" Grid.Row="4" Grid.Column="1" StyleClass="InfotableValue" />
 
                                 <Image Source="Icon_AnimalPage_Lifetime.png" StyleClass="InfotableLabelImage" Grid.Row="5" Grid.Column="0" />
-                                <Label Text="{Binding Lifetime}" Grid.Row="5" Grid.Column="1" StyleClass="InfotableValue" />
+                                <Label Text="{Binding Lifetime, StringFormat='{0:N} years'}" Grid.Row="5" Grid.Column="1" StyleClass="InfotableValue" />
 
                                 <Label Text="Kontinent" Grid.Row="6" Grid.Column="0" StyleClass="InfotableLabelText" />
                                 <Label Text="{Binding Continent}" Grid.Row="6" Grid.Column="1" StyleClass="InfotableValue" />
