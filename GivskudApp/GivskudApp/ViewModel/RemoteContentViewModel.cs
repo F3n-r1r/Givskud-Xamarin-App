@@ -320,7 +320,6 @@ namespace GivskudApp.ViewModel
             });
 
             VMCloseOverlayCommand = new Command<string>((string OverlayType) => {
-                System.Diagnostics.Debug.WriteLine(OverlayType);
                 switch(OverlayType)
                 {
                     case "lost-connection-notification":

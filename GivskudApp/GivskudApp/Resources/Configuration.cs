@@ -26,7 +26,7 @@ namespace GivskudApp.Resources
         public class ApiConfiguration
         {
             // public const string ApiRoot = "https://givskud-app-admin20190504114828.azurewebsites.net/umbraco/api";
-            public const string ApiRoot = "https://3d512fd8.ngrok.io/umbraco/api";
+            public const string ApiRoot = "https://860d3a86.ngrok.io/umbraco/api";
             public const string ApiAuth = "C4oILgIT7dTqLye9LJZ0Hr9Xedp7RleQAxw5NVHE";
         }
     };
