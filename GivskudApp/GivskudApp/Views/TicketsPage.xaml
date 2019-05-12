@@ -88,10 +88,10 @@
                                     <Setter Property="Keyboard" Value="Numeric" />
                                 </Style>
                                 <Style TargetType="Frame" Class="EntryWrapper">
-                                    <Setter Property="Padding" Value="2" />
+                                    <Setter Property="Padding" Value="2,0" />
                                     <Setter Property="BackgroundColor" Value="#3A4744" />
                                     <Setter Property="CornerRadius" Value="0" />
-                                    <Setter Property="HeightRequest" Value="30" />
+                                    <Setter Property="HeightRequest" Value="40" />
                                 </Style>
                             </Grid.Resources>
 
