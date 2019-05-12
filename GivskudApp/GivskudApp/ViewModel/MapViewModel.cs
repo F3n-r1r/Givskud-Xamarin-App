@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace GivskudApp.ViewModel
 {
-    class MapViewModel
+    class MapViewModel : INotifyPropertyChanged
     {
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -25,7 +25,8 @@ namespace GivskudApp.ViewModel
 
         public ICommand MapControlCommand { get; private set; }
 
-        public List<bool> MapOverlayState { get; private set; }
+        public bool IsTestVisible { get; private set; }
+        public List<bool> MapOverlayState { get; set; }
 
         private Dictionary<string, MapOverlay> StatePresets { get; set; }
 
@@ -33,55 +34,57 @@ namespace GivskudApp.ViewModel
         {
             SetOverlays();
 
-            MapOverlayState = new List<bool> { false, false, false, false, false, false, false, false, false };
-
             MapControlCommand = new Command<string>((id) => {
-                Task.Run(() =>
+                
+                if (StatePresets.ContainsKey(id))
                 {
-                    if (StatePresets.ContainsKey(id))
+
+                    StatePresets[id].IsActive = !StatePresets[id].IsActive;
+
+                    for (int i = 0; i < MapOverlayState.Count; i++)
                     {
-
-                        StatePresets[id].IsActive = !StatePresets[id].IsActive;
-
-                        for (int i = 0; i < MapOverlayState.Count; i++)
+                        if (StatePresets[id].IsActive)
                         {
-                            if (StatePresets[id].IsActive)
+                            if (StatePresets[id].Values[i] == true)
                             {
-                                if (StatePresets[id].Values[i] == true)
-                                {
-                                    MapOverlayState[i] = true;
-                                }
+                                MapOverlayState[i] = true;
                             }
-                            else
+                        }
+                        else
+                        {
+                            if (MapOverlayState[i] == true)
                             {
-                                if(MapOverlayState[i] == true)
+                                MapOverlayState[i] = false;
+                                foreach (KeyValuePair<string, MapOverlay> State in StatePresets)
                                 {
-                                    MapOverlayState[i] = false;
-                                    foreach(KeyValuePair<string, MapOverlay> State in StatePresets)
+                                    if (State.Key == id || State.Value.IsActive == false)
                                     {
-                                        if (State.Key == id || State.Value.IsActive == false)
+                                        continue;
+                                    }
+                                    else
+                                    {
+                                        if (State.Value.Values[i] == true)
                                         {
-                                            continue;
-                                        } else
-                                        {
-                                            if(State.Value.Values[i] == true)
-                                            {
-                                                MapOverlayState[i] = true;
-                                            }
+                                            MapOverlayState[i] = true;
                                         }
                                     }
                                 }
                             }
                         }
-                        OnPropertyChanged(nameof(MapOverlayState));
-                    };
-                });
+                    }
+                };
+                
+                OnPropertyChanged(nameof(MapOverlayState));
+
             });
         }
 
         private void SetOverlays()
         {
+            MapOverlayState = new List<bool> { false, false, false, false, false, false, false, false, false };
+
             StatePresets = new Dictionary<string, MapOverlay>();
+
             Dictionary<string, List<bool>> Presets = new Dictionary<string, List<bool>> {
                 { "Animals", new List<bool>         { false,    false,  false,  false,  false,  false,  false,  false,  true    } },
                 { "Defibrilator", new List<bool>    { false,    false,  false,  false,  false,  false,  false,  false,  false   } },
@@ -101,6 +104,9 @@ namespace GivskudApp.ViewModel
                     Values = Preset.Value
                 });
             }
+
+            OnPropertyChanged(nameof(MapOverlayState));
+
         }
 
     }
