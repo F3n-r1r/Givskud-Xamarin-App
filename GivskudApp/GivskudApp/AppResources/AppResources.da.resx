@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AnimalDetailsContinent" xml:space="preserve">
+    <value>Kontinent</value>
+  </data>
+  <data name="AnimalDetailsEats" xml:space="preserve">
+    <value>Spiser</value>
+  </data>
+  <data name="AnimalDetailsSpecies" xml:space="preserve">
+    <value>Arter</value>
+  </data>
+  <data name="AnimalDetailsStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="AnimalGuidePageBtnInformation" xml:space="preserve">
+    <value>Information om dyret</value>
+  </data>
+  <data name="AnimalGuidePageBtnQuiz" xml:space="preserve">
+    <value>Spil Quiz</value>
+  </data>
+  <data name="AnimalGuidePageBtnShowOnMap" xml:space="preserve">
+    <value>Vis mig kortet</value>
+  </data>
+  <data name="AnimalGuidePageHeadline01" xml:space="preserve">
+    <value>Du har valgt</value>
+  </data>
+  <data name="AnimalGuidePageHeadline02" xml:space="preserve">
+    <value>Hvad vil du gerne vide først om dette dyr?</value>
+  </data>
+  <data name="BuyTicketsAdults" xml:space="preserve">
+    <value>Voksne 2019</value>
+  </data>
+  <data name="BuyTicketsCheckout" xml:space="preserve">
+    <value>Til kassen</value>
+  </data>
+  <data name="BuyTicketsChildren" xml:space="preserve">
+    <value>Børn (3-11 years) 2019</value>
+  </data>
+  <data name="BuyTicketsHeader" xml:space="preserve">
+    <value>Køb billetter</value>
+  </data>
+  <data name="BuyTicketsNewborns" xml:space="preserve">
+    <value>Børn (0-2 years) 2019</value>
+  </data>
+  <data name="ContactUsBtnMap" xml:space="preserve">
+    <value>Gå til kortet</value>
+  </data>
+  <data name="ContactUsFooter" xml:space="preserve">
+    <value>Hvis du hellere vil snakke med os ansigt til ansigt, kan du os på kortet.</value>
+  </data>
+  <data name="ContactUsGroupAndEvents" xml:space="preserve">
+    <value>Gruppe begivenheder, Skoler, and Indkvartering</value>
+  </data>
+  <data name="ContactUsHeadline" xml:space="preserve">
+    <value>Kontakt os</value>
+  </data>
+  <data name="ContactUsInfoAndTickets" xml:space="preserve">
+    <value>Information and Billetter</value>
+  </data>
+  <data name="ContactUsPhoneTableDescription" xml:space="preserve">
+    <value>*Telefonerne er lukket fra d.22 December til d.1 Januar</value>
+  </data>
+  <data name="ContactUsPhoneTableHeadline" xml:space="preserve">
+    <value>Telefon tider</value>
+  </data>
+  <data name="ContactUsSubheadline" xml:space="preserve">
+    <value>Vi er tilgængelige hvis i har nogle spørgsmål</value>
+  </data>
+  <data name="GamesBtnQuizzes" xml:space="preserve">
+    <value>Quizzer</value>
+  </data>
+  <data name="GeneralYears" xml:space="preserve">
+    <value>år</value>
+  </data>
+  <data name="GeneralYoungs" xml:space="preserve">
+    <value>youngs</value>
+  </data>
+  <data name="GuidedTourAreas" xml:space="preserve">
+    <value>See parkens områder</value>
+  </data>
+  <data name="GuidedTourIntroduction" xml:space="preserve">
+    <value>Velkommen til Givskud Zoo! Jeg er jeres guide, Anna! Jeg vil hjælpe jer på jeres rejse igennem zoo. Hvad kunne i tænke jer at se først?</value>
+  </data>
+  <data name="GuidedTourQuizzes" xml:space="preserve">
+    <value>Spil</value>
+  </data>
+  <data name="HomepageBtnMap" xml:space="preserve">
+    <value>Åben kort</value>
+  </data>
+  <data name="HomepageBtnProgram" xml:space="preserve">
+    <value>Dagens program</value>
+  </data>
+  <data name="HomepageBtnTour" xml:space="preserve">
+    <value>Guided Tur</value>
+  </data>
+  <data name="NavigationAnimals" xml:space="preserve">
+    <value>Dyr</value>
+  </data>
+  <data name="NavigationBuyTickets" xml:space="preserve">
+    <value>Køb billetter</value>
+  </data>
+  <data name="NavigationContact" xml:space="preserve">
+    <value>Kontakt os</value>
+  </data>
+  <data name="NavigationGames" xml:space="preserve">
+    <value>Spil</value>
+  </data>
+  <data name="NavigationHomepage" xml:space="preserve">
+    <value>Forside</value>
+  </data>
+  <data name="NavigationNews" xml:space="preserve">
+    <value>Nyheder</value>
+  </data>
+  <data name="NavigationSeasonPass" xml:space="preserve">
+    <value>Sæsonkort</value>
+  </data>
+  <data name="NotificationInvalidPass" xml:space="preserve">
+    <value>Sæsonkortet med følgende ID / sæsonkortet du har gemt lader til at være ugyldigt. Prøv venligst igen.</value>
+  </data>
+  <data name="NotificationNoInternet" xml:space="preserve">
+    <value>Der lader til at være et problem med din internet forbindelse. Venligst forbind din enhed til internettet.</value>
+  </data>
+  <data name="NotificationOutdatedContent" xml:space="preserve">
+    <value>Indholdet der bliver vist er uddateret. Forbind venligst din enhed til internettet for at få det nyeste indhold.</value>
+  </data>
+  <data name="QuizBtnBackToGames" xml:space="preserve">
+    <value>Tilbage til spil</value>
+  </data>
+  <data name="QuizBtnNextQuestion" xml:space="preserve">
+    <value>Næste spørgsmål</value>
+  </data>
+  <data name="QuizEndTitle01" xml:space="preserve">
+    <value>Det ikke dårligt! Du skal nok få dem næste gang, det skal du ikke være i tvivl om!</value>
+  </data>
+  <data name="QuizEndTitle02" xml:space="preserve">
+    <value>Beundringsværdigt! Tag en af vores guided ture for at forbedre din viden.</value>
+  </data>
+  <data name="QuizEndTitle03" xml:space="preserve">
+    <value>Det er et rigtigt godt resultat! Du er en meget klog abe!</value>
+  </data>
+  <data name="QuizEndTitle04" xml:space="preserve">
+    <value>Tillykke! Din score er perfekt!</value>
+  </data>
+  <data name="ScannerPageDescription" xml:space="preserve">
+    <value>Ved at scanne koden kommer du til dit nuværende punkt i tur guiden.</value>
+  </data>
+  <data name="ScannerPageTitle" xml:space="preserve">
+    <value>Find koden på en infostander.</value>
+  </data>
+  <data name="SeasonPassAcquiredOn" xml:space="preserve">
+    <value>Erhvervet den:</value>
+  </data>
+  <data name="SeasonPassBtnAdd" xml:space="preserve">
+    <value>Tilføj kort</value>
+  </data>
+  <data name="SeasonPassBtnRemove" xml:space="preserve">
+    <value>Fjern kort</value>
+  </data>
+  <data name="SeasonPassDescription" xml:space="preserve">
+    <value>*Dette ID kan findes bagpå det fysiske kort eller kvittering fra da kortet blev købt.</value>
+  </data>
+  <data name="SeasonPassHeadline01" xml:space="preserve">
+    <value>Tilføj kort detaljer</value>
+  </data>
+  <data name="SeasonPassHeadline02" xml:space="preserve">
+    <value>Dit sæsonkort</value>
+  </data>
+  <data name="SeasonPassValidFrom" xml:space="preserve">
+    <value>Gyldigt fra:</value>
+  </data>
+  <data name="SeasonPassValidTo" xml:space="preserve">
+    <value>Gyldigt til:</value>
+  </data>
+</root>

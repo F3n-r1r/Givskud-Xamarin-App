@@ -20,10 +20,12 @@ namespace GivskudApp
         {
             InitializeComponent();
 
+            System.Diagnostics.Debug.WriteLine(AppResources.AppResources.NavigationHomepage);
+            
             MenuList = new List<NavigationModel>
             {
                 // Adding menu items to menuList and you can define title ,page and icon
-                new NavigationModel() { Title = AppResources.AppResources.ResourceManager.GetString("NavigationHomepage"), Icon = "Icon_Navigation_Home.png", TargetType = typeof(HomePage) },
+                new NavigationModel() { Title = AppResources.AppResources.NavigationHomepage, Icon = "Icon_Navigation_Home.png", TargetType = typeof(HomePage) },
                 new NavigationModel() { Title = AppResources.AppResources.ResourceManager.GetString("NavigationGames"), Icon = "Icon_Navigation_Games.png", TargetType = typeof(GamePage) },
                 new NavigationModel() { Title = AppResources.AppResources.ResourceManager.GetString("NavigationNews"), Icon = "Icon_Navigation_News.png", TargetType = typeof(NewsPage) },
                 new NavigationModel() { Title = AppResources.AppResources.ResourceManager.GetString("NavigationSeasonPass"), Icon = "Icon_Navigation_SeasonPass.png", TargetType = typeof(SeasonPassPage) },

@@ -1,6 +1,13 @@
 ﻿using System;
+using System.Globalization;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
+using GivskudApp.Resources;
+
+using Plugin.Settings;
+using Plugin.Multilingual;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace GivskudApp
@@ -11,6 +18,18 @@ namespace GivskudApp
         {
             InitializeComponent();
 
+            // Initiate language plugin
+            AppResources.AppResources.Culture = CrossMultilingual.Current.DeviceCultureInfo;
+            
+            // Load store culture if available
+            string StoredCulture = CrossSettings.Current.GetValueOrDefault(ConfigurationManager.AppConfiguration.LanguagePreset, null);
+
+            if(!String.IsNullOrEmpty(StoredCulture))
+            {
+                CrossMultilingual.Current.CurrentCultureInfo = new CultureInfo(StoredCulture);
+            }
+
+            // Start app
             MainPage = new MainPage();
         }
 
@@ -28,5 +47,6 @@ namespace GivskudApp
         {
             // Handle when your app resumes
         }
+
     }
 }

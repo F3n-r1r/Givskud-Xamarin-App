@@ -20,23 +20,44 @@ namespace GivskudApp.Views
 	{
 		public HomePage ()
 		{
-			InitializeComponent ();
+
+            InitializeComponent();
+
+            System.Diagnostics.Debug.WriteLine("Initialized page; Current language: " + CrossMultilingual.Current.CurrentCultureInfo);
+
         }
         // Handle language change
         public async void LanguageChangeEvent(object sender, EventArgs e)
         {
 
+            // Collect info
             Image source = sender as Image;
-
             string languageId = source.ClassId;
-            
-            CrossMultilingual.Current.CurrentCultureInfo = new CultureInfo(languageId);
 
+            // Change culture
+            CrossMultilingual.Current.CurrentCultureInfo = new CultureInfo(languageId);
+            AppResources.AppResources.Culture = CrossMultilingual.Current.CurrentCultureInfo;
+
+            // Save cache value
             CrossSettings.Current.AddOrUpdateValue(ConfigurationManager.AppConfiguration.LanguagePreset, languageId);
 
-            await Navigation.PushAsync(new HomePage());
+            // Pop navigation
+            await PopAllModals();
 
-        }   
+        }
+        public async Task<Page> PopAllModals()
+        {
+            Page root = null;
+
+            if (Navigation.ModalStack.Count() == 0)
+                return null;
+
+            for (var i = 0; i <= Navigation.ModalStack.Count(); i++)
+            {
+                root = await Navigation.PopModalAsync(false);
+            }
+            return root;
+        }
         // Handle button click -> Push new page
         async void Button_Clicked(object sender, EventArgs e)
         {

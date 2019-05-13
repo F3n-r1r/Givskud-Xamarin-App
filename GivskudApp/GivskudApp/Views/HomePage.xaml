@@ -43,13 +43,13 @@
                         <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ClassId="ProgramPageBtn" Text="{i18n:Translate HomepageBtnProgram}" Clicked="Button_Clicked" />
                     </Grid>
 
-                    <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HorizontalOptions="End" Margin="0,15,0,10">
-                        <Image Source="Icon_Flag_DK.png" ClassId="da" HeightRequest="40">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HorizontalOptions="End" Margin="0,15,15,10">
+                        <Image Source="Icon_Flag_DK.png" ClassId="da-DK" HeightRequest="40">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="LanguageChangeEvent" NumberOfTapsRequired="1" />
                             </Image.GestureRecognizers>
                         </Image>
-                        <Image Source="Icon_Flag_UK.png" ClassId="en" HeightRequest="40">
+                        <Image Source="Icon_Flag_UK.png" ClassId="en-US" HeightRequest="40">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="LanguageChangeEvent" NumberOfTapsRequired="1" />
                             </Image.GestureRecognizers>
