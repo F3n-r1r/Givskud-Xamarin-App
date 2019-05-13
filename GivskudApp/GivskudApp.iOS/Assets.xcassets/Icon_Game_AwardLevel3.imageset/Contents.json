@@ -1,0 +1,24 @@
+{
+  "images": [
+    {
+      "scale": "1x",
+      "idiom": "universal",
+      "filename": "Icon_Game_AwardLevel3.png"
+    },
+    {
+      "scale": "2x",
+      "idiom": "universal",
+      "filename": "Icon_Game_AwardLevel31.png"
+    },
+    {
+      "scale": "3x",
+      "idiom": "universal",
+      "filename": "Icon_Game_AwardLevel32.png"
+    }
+  ],
+  "properties": {},
+  "info": {
+    "version": 1,
+    "author": ""
+  }
+}

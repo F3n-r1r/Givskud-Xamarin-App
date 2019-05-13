@@ -1,0 +1,24 @@
+{
+  "images": [
+    {
+      "scale": "1x",
+      "idiom": "universal",
+      "filename": "Icon_Flag_UK.png"
+    },
+    {
+      "scale": "2x",
+      "idiom": "universal",
+      "filename": "Icon_Flag_UK1.png"
+    },
+    {
+      "scale": "3x",
+      "idiom": "universal",
+      "filename": "Icon_Flag_UK2.png"
+    }
+  ],
+  "properties": {},
+  "info": {
+    "version": 1,
+    "author": ""
+  }
+}
