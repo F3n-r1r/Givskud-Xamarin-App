@@ -1,12 +1,6 @@
 ﻿using DLToolkit.Forms.Controls;
 using GivskudApp.Models;
 using GivskudApp.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using GivskudApp.Resources;
 using GivskudApp.Controllers;
@@ -32,8 +26,11 @@ namespace GivskudApp.Views
 
             BindingContext = Binding;
 
-            ElementsController.RenderNotification(ApplicationLayoutTopLevel, "There was a problem with your internet connection. Please connect your device to the internet", "lost-connection-notification", "_VMIsDeviceOfflineNotification", true);
-            ElementsController.RenderNotification(ApplicationLayoutTopLevel, "The content used is outdated. Please connect your device to the internet to see the newest content", "cached-content-notification", "_VMIsContentOutdatedNotification", false);
+            
+
+            // AppResources.AppResources.NotificationNoInternet
+            ElementsController.RenderNotification(ApplicationLayoutTopLevel, AppResources.AppResources.ResourceManager.GetString("NotificationNoInternet"), "lost-connection-notification", "_VMIsDeviceOfflineNotification", true);
+            ElementsController.RenderNotification(ApplicationLayoutTopLevel, AppResources.AppResources.ResourceManager.GetString("NotificationOutdatedContent"), "cached-content-notification", "_VMIsContentOutdatedNotification", false);
 
             Binding.InitializeService();
 

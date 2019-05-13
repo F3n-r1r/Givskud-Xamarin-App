@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GivskudApp.Views.HomePage"
-             Style="{StaticResource GlobalLayoutStyle}">
+             Style="{StaticResource GlobalLayoutStyle}"
+             xmlns:i18n="clr-namespace:GivskudApp.Helpers">
     <ContentPage.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="0,30,0,0" />
@@ -37,15 +38,27 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Row="0" Grid.Column="0" ClassId="TourPageBtn" Text="Guided tour" Clicked="Button_Clicked" />
-                        <Button Grid.Row="0" Grid.Column="1" ClassId="MapPageBtn" Text="Open map" Clicked="Button_Clicked" />
-                        <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ClassId="ProgramPageBtn" Text="Daily schedule" Clicked="Button_Clicked" />
+                        <Button Grid.Row="0" Grid.Column="0" ClassId="TourPageBtn" Text="{i18n:Translate HomepageBtnTour}" Clicked="Button_Clicked" />
+                        <Button Grid.Row="0" Grid.Column="1" ClassId="MapPageBtn" Text="{i18n:Translate HomepageBtnMap}" Clicked="Button_Clicked" />
+                        <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ClassId="ProgramPageBtn" Text="{i18n:Translate HomepageBtnProgram}" Clicked="Button_Clicked" />
                     </Grid>
 
                     <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HorizontalOptions="End" Margin="0,15,0,10">
-                        <Image Source="Icon_Flag_DK.png" HeightRequest="40"/>
-                        <Image Source="Icon_Flag_DE.png" HeightRequest="40"/>
-                        <Image Source="Icon_Flag_UK.png" HeightRequest="40"/>
+                        <Image Source="Icon_Flag_DK.png" ClassId="da" HeightRequest="40">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="LanguageChangeEvent" NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Image Source="Icon_Flag_UK.png" ClassId="en" HeightRequest="40">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="LanguageChangeEvent" NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Image IsVisible="False" Source="Icon_Flag_DE.png" ClassId="de" HeightRequest="40">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="LanguageChangeEvent" NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                        </Image>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>

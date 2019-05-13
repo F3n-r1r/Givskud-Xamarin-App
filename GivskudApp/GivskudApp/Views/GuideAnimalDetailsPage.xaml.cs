@@ -30,13 +30,14 @@ namespace GivskudApp.Views
 
             BindingContext = Binding;
 
-            ElementsController.RenderNotification(ApplicationLayoutTopLevel, "There was a problem with your internet connection. Please connect your device to the internet", "lost-connection-notification", "_VMIsDeviceOfflineNotification", true);
-            ElementsController.RenderNotification(ApplicationLayoutTopLevel, "The content used is outdated. Please connect your device to the internet to see the newest content", "cached-content-notification", "_VMIsContentOutdatedNotification", false);
+            ElementsController.RenderNotification(ApplicationLayoutTopLevel, AppResources.AppResources.ResourceManager.GetString("NotificationNoInternet"), "lost-connection-notification", "_VMIsDeviceOfflineNotification", true);
+            ElementsController.RenderNotification(ApplicationLayoutTopLevel, AppResources.AppResources.ResourceManager.GetString("NotificationOutdatedContent"), "cached-content-notification", "_VMIsContentOutdatedNotification", false);
+
             ElementsController.RenderScannerIcon(ApplicationLayoutTopLevel, Navigation);
             
             Binding.InitializeService();
 
-            GuiInstanceController.AnnaGuiInstance AnnaOverlay = new GuiInstanceController.AnnaGuiInstance(ApplicationLayoutTopLevel, "You have chosen the " + Binding.AnimalData.Name + ". What would you like to know first about this animal?");
+            GuiInstanceController.AnnaGuiInstance AnnaOverlay = new GuiInstanceController.AnnaGuiInstance(ApplicationLayoutTopLevel, AppResources.AppResources.ResourceManager.GetString("AnimalGuidePageHeadline01") + " " + Binding.AnimalData.Name + ". " + AppResources.AppResources.ResourceManager.GetString("AnimalGuidePageHeadline02"));
 
         }
         async void BtnClicked(object sender, EventArgs e)

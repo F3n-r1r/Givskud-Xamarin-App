@@ -19,18 +19,17 @@ namespace GivskudApp
         public MainPage()
         {
             InitializeComponent();
-            
 
             MenuList = new List<NavigationModel>
             {
                 // Adding menu items to menuList and you can define title ,page and icon
-                new NavigationModel() { Title = "Homepage", Icon = "Icon_Navigation_Home.png", TargetType = typeof(HomePage) },
-                new NavigationModel() { Title = "Games", Icon = "Icon_Navigation_Games.png", TargetType = typeof(GamePage) },
-                new NavigationModel() { Title = "News", Icon = "Icon_Navigation_News.png", TargetType = typeof(NewsPage) },
-                new NavigationModel() { Title = "Season Pass", Icon = "Icon_Navigation_SeasonPass.png", TargetType = typeof(SeasonPassPage) },
-                new NavigationModel() { Title = "Animals", Icon = "Icon_Navigation_Animals.png", TargetType = typeof(AnimalsPage) },
-                new NavigationModel() { Title = "Contact Us", Icon = "Icon_Navigation_Contact.png", TargetType = typeof(ContactPage) },
-                new NavigationModel() { Title = "Buy Tickets", Icon = "Icon_Navigation_Tickets.png", TargetType = typeof(TicketsPage) },
+                new NavigationModel() { Title = AppResources.AppResources.ResourceManager.GetString("NavigationHomepage"), Icon = "Icon_Navigation_Home.png", TargetType = typeof(HomePage) },
+                new NavigationModel() { Title = AppResources.AppResources.ResourceManager.GetString("NavigationGames"), Icon = "Icon_Navigation_Games.png", TargetType = typeof(GamePage) },
+                new NavigationModel() { Title = AppResources.AppResources.ResourceManager.GetString("NavigationNews"), Icon = "Icon_Navigation_News.png", TargetType = typeof(NewsPage) },
+                new NavigationModel() { Title = AppResources.AppResources.ResourceManager.GetString("NavigationSeasonPass"), Icon = "Icon_Navigation_SeasonPass.png", TargetType = typeof(SeasonPassPage) },
+                new NavigationModel() { Title = AppResources.AppResources.ResourceManager.GetString("NavigationAnimals"), Icon = "Icon_Navigation_Animals.png", TargetType = typeof(AnimalsPage) },
+                new NavigationModel() { Title = AppResources.AppResources.ResourceManager.GetString("NavigationContact"), Icon = "Icon_Navigation_Contact.png", TargetType = typeof(ContactPage) },
+                new NavigationModel() { Title = AppResources.AppResources.ResourceManager.GetString("NavigationBuyTickets"), Icon = "Icon_Navigation_Tickets.png", TargetType = typeof(TicketsPage) },
             };
 
             // Setting our list to be ItemSource for ListView in MainPage.xaml
@@ -50,7 +49,6 @@ namespace GivskudApp
             Detail = new NavigationPage((Page)Activator.CreateInstance(page));
             IsPresented = false;
         }
-
         public void InvokeNavigationChange()
         {
             System.Diagnostics.Debug.WriteLine("Invokation on MainPage instance");

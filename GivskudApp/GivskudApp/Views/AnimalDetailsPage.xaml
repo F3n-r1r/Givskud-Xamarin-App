@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
              x:Class="GivskudApp.Views.AnimalDetailsPage"
-             Style="{StaticResource GlobalLayoutStyle}">
+             Style="{StaticResource GlobalLayoutStyle}"
+             xmlns:i18n="clr-namespace:GivskudApp.Helpers">
     <ContentPage.Resources>
         <Style TargetType="Label" Class="ViewParagraph">
             <Setter Property="Margin" Value="0,8,0,0" />
@@ -96,24 +97,24 @@
                                 <Label Text="{Binding Weight}" Grid.Row="2" Grid.Column="1" StyleClass="InfotableValue" />
 
                                 <Image Source="Icon_AnimalPage_Pregnancy.png" StyleClass="InfotableLabelImage" Grid.Row="3" Grid.Column="0" />
-                                <Label  Text="{Binding PregnancyTime, StringFormat='{0:N} days'}" Grid.Row="3" Grid.Column="1" StyleClass="InfotableValue" />
+                                <Label  Text="{Binding PregnancyTime}" Grid.Row="3" Grid.Column="1" StyleClass="InfotableValue" />
 
                                 <Image Source="Icon_AnimalPage_Descendants.png" StyleClass="InfotableLabelImage" Grid.Row="4" Grid.Column="0" />
-                                <Label Text="{Binding Descendants, StringFormat='{0:N} youngs'}" Grid.Row="4" Grid.Column="1" StyleClass="InfotableValue" />
+                                <Label Text="{Binding Descendants}" Grid.Row="4" Grid.Column="1" StyleClass="InfotableValue" />
 
                                 <Image Source="Icon_AnimalPage_Lifetime.png" StyleClass="InfotableLabelImage" Grid.Row="5" Grid.Column="0" />
-                                <Label Text="{Binding Lifetime, StringFormat='{0:N} years'}" Grid.Row="5" Grid.Column="1" StyleClass="InfotableValue" />
+                                <Label Text="{Binding Lifetime}" Grid.Row="5" Grid.Column="1" StyleClass="InfotableValue" />
 
-                                <Label Text="Kontinent" Grid.Row="6" Grid.Column="0" StyleClass="InfotableLabelText" />
+                                <Label Text="{i18n:Translate AnimalDetailsContinent}" Grid.Row="6" Grid.Column="0" StyleClass="InfotableLabelText" />
                                 <Label Text="{Binding Continent}" Grid.Row="6" Grid.Column="1" StyleClass="InfotableValue" />
 
-                                <Label Text="Art" Grid.Row="7" Grid.Column="0" StyleClass="InfotableLabelText" />
+                                <Label Text="{i18n:Translate AnimalDetailsSpecies}" Grid.Row="7" Grid.Column="0" StyleClass="InfotableLabelText" />
                                 <Label Text="{Binding Species}" Grid.Row="7" Grid.Column="1" StyleClass="InfotableValue" />
 
-                                <Label Text="Status" Grid.Row="8" Grid.Column="0"  StyleClass="InfotableLabelText" />
+                                <Label Text="{i18n:Translate AnimalDetailsStatus}" Grid.Row="8" Grid.Column="0"  StyleClass="InfotableLabelText" />
                                 <Label Text="{Binding Status}" Grid.Row="8" Grid.Column="1" StyleClass="InfotableValue" />
 
-                                <Label Text="Føde" Grid.Row="9" Grid.Column="0" StyleClass="InfotableLabelText" />
+                                <Label Text="{i18n:Translate AnimalDetailsEats}" Grid.Row="9" Grid.Column="0" StyleClass="InfotableLabelText" />
                                 <Label Text="{Binding Eats}" Grid.Row="9" Grid.Column="1" StyleClass="InfotableValue" />
                             </Grid>
                             <!-- / Infotable -->

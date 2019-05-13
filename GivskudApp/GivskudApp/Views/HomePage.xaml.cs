@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 
-using GivskudApp.ViewModel;
-using GivskudApp.Controllers;
+using Plugin.Settings;
+using Plugin.Multilingual;
+
+using GivskudApp.Resources;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -19,7 +22,21 @@ namespace GivskudApp.Views
 		{
 			InitializeComponent ();
         }
+        // Handle language change
+        public async void LanguageChangeEvent(object sender, EventArgs e)
+        {
 
+            Image source = sender as Image;
+
+            string languageId = source.ClassId;
+            
+            CrossMultilingual.Current.CurrentCultureInfo = new CultureInfo(languageId);
+
+            CrossSettings.Current.AddOrUpdateValue(ConfigurationManager.AppConfiguration.LanguagePreset, languageId);
+
+            await Navigation.PushAsync(new HomePage());
+
+        }   
         // Handle button click -> Push new page
         async void Button_Clicked(object sender, EventArgs e)
         {

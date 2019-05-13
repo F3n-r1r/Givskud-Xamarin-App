@@ -26,8 +26,8 @@ namespace GivskudApp.Views
 			InitializeComponent ();
             BindingContext = Binding;
 
-            ElementsController.RenderNotification(ApplicationLayoutTopLevel, "There was a problem with your internet connection. Please connect your device to the internet", "lost-connection-notification", "_VMIsDeviceOfflineNotification", true);
-            ElementsController.RenderNotification(ApplicationLayoutTopLevel, "The pass with the ID / the pass you saved seems to be invalid. Please try again.", "invalid-pass-notification", "_VMIsPassOutdatedNotification", false);
+            ElementsController.RenderNotification(ApplicationLayoutTopLevel, AppResources.AppResources.ResourceManager.GetString("NotificationNoInternet"), "lost-connection-notification", "_VMIsDeviceOfflineNotification", true);
+            ElementsController.RenderNotification(ApplicationLayoutTopLevel, AppResources.AppResources.ResourceManager.GetString("NotificationInvalidPass"), "invalid-pass-notification", "_VMIsPassOutdatedNotification", false);
 
             Binding.InitializeService();
 

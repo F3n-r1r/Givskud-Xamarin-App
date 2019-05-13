@@ -19,5 +19,10 @@ namespace GivskudApp.Views
 			InitializeComponent ();
             ElementsController.RenderScannerIcon(ApplicationLayoutTopLevel, Navigation);
         }
-	}
+        public async void MapButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MapPage());
+        }
+
+    }
 }

@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GivskudApp.Views.SeasonPassPage"
-             Style="{StaticResource GlobalLayoutStyle}">
+             Style="{StaticResource GlobalLayoutStyle}"
+             xmlns:i18n="clr-namespace:GivskudApp.Helpers">
     <ContentPage.Resources>
 
     </ContentPage.Resources>
@@ -21,7 +22,7 @@
 
                 <!-- START PASS INPUT -->
                 <StackLayout x:Name="SeasonPassInput" IsVisible="{Binding NoContentAvailable}" StyleClass="StackLayoutOverlay" VerticalOptions="Center">
-                    <Label Text="Enter pass details" Style="{StaticResource LabelHeadline}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" TextColor="Black" Margin="0,20,0,16"/>
+                    <Label Text="{i18n:Translate SeasonPassHeadline01}" Style="{StaticResource LabelHeadline}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" TextColor="Black" Margin="0,20,0,16"/>
                     <Grid VerticalOptions="Center">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
@@ -30,15 +31,15 @@
                         </Grid.RowDefinitions>
 
                         <Entry Text="{Binding UserInputValue, Mode=TwoWay}" Placeholder="Enter ID" Grid.Row="0" TextColor="Black" />
-                        <Button Command="{Binding FetchPassCommand}" Text="Add Pass" Grid.Row="1" />
-                        <Label Style="{StaticResource GlobalFormFootnote}" Text="This ID can be found on the physical card acquired by purchasing the season pass" Grid.Row="2" TextColor="Black" />
+                        <Button Command="{Binding FetchPassCommand}" Text="{i18n:Translate SeasonPassBtnAdd}" Grid.Row="1" />
+                        <Label Style="{StaticResource GlobalFormFootnote}" Text="{i18n:Translate SeasonPassDescription}" Grid.Row="2" TextColor="Black" />
                     </Grid>
                 </StackLayout>
                 <!-- END PASS INPUT -->
 
                 <!-- START PASS DETAILS -->
                 <StackLayout x:Name="SeasonPassDetails" IsVisible="{Binding IsContentLoaded}" StyleClass="StackLayoutOverlay">
-                    <Label Text="Your Season Pass" Style="{StaticResource LabelHeadline}" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,10,0,16"/>
+                    <Label Text="{i18n:Translate SeasonPassHeadline02}" Style="{StaticResource LabelHeadline}" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,10,0,16"/>
                     <Frame>
                         <Frame.Resources>
                             <Style TargetType="Frame" Class="Master">
@@ -79,17 +80,17 @@
 
                             <Label Text="{Binding Data.Holder}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" StyleClass="Cardholder" />
 
-                            <Label Text="Gældende fra.:" Grid.Row="1" Grid.Column="0" StyleClass="Label" />
+                            <Label Text="{i18n:Translate SeasonPassValidFrom}" Grid.Row="1" Grid.Column="0" StyleClass="Label" />
                             <Label Text="{Binding Data.ValidFrom}" HorizontalTextAlignment="End" Grid.Row="1" Grid.Column="1" StyleClass="Content" />
 
-                            <Label Text="Gyldig til.:" Grid.Row="2" Grid.Column="0" StyleClass="Label" />
+                            <Label Text="{i18n:Translate SeasonPassValidTo}" Grid.Row="2" Grid.Column="0" StyleClass="Label" />
                             <Label Text="{Binding Data.ValidTo}" HorizontalTextAlignment="End" Grid.Row="2" Grid.Column="1" StyleClass="Content" />
 
-                            <Label Text="Erhvervet den.:" Grid.Row="3" Grid.Column="0" StyleClass="Label" />
+                            <Label Text="{i18n:Translate SeasonPassAcquiredOn}" Grid.Row="3" Grid.Column="0" StyleClass="Label" />
                             <Label Text="{Binding Data.AcquiredOn}" HorizontalTextAlignment="End" Grid.Row="3" Grid.Column="1" StyleClass="Content" />
                         </Grid>
                     </Frame>
-                    <Button Command="{Binding RemovePassCommand}" Text="Remove Pass" />
+                    <Button Command="{Binding RemovePassCommand}" Text="{i18n:Translate SeasonPassBtnRemove}" />
                 </StackLayout>
                 <!-- END PASS DETAILS -->
             </StackLayout>

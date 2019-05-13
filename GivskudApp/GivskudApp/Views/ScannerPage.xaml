@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GivskudApp.Views.ScannerPage"
              Style="{StaticResource GlobalLayoutStyle}"
+             xmlns:i18n="clr-namespace:GivskudApp.Helpers"
              Padding="0">
     <ContentPage.Resources>
 
@@ -29,8 +30,8 @@
                         <Setter Property="HorizontalTextAlignment" Value="Center" />
                     </Style>
                 </StackLayout.Resources>
-                <Label Text="Find the code on an info stand" />
-                <Label Text="By scanning the code you get to your current point in the tour guide" />
+                <Label Text="{i18n:Translate ScannerPageTitle}" />
+                <Label Text="{i18n:Translate ScannerPageDescription}" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

@@ -21,7 +21,7 @@ namespace GivskudApp.Views
 		{
 
 			InitializeComponent ();
-            AnnaOverlay = new GuiInstanceController.AnnaGuiInstance(ApplicationLayoutTopLevel, "Welcome to Givskud Zoo! I am your guide, Anna! I will be helping you on your trip through the zoo. What would y ou like to try first?");
+            AnnaOverlay = new GuiInstanceController.AnnaGuiInstance(ApplicationLayoutTopLevel, AppResources.AppResources.ResourceManager.GetString("GuidedTourIntroduction"));
 
         }
 

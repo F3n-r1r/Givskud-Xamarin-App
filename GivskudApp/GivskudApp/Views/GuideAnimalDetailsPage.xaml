@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GivskudApp.Views.AnimalGuidePage"
-             Style="{StaticResource GlobalLayoutStyle}">
+             Style="{StaticResource GlobalLayoutStyle}"
+             xmlns:i18n="clr-namespace:GivskudApp.Helpers">
     <ContentPage.Resources>
 
     </ContentPage.Resources>
@@ -21,9 +22,9 @@
                         </Style>
                     </StackLayout.Resources>
 
-                    <Button Text="Animal information" ClassId="AnimalInfoBtn" Clicked="BtnClicked"  />
-                    <Button Text="Show on map" Margin="0,15,0,0" ClassId="AnimalMapBtn" Clicked="BtnClicked" />
-                    <Button Text="Quiz" IsEnabled="{Binding HasQuiz}" Margin="0,15,0,0" ClassId="AnimalQuizBtn" Clicked="BtnClicked" x:Name="BtnGoToQuiz" />
+                    <Button Text="{i18n:Translate AnimalGuidePageBtnInformation}" ClassId="AnimalInfoBtn" Clicked="BtnClicked"  />
+                    <Button Text="{i18n:Translate AnimalGuidePageBtnShowOnMap}" Margin="0,15,0,0" ClassId="AnimalMapBtn" Clicked="BtnClicked" />
+                    <Button Text="{i18n:Translate AnimalGuidePageBtnQuiz}" IsEnabled="{Binding HasQuiz}" Margin="0,15,0,0" ClassId="AnimalQuizBtn" Clicked="BtnClicked" x:Name="BtnGoToQuiz" />
                 </StackLayout>
             </StackLayout>
             

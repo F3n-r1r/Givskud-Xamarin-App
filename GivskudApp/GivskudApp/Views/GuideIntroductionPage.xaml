@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GivskudApp.Views.GuidePage"
-             Style="{StaticResource GlobalLayoutStyle}">
+             Style="{StaticResource GlobalLayoutStyle}"
+             xmlns:i18n="clr-namespace:GivskudApp.Helpers">
     <ContentPage.Resources>
 
     </ContentPage.Resources>
@@ -24,8 +25,8 @@
                         </Style>
                     </StackLayout.Resources>
 
-                    <Button Text="Park areas" ClassId="GuideSavannaPageBtn" Clicked="Button_Clicked"/>
-                    <Button Text="Quizzes" Margin="0,15,0,0" ClassId="QuizPageBtn" Clicked="Button_Clicked"/>
+                    <Button Text="{i18n:Translate GuidedTourAreas}" ClassId="GuideSavannaPageBtn" Clicked="Button_Clicked"/>
+                    <Button Text="{i18n:Translate GuidedTourQuizzes}" Margin="0,15,0,0" ClassId="QuizPageBtn" Clicked="Button_Clicked"/>
 
                 </StackLayout>
             </StackLayout>

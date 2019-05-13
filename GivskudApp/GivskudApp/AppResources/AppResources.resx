@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AnimalDetailsContinent" xml:space="preserve">
+    <value>Continent</value>
+  </data>
+  <data name="AnimalDetailsEats" xml:space="preserve">
+    <value>Eats</value>
+  </data>
+  <data name="AnimalDetailsSpecies" xml:space="preserve">
+    <value>Species</value>
+  </data>
+  <data name="AnimalDetailsStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="AnimalGuidePageBtnInformation" xml:space="preserve">
+    <value>Animal Information</value>
+  </data>
+  <data name="AnimalGuidePageBtnQuiz" xml:space="preserve">
+    <value>Play Quiz</value>
+  </data>
+  <data name="AnimalGuidePageBtnShowOnMap" xml:space="preserve">
+    <value>Show me the map</value>
+  </data>
+  <data name="AnimalGuidePageHeadline01" xml:space="preserve">
+    <value>You have chosen the</value>
+  </data>
+  <data name="AnimalGuidePageHeadline02" xml:space="preserve">
+    <value>What would you like to know first about this animal?</value>
+  </data>
+  <data name="BuyTicketsAdults" xml:space="preserve">
+    <value>Adults 2019</value>
+  </data>
+  <data name="BuyTicketsCheckout" xml:space="preserve">
+    <value>To Checkout</value>
+  </data>
+  <data name="BuyTicketsChildren" xml:space="preserve">
+    <value>Children (3-11 years) 2019</value>
+  </data>
+  <data name="BuyTicketsHeader" xml:space="preserve">
+    <value>Buy Tickets</value>
+  </data>
+  <data name="BuyTicketsNewborns" xml:space="preserve">
+    <value>Newborns (0-2 years) 2019</value>
+  </data>
+  <data name="ContactUsBtnMap" xml:space="preserve">
+    <value>Go To Map</value>
+  </data>
+  <data name="ContactUsFooter" xml:space="preserve">
+    <value>If you would rather talk to us face to face, see our map and find us in our zoo.</value>
+  </data>
+  <data name="ContactUsGroupAndEvents" xml:space="preserve">
+    <value>Group Events, Schools, and Accommodation</value>
+  </data>
+  <data name="ContactUsHeadline" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="ContactUsInfoAndTickets" xml:space="preserve">
+    <value>Information and Tickets</value>
+  </data>
+  <data name="ContactUsPhoneTableDescription" xml:space="preserve">
+    <value>*The phones are unavailable from December 22nd to January 1st</value>
+  </data>
+  <data name="ContactUsPhoneTableHeadline" xml:space="preserve">
+    <value>Phone Hours</value>
+  </data>
+  <data name="ContactUsSubheadline" xml:space="preserve">
+    <value>We are available if you have any questions</value>
+  </data>
+  <data name="GamesBtnQuizzes" xml:space="preserve">
+    <value>Quizzes</value>
+  </data>
+  <data name="GeneralYears" xml:space="preserve">
+    <value>years</value>
+  </data>
+  <data name="GeneralYoungs" xml:space="preserve">
+    <value>youngs</value>
+  </data>
+  <data name="GuidedTourAreas" xml:space="preserve">
+    <value>See Park Areas</value>
+  </data>
+  <data name="GuidedTourIntroduction" xml:space="preserve">
+    <value>Welcome toGivskud Zoo! I am your guide, Anna! I will be helping you on your trip through the zoo. What would you like to see first?</value>
+  </data>
+  <data name="GuidedTourQuizzes" xml:space="preserve">
+    <value>Play Games</value>
+  </data>
+  <data name="HomepageBtnMap" xml:space="preserve">
+    <value>Open Map</value>
+  </data>
+  <data name="HomepageBtnProgram" xml:space="preserve">
+    <value>Daily Program</value>
+  </data>
+  <data name="HomepageBtnTour" xml:space="preserve">
+    <value>Guided Tour</value>
+  </data>
+  <data name="NavigationAnimals" xml:space="preserve">
+    <value>Animals</value>
+  </data>
+  <data name="NavigationBuyTickets" xml:space="preserve">
+    <value>Buy Tickets</value>
+  </data>
+  <data name="NavigationContact" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="NavigationGames" xml:space="preserve">
+    <value>Play Games</value>
+  </data>
+  <data name="NavigationHomepage" xml:space="preserve">
+    <value>Homepage</value>
+  </data>
+  <data name="NavigationNews" xml:space="preserve">
+    <value>Latest News</value>
+  </data>
+  <data name="NavigationSeasonPass" xml:space="preserve">
+    <value>Season Pass</value>
+  </data>
+  <data name="NotificationInvalidPass" xml:space="preserve">
+    <value>The pass with the ID / the pass you saved seems to be invalid. Please try again.</value>
+  </data>
+  <data name="NotificationNoInternet" xml:space="preserve">
+    <value>There was a problem with your internet connection. Please connect your device to the internet</value>
+  </data>
+  <data name="NotificationOutdatedContent" xml:space="preserve">
+    <value>The content used is outdated. Please connect your device to the internet to see the newest content</value>
+  </data>
+  <data name="QuizBtnBackToGames" xml:space="preserve">
+    <value>Back To Games</value>
+  </data>
+  <data name="QuizBtnNextQuestion" xml:space="preserve">
+    <value>Next Question</value>
+  </data>
+  <data name="QuizEndTitle01" xml:space="preserve">
+    <value>That is not bad! You will get them next time, do not worry!</value>
+  </data>
+  <data name="QuizEndTitle02" xml:space="preserve">
+    <value>Admirable! Take one of our guided tours to make your knowledge better.</value>
+  </data>
+  <data name="QuizEndTitle03" xml:space="preserve">
+    <value>That is very good result! You are a smart monkey!</value>
+  </data>
+  <data name="QuizEndTitle04" xml:space="preserve">
+    <value>Congratulations! Your score is perfect!</value>
+  </data>
+  <data name="ScannerPageDescription" xml:space="preserve">
+    <value>By scanning the code you get to your current point in the tour guide.</value>
+  </data>
+  <data name="ScannerPageTitle" xml:space="preserve">
+    <value>Find the code on an info stand.</value>
+  </data>
+  <data name="SeasonPassAcquiredOn" xml:space="preserve">
+    <value>Acquired On:</value>
+  </data>
+  <data name="SeasonPassBtnAdd" xml:space="preserve">
+    <value>Add Pass</value>
+  </data>
+  <data name="SeasonPassBtnRemove" xml:space="preserve">
+    <value>Remove Pass</value>
+  </data>
+  <data name="SeasonPassDescription" xml:space="preserve">
+    <value>*This ID can be found on the physical card or a receipt acquired by purchasing the pass.</value>
+  </data>
+  <data name="SeasonPassHeadline01" xml:space="preserve">
+    <value>Enter Pass Details</value>
+  </data>
+  <data name="SeasonPassHeadline02" xml:space="preserve">
+    <value>Your Season Pass</value>
+  </data>
+  <data name="SeasonPassValidFrom" xml:space="preserve">
+    <value>Valid From:</value>
+  </data>
+  <data name="SeasonPassValidTo" xml:space="preserve">
+    <value>Valid To:</value>
+  </data>
+</root>
