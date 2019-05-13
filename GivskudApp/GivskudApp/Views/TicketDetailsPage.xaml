@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GivskudApp.Views.TicketDetailsPage"
+             Style="{StaticResource GlobalLayoutStyle}"
+             xmlns:i18n="clr-namespace:GivskudApp.Helpers">
+    
+    <ContentPage.Content>
+
+        <AbsoluteLayout x:Name="ApplicationLayoutTopLevel">
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel" Style="{StaticResource GlobalContentStyle}">
+
+                <StackLayout.Resources>
+                    <Style TargetType="Frame">
+                        <Setter Property="IsClippedToBounds" Value="True" />
+                        <Setter Property="BackgroundColor" Value="White" />
+                        <Setter Property="CornerRadius" Value="6" />
+                        <Setter Property="Padding" Value="10" />
+                    </Style>
+                </StackLayout.Resources>
+
+                <Frame>
+                    <StackLayout>
+
+                        <StackLayout.Resources>
+                            <Style TargetType="Frame" Class="QRArea">
+                                <Setter Property="Padding" Value="10" />
+                                <Setter Property="IsClippedToBounds" Value="True" />
+                                <Setter Property="Margin" Value="0,15" />
+                                <Setter Property="BackgroundColor" Value="#2d2d2d" />
+                            </Style>
+                            <Style TargetType="Label" x:Key="TableBase">
+                                <Setter Property="TextColor" Value="Black" />
+                                <Setter Property="FontSize" Value="16" />
+                                <Setter Property="MaxLines" Value="1" />
+                            </Style>
+                            <Style TargetType="Label" BasedOn="{StaticResource TableBase}"></Style>
+                            <Style TargetType="Label" Class="TableLeft" BasedOn="{StaticResource TableBase}">
+                                <Setter Property="VerticalTextAlignment" Value="Center" />
+                            </Style>
+                            <Style TargetType="Label" Class="TableRight" BasedOn="{StaticResource TableBase}">
+                                <Setter Property="HorizontalOptions" Value="End" />
+                                <Setter Property="VerticalTextAlignment" Value="Center" />
+                            </Style>
+                        </StackLayout.Resources>
+
+                        <Label Margin="0,12,0,0" Text="{Binding ValidUntilConverted}" />
+
+                        <BoxView Margin="0,20,0,16" HeightRequest="1" BackgroundColor="LightGray" />
+
+                        <ListView x:Name="ProductList" ItemsSource="{Binding Products}"  VerticalOptions="FillAndExpand" HasUnevenRows="True" SeparatorVisibility="None">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout HeightRequest="30" Orientation="Horizontal">
+                                            <Label StyleClass="TableLeft" Text="{Binding Title}" />
+                                            <Label StyleClass="TableLeft" Text="{Binding Quantity}" />
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                        <Frame StyleClass="QRArea" HeightRequest="130">
+                            <Image Source="Icon_Uncategorized_QR" Aspect="AspectFit" HorizontalOptions="Center" />
+                        </Frame>
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+        </AbsoluteLayout>
+        
+    </ContentPage.Content>
+    
+</ContentPage>

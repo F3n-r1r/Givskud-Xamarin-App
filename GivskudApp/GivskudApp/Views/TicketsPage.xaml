@@ -23,125 +23,26 @@
 
             <!-- Start: Actual Page Content -->
             <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel" Style="{StaticResource GlobalContentStyle}">
-                <ScrollView>
-                    <Grid VerticalOptions="FillAndExpand">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="60" />
-                            <ColumnDefinition Width="90" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="45" />
-                        </Grid.RowDefinitions>
-                        <Grid.Resources>
-                            <Style TargetType="Frame" Class="Stepper">
-                                <Setter Property="HeightRequest" Value="40" />
-                                <Setter Property="WidthRequest" Value="40" />
-                                <Setter Property="CornerRadius" Value="20" />
-                                <Setter Property="Margin" Value="0" />
-                                <Setter Property="Padding" Value="0" />
-                            </Style>
-                            <Style TargetType="Label" Class="StepperLabel">
-                                <Setter Property="TextColor" Value="White" />
-                                <Setter Property="FontSize" Value="15" />
-                                <Setter Property="HorizontalOptions" Value="Center" />
-                                <Setter Property="VerticalOptions" Value="Center" />
-                                <Setter Property="HorizontalTextAlignment" Value="Center" />
-                                <Setter Property="VerticalTextAlignment" Value="Center" />
-                            </Style>
-                        </Grid.Resources>
 
-                        <!-- START PURCHASE STATUS -->
-                        <Frame StyleClass="Stepper" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" HeightRequest="40" WidthRequest="40" CornerRadius="20" HorizontalOptions="Start" VerticalOptions="Start" Margin="0,30" Padding="0" BackgroundColor="#de1f28">
-                            <Label Text="1" StyleClass="StepperLabel" />
-                        </Frame>
-                        <Label  StyleClass="StepHeadline" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Text="{i18n:Translate BuyTicketsHeadline}" Style="{StaticResource LabelHeadline}" />
-                        <!-- END PURCHASE STATUS -->
+                <Button Text="{i18n:Translate BuyTicketsHeader}" Clicked="GoToTicketPurchase" />
 
-                        <!-- START TABLE -->
-                        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" RowSpacing="12" >
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="150" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Grid.Resources>
-                                <Style TargetType="Label" Class="EntryLabel">
-                                    <Setter Property="TextColor" Value="Black" />
-                                    <Setter Property="VerticalTextAlignment" Value="Center" />
-                                </Style>
-                                <Style TargetType="Entry" Class="EntryInput">
-                                    <Setter Property="BackgroundColor" Value="White" />
-                                    <Setter Property="TextColor" Value="Black" />
-                                    <Setter Property="FontSize" Value="13" />
-                                    <Setter Property="HorizontalTextAlignment" Value="End" />
-                                    <Setter Property="Keyboard" Value="Numeric" />
-                                </Style>
-                                <Style TargetType="Frame" Class="EntryWrapper">
-                                    <Setter Property="Padding" Value="2,0" />
-                                    <Setter Property="BackgroundColor" Value="#3A4744" />
-                                    <Setter Property="CornerRadius" Value="0" />
-                                    <Setter Property="HeightRequest" Value="40" />
-                                </Style>
-                            </Grid.Resources>
+                <ListView x:Name="ProgramList" ItemsSource="{Binding Data}" ItemTapped="ItemClicked" VerticalOptions="FillAndExpand" HasUnevenRows="True" SeparatorVisibility="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame BackgroundColor="White" CornerRadius="6" Padding="0" Margin="0,0,0,5">
+                                    <AbsoluteLayout Padding="16">
+                                        <StackLayout Spacing="0" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Padding="0,0,45,0">
+                                            <Label TextColor="Black" Text="{Binding ValidUntilConverted}" />
+                                            <Label TextColor="Gray" FontSize="Micro" Text="{i18n:Translate TicketsViewTicket}" />
+                                        </StackLayout>
+                                    </AbsoluteLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
-                            <!-- START OPTIONS SELECT -->
-                            <Label Text="{i18n:Translate BuyTicketsAdults}" StyleClass="EntryLabel" Grid.Row="0" Grid.Column="0" />
-                            <Frame StyleClass="EntryWrapper" Grid.Row="0" Grid.Column="1">
-                                <Entry Text="0" StyleClass="EntryInput" />
-                            </Frame>
-
-                            <Label Text="{i18n:Translate BuyTicketsChildren}" StyleClass="EntryLabel" Grid.Row="1" Grid.Column="0" />
-                            <Frame StyleClass="EntryWrapper" Grid.Row="1" Grid.Column="1">
-                                <Entry Text="0" StyleClass="EntryInput" />
-                            </Frame>
-
-                            <Label Text="{i18n:Translate BuyTicketsNewborns}" StyleClass="EntryLabel" Grid.Row="2" Grid.Column="0" />
-                            <Frame StyleClass="EntryWrapper" Grid.Row="2" Grid.Column="1">
-                                <Entry Text="0" StyleClass="EntryInput" />
-                            </Frame>
-
-                            <Label Text="Safari CD DK Online" StyleClass="EntryLabel" Grid.Row="3" Grid.Column="0" />
-                            <Frame StyleClass="EntryWrapper" Grid.Row="3" Grid.Column="1">
-                                <Entry Text="0" StyleClass="EntryInput" />
-                            </Frame>
-
-                            <Label Text="Safari CD EN Online" StyleClass="EntryLabel" Grid.Row="4" Grid.Column="0" />
-                            <Frame StyleClass="EntryWrapper" Grid.Row="4" Grid.Column="1">
-                                <Entry Text="0" StyleClass="EntryInput" />
-                            </Frame>
-
-                            <Label Text="Safari CD DE Online" StyleClass="EntryLabel" Grid.Row="5" Grid.Column="0" />
-                            <Frame StyleClass="EntryWrapper" Grid.Row="5" Grid.Column="1">
-                                <Entry Text="0" StyleClass="EntryInput" />
-                            </Frame>
-
-                            <Label Text="Safari CD NL Online" StyleClass="EntryLabel" Grid.Row="6" Grid.Column="0" />
-                            <Frame StyleClass="EntryWrapper" Grid.Row="6" Grid.Column="1">
-                                <Entry Text="0" StyleClass="EntryInput" />
-                            </Frame>
-                            <!-- END OPTIONS SELECT -->
-
-                        </Grid>
-                        <!-- END TABLE -->
-
-                        <!-- START CONTROLS -->
-                        <Button Text="{i18n:Translate BuyTicketsCheckout}" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" />
-                        <!-- END CONTROLS -->
-
-                    </Grid>
-                </ScrollView>
             </StackLayout>
             <!-- End: Actual Page Content -->
 

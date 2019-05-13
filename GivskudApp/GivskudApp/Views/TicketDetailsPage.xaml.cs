@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using GivskudApp.Controllers;
+using GivskudApp.Models;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,11 +12,15 @@ using Xamarin.Forms.Xaml;
 namespace GivskudApp.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class TicketsPageCheckout : ContentPage
+	public partial class TicketDetailsPage : ContentPage
 	{
-		public TicketsPageCheckout ()
+		public TicketDetailsPage (TicketModel Data)
 		{
+
 			InitializeComponent ();
-        }
+
+            BindingContext = Data;
+
+		}
 	}
 }

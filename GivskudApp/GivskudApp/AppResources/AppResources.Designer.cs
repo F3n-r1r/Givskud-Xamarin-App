@@ -142,6 +142,15 @@ namespace GivskudApp.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Buy Tickets.
+        /// </summary>
+        public static string BtnBuyTickets {
+            get {
+                return ResourceManager.GetString("BtnBuyTickets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Adults 2019.
         /// </summary>
         public static string BuyTicketsAdults {
@@ -169,6 +178,15 @@ namespace GivskudApp.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Go Back.
+        /// </summary>
+        public static string BuyTicketsGoBack {
+            get {
+                return ResourceManager.GetString("BuyTicketsGoBack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Buy Tickets.
         /// </summary>
         public static string BuyTicketsHeader {
@@ -183,6 +201,60 @@ namespace GivskudApp.AppResources {
         public static string BuyTicketsNewborns {
             get {
                 return ResourceManager.GetString("BuyTicketsNewborns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchase Tickets.
+        /// </summary>
+        public static string BuyTicketsStep1 {
+            get {
+                return ResourceManager.GetString("BuyTicketsStep1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Basket.
+        /// </summary>
+        public static string BuyTicketsStep2 {
+            get {
+                return ResourceManager.GetString("BuyTicketsStep2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pay And Collect.
+        /// </summary>
+        public static string BuyTicketsToPayAndCollect {
+            get {
+                return ResourceManager.GetString("BuyTicketsToPayAndCollect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subtotal.
+        /// </summary>
+        public static string CheckoutSubtotal {
+            get {
+                return ResourceManager.GetString("CheckoutSubtotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total.
+        /// </summary>
+        public static string CheckoutTotal {
+            get {
+                return ResourceManager.GetString("CheckoutTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VAT (25%).
+        /// </summary>
+        public static string CheckoutVAT {
+            get {
+                return ResourceManager.GetString("CheckoutVAT", resourceCulture);
             }
         }
         
@@ -570,6 +642,24 @@ namespace GivskudApp.AppResources {
         public static string SeasonPassValidTo {
             get {
                 return ResourceManager.GetString("SeasonPassValidTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ticket valid until.
+        /// </summary>
+        public static string TicketsValidUntil {
+            get {
+                return ResourceManager.GetString("TicketsValidUntil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View ticket.
+        /// </summary>
+        public static string TicketsViewTicket {
+            get {
+                return ResourceManager.GetString("TicketsViewTicket", resourceCulture);
             }
         }
     }

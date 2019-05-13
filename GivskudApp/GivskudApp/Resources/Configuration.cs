@@ -34,6 +34,7 @@ namespace GivskudApp.Resources
         public class AppConfiguration
         {
             public const string LanguagePreset = "applicationLanguagePreset";
+            public const string Tickets = "applicationTicketCache";
         }
     };
 };

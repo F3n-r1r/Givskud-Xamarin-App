@@ -144,6 +144,9 @@
   <data name="AnimalGuidePageHeadline02" xml:space="preserve">
     <value>Hvad vil du gerne vide først om dette dyr?</value>
   </data>
+  <data name="BtnBuyTickets" xml:space="preserve">
+    <value>Køb billetter</value>
+  </data>
   <data name="BuyTicketsAdults" xml:space="preserve">
     <value>Voksne 2019</value>
   </data>
@@ -153,11 +156,32 @@
   <data name="BuyTicketsChildren" xml:space="preserve">
     <value>Børn (3-11 years) 2019</value>
   </data>
+  <data name="BuyTicketsGoBack" xml:space="preserve">
+    <value>Gå tilbage</value>
+  </data>
   <data name="BuyTicketsHeader" xml:space="preserve">
     <value>Køb billetter</value>
   </data>
   <data name="BuyTicketsNewborns" xml:space="preserve">
     <value>Børn (0-2 years) 2019</value>
+  </data>
+  <data name="BuyTicketsStep1" xml:space="preserve">
+    <value>Køb billetter</value>
+  </data>
+  <data name="BuyTicketsStep2" xml:space="preserve">
+    <value>Din kurv</value>
+  </data>
+  <data name="BuyTicketsToPayAndCollect" xml:space="preserve">
+    <value>Betal og saml</value>
+  </data>
+  <data name="CheckoutSubtotal" xml:space="preserve">
+    <value>Subtotal</value>
+  </data>
+  <data name="CheckoutTotal" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="CheckoutVAT" xml:space="preserve">
+    <value>Heraf moms (25%)</value>
   </data>
   <data name="ContactUsBtnMap" xml:space="preserve">
     <value>Gå til kortet</value>
@@ -287,5 +311,11 @@
   </data>
   <data name="SeasonPassValidTo" xml:space="preserve">
     <value>Gyldigt til:</value>
+  </data>
+  <data name="TicketsValidUntil" xml:space="preserve">
+    <value>Billet gyldigt til</value>
+  </data>
+  <data name="TicketsViewTicket" xml:space="preserve">
+    <value>Se billet</value>
   </data>
 </root>

@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GivskudApp.Views.TicketsPagePurchase"
+             Style="{StaticResource GlobalLayoutStyle}"
+             xmlns:i18n="clr-namespace:GivskudApp.Helpers">
+    <ContentPage.Resources>
+        <Style TargetType="Label" Class="StepHeadline">
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0,0,0,16" />
+            <Setter Property="HeightRequest" Value="100" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="VerticalOptions" Value="End" />
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <AbsoluteLayout x:Name="ApplicationLayoutTopLevel">
+
+            <!-- Absolute Elements Below Content -->
+
+            <!-- Start: Actual Page Content -->
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" x:Name="ApplicationLayoutContentLevel" Style="{StaticResource GlobalContentStyle}">
+
+                <ScrollView>
+                    
+                    <Grid VerticalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="45" />
+                        </Grid.RowDefinitions>
+                        <Grid.Resources>
+                            <Style TargetType="Frame">
+
+                            </Style>
+                        </Grid.Resources>
+
+                        <!-- Header -->
+                        <Frame StyleClass="Stepper" Grid.Row="0" Grid.Column="0" HeightRequest="40" WidthRequest="40" CornerRadius="20" HorizontalOptions="Start" VerticalOptions="Start" Margin="0,30" Padding="0" BackgroundColor="#de1f28">
+                            <Frame.Resources>
+                                <Style TargetType="Label">
+                                    <Setter Property="TextColor" Value="White" />
+                                    <Setter Property="FontSize" Value="19" />
+                                    <Setter Property="FontAttributes" Value="Bold" />
+                                    <Setter Property="HorizontalTextAlignment" Value="Center" />
+                                    <Setter Property="VerticalTextAlignment" Value="Center" />
+                                </Style>
+                            </Frame.Resources>
+                            <Label Text="{Binding CheckoutStatusStep}" StyleClass="StepperLabel" />
+                        </Frame>
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            VerticalTextAlignment="Center"
+                            TextColor="{StaticResource ColorPrimary}"
+                            FontAttributes="Bold"
+                            FontSize="24"
+                            Text="{Binding CheckoutStatusHeadline}"
+                            />
+                        <!-- /Header -->
+
+                        <!-- Content -->
+                        <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+
+                            <StackLayout.Resources>
+                                <Style TargetType="Frame">
+                                    <Setter Property="IsClippedToBounds" Value="True" />
+                                    <Setter Property="BackgroundColor" Value="White" />
+                                    <Setter Property="CornerRadius" Value="6" />
+                                    <Setter Property="Padding" Value="10" />
+                                </Style>
+                            </StackLayout.Resources>
+                            
+                            <StackLayout>
+                                <!-- Step 1: Selection -->
+                                <Frame>
+                                    <Grid ColumnSpacing="0" RowSpacing="15">
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="36" />
+                                            <RowDefinition Height="36" />
+                                            <RowDefinition Height="36" />
+                                            <RowDefinition Height="36" />
+                                            <RowDefinition Height="36" />
+                                            <RowDefinition Height="36" />
+                                            <RowDefinition Height="36" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.Resources>
+                                            <Style TargetType="Label" Class="Label">
+                                                <Setter Property="VerticalTextAlignment" Value="Center" />
+                                                <Setter Property="TextColor" Value="Black" />
+                                                <Setter Property="Grid.Column" Value="0" />
+                                                <Setter Property="MaxLines" Value="2" />
+                                                <Setter Property="LineBreakMode" Value="WordWrap" />
+                                            </Style>
+                                            <Style TargetType="StackLayout" Class="ValueHolder">
+                                                <Setter Property="Spacing" Value="0" />
+                                                <Setter Property="Orientation" Value="Horizontal" />
+                                                <Setter Property="Grid.Column" Value="1" />
+                                            </Style>
+                                            <Style TargetType="Frame" x:Key="Stepper">
+                                                <Setter Property="BackgroundColor" Value="{StaticResource ColorPrimary}" />
+                                                <Setter Property="WidthRequest" Value="16" />
+                                                <Setter Property="HeightRequest" Value="16" />
+                                                <Setter Property="CornerRadius" Value="20" />
+                                                <Setter Property="IsVisible" Value="{Binding IsInputVisible}" />
+                                            </Style>
+                                            <Style TargetType="Frame" Class="StepperAdd" BasedOn="{StaticResource Stepper}">
+
+                                            </Style>
+                                            <Style TargetType="Frame" Class="StepperDec" BasedOn="{StaticResource Stepper}">
+
+                                            </Style>
+                                            <Style TargetType="Label" Class="StepperValue">
+                                                <Setter Property="FontSize" Value="20" />
+                                                <Setter Property="FontAttributes" Value="Bold" />
+                                                <Setter Property="TextColor" Value="White" />
+                                                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                                                <Setter Property="VerticalTextAlignment" Value="Center" />
+                                                <Setter Property="Margin" Value="0,-6,0,0" />
+                                            </Style>
+                                            <Style TargetType="Label" Class="StepperOuterValue">
+                                                <Setter Property="FontSize" Value="16" />
+                                                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                                                <Setter Property="VerticalTextAlignment" Value="Center" />
+                                                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                                                <Setter Property="TextColor" Value="{StaticResource ColorPrimary}" />
+                                                <Setter Property="WidthRequest" Value="60" />
+                                            </Style>
+                                        </Grid.Resources>
+
+                                        <!-- Option -->
+                                        <Label StyleClass="Label" Text="{i18n:Translate BuyTicketsAdults}" Grid.Row="0" />
+                                        <StackLayout StyleClass="ValueHolder" Grid.Row="0" >
+                                            <Frame HorizontalOptions="Start" StyleClass="StepperAdd">
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding TapCommandAdd}" CommandParameter="Adults" NumberOfTapsRequired="1"/>
+                                                </Frame.GestureRecognizers>
+                                                <Label Text="+" StyleClass="StepperValue" />
+                                            </Frame>
+                                            <Label Text="{Binding ProductMatrix.[Adults].Quantity}" StyleClass="StepperOuterValue" />
+                                            <Frame HorizontalOptions="End" StyleClass="StepperDec">
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding TapCommandDecrease}" CommandParameter="Adults" NumberOfTapsRequired="1"/>
+                                                </Frame.GestureRecognizers>
+                                                <Label Text="-" StyleClass="StepperValue" />
+                                            </Frame>
+                                        </StackLayout>
+                                        <!-- /Option -->
+
+                                        <!-- Option -->
+                                        <Label StyleClass="Label" Text="{i18n:Translate BuyTicketsChildren}" Grid.Row="1" />
+                                        <StackLayout StyleClass="ValueHolder" Grid.Row="1" >
+                                            <Frame HorizontalOptions="Start" StyleClass="StepperAdd">
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding TapCommandAdd}" CommandParameter="Children" NumberOfTapsRequired="1"/>
+                                                </Frame.GestureRecognizers>
+                                                <Label Text="+" StyleClass="StepperValue" />
+                                            </Frame>
+                                            <Label Text="{Binding ProductMatrix.[Children].Quantity}" StyleClass="StepperOuterValue" />
+                                            <Frame HorizontalOptions="End" StyleClass="StepperDec">
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding TapCommandDecrease}" CommandParameter="Children" NumberOfTapsRequired="1"/>
+                                                </Frame.GestureRecognizers>
+                                                <Label Text="-" StyleClass="StepperValue" />
+                                            </Frame>
+                                        </StackLayout>
+                                        <!-- /Option -->
+
+                                        <!-- Option -->
+                                        <Label StyleClass="Label" Text="{i18n:Translate BuyTicketsNewborns}" Grid.Row="2" />
+                                        <StackLayout StyleClass="ValueHolder" Grid.Row="2" >
+                                            <Frame HorizontalOptions="Start" StyleClass="StepperAdd">
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding TapCommandAdd}" CommandParameter="Newborns" NumberOfTapsRequired="1"/>
+                                                </Frame.GestureRecognizers>
+                                                <Label Text="+" StyleClass="StepperValue" />
+                                            </Frame>
+                                            <Label Text="{Binding ProductMatrix.[Newborns].Quantity}" StyleClass="StepperOuterValue" />
+                                            <Frame HorizontalOptions="End" StyleClass="StepperDec">
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding TapCommandDecrease}" CommandParameter="Newborns" NumberOfTapsRequired="1"/>
+                                                </Frame.GestureRecognizers>
+                                                <Label Text="-" StyleClass="StepperValue" />
+                                            </Frame>
+                                        </StackLayout>
+                                        <!-- /Option -->
+
+                                        <!-- Option -->
+                                        <Label StyleClass="Label" Text="Safari CD Dansk" Grid.Row="3" />
+                                        <StackLayout StyleClass="ValueHolder" Grid.Row="3" >
+                                            <Frame HorizontalOptions="Start" StyleClass="StepperAdd">
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding TapCommandAdd}" CommandParameter="CDDK" NumberOfTapsRequired="1"/>
+                                                </Frame.GestureRecognizers>
+                                                <Label Text="+" StyleClass="StepperValue" />
+                                            </Frame>
+                                            <Label Text="{Binding ProductMatrix.[CDDK].Quantity}" StyleClass="StepperOuterValue" />
+                                            <Frame HorizontalOptions="End" StyleClass="StepperDec">
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding TapCommandDecrease}" CommandParameter="CDDK" NumberOfTapsRequired="1"/>
+                                                </Frame.GestureRecognizers>
+                                                <Label Text="-" StyleClass="StepperValue" />
+                                            </Frame>
+                                        </StackLayout>
+                                        <!-- /Option -->
+
+                                        <!-- Option -->
+                                        <Label StyleClass="Label" Text="Safari CD English" Grid.Row="4" />
+                                        <StackLayout StyleClass="ValueHolder" Grid.Row="4" >
+                                            <Frame HorizontalOptions="Start" StyleClass="StepperAdd">
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding TapCommandAdd}" CommandParameter="CDEN" NumberOfTapsRequired="1"/>
+                                                </Frame.GestureRecognizers>
+                                                <Label Text="+" StyleClass="StepperValue" />
+                                            </Frame>
+                                            <Label Text="{Binding ProductMatrix.[CDEN].Quantity}" StyleClass="StepperOuterValue" />
+                                            <Frame HorizontalOptions="End" StyleClass="StepperDec">
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding TapCommandDecrease}" CommandParameter="CDEN" NumberOfTapsRequired="1"/>
+                                                </Frame.GestureRecognizers>
+                                                <Label Text="-" StyleClass="StepperValue" />
+                                            </Frame>
+                                        </StackLayout>
+                                        <!-- /Option -->
+
+                                        <!-- Option -->
+                                        <Label StyleClass="Label" Text="Safari CD Deutsch" Grid.Row="5" />
+                                        <StackLayout StyleClass="ValueHolder" Grid.Row="5" >
+                                            <Frame HorizontalOptions="Start" StyleClass="StepperAdd">
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding TapCommandAdd}" CommandParameter="CDDE" NumberOfTapsRequired="1"/>
+                                                </Frame.GestureRecognizers>
+                                                <Label Text="+" StyleClass="StepperValue" />
+                                            </Frame>
+                                            <Label Text="{Binding ProductMatrix.[CDDE].Quantity}" StyleClass="StepperOuterValue" />
+                                            <Frame HorizontalOptions="End" StyleClass="StepperDec">
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding TapCommandDecrease}" CommandParameter="CDDE" NumberOfTapsRequired="1"/>
+                                                </Frame.GestureRecognizers>
+                                                <Label Text="-" StyleClass="StepperValue" />
+                                            </Frame>
+                                        </StackLayout>
+                                        <!-- /Option -->
+
+                                        <!-- Option -->
+                                        <Label StyleClass="Label" Text="Safari CD Nederlands" Grid.Row="6" />
+                                        <StackLayout StyleClass="ValueHolder" Grid.Row="6" >
+                                            <Frame HorizontalOptions="Start" StyleClass="StepperAdd">
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding TapCommandAdd}" CommandParameter="CDNL" NumberOfTapsRequired="1"/>
+                                                </Frame.GestureRecognizers>
+                                                <Label Text="+" StyleClass="StepperValue" />
+                                            </Frame>
+                                            <Label Text="{Binding ProductMatrix.[CDNL].Quantity}" StyleClass="StepperOuterValue" />
+                                            <Frame HorizontalOptions="End" StyleClass="StepperDec">
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding TapCommandDecrease}" CommandParameter="CDNL" NumberOfTapsRequired="1"/>
+                                                </Frame.GestureRecognizers>
+                                                <Label Text="-" StyleClass="StepperValue" />
+                                            </Frame>
+                                        </StackLayout>
+                                        <!-- /Option -->
+
+                                    </Grid>
+                                </Frame>
+                                <Button IsVisible="{Binding IsInputVisible}" HeightRequest="45" Text="{i18n:Translate BuyTicketsCheckout}" Command="{Binding CommandToCheckout}" />
+                                <!-- /Step 1: Selection -->
+
+                                <!-- Step 2: Checkout -->
+
+                                <Frame IsVisible="{Binding IsCheckoutVisible}">
+                                    <Grid ColumnSpacing="0" RowSpacing="2">
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="20" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.Resources>
+                                            <Style TargetType="Label" Class="Label">
+                                                <Setter Property="VerticalTextAlignment" Value="Center" />
+                                                <Setter Property="TextColor" Value="#969696" />
+                                                <Setter Property="MaxLines" Value="1" />
+                                                <Setter Property="FontAttributes" Value="Bold" />
+                                            </Style>
+                                            <Style TargetType="Label" Class="Total">
+                                                <Setter Property="VerticalTextAlignment" Value="Center" />
+                                                <Setter Property="TextColor" Value="Black" />
+                                                <Setter Property="MaxLines" Value="1" />
+                                                <Setter Property="FontSize" Value="24" />
+                                                <Setter Property="FontAttributes" Value="Bold" />
+                                            </Style>
+                                        </Grid.Resources>
+
+                                        <!-- Option -->
+                                        <Label StyleClass="Total" Text="{i18n:Translate CheckoutTotal}" Grid.Row="0" Grid.Column="0" />
+                                        <Label StyleClass="Total" HorizontalTextAlignment="End" Text="{Binding PriceTotal, StringFormat='DKK {0:N}'}" Grid.Row="0" Grid.Column="1" />
+                                        <!-- /Option -->
+
+                                        <!-- Option -->
+                                        <Label StyleClass="Label" Text="{i18n:Translate CheckoutSubtotal}"  Grid.Row="1" Grid.Column="0" />
+                                        <Label StyleClass="Label" HorizontalTextAlignment="End" Text="{Binding PriceSubtotal, StringFormat='DKK {0:N}'}" Grid.Row="1" Grid.Column="1" />
+                                        <!-- /Option -->
+
+                                        <!-- Option -->
+                                        <Label StyleClass="Label" Text="{i18n:Translate CheckoutVAT}" Grid.Row="2" Grid.Column="0" />
+                                        <Label StyleClass="Label" HorizontalTextAlignment="End" Text="{Binding PriceVAT, StringFormat='DKK {0:N}'}" Grid.Row="2" Grid.Column="1" />
+                                        <!-- /Option -->
+
+                                    </Grid>
+                                </Frame>
+                                
+                                <Button IsVisible="{Binding IsCheckoutVisible}" HeightRequest="45" Text="{i18n:Translate BuyTicketsGoBack}" Command="{Binding CommandGoBack}" />
+                                <Button IsVisible="{Binding IsCheckoutVisible}" HeightRequest="45" Text="{i18n:Translate BuyTicketsToPayAndCollect}" Command="{Binding CommandPayAndCollect}" />
+                                <!-- /Step 2: Checkout -->
+
+                            </StackLayout>
+
+                        </StackLayout>
+                        <!-- /Content -->
+
+                    </Grid>
+                    
+                </ScrollView>
+
+            </StackLayout>
+            <!-- End: Actual Page Content -->
+
+            <!-- Absolute Elements Above Content -->
+
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+</ContentPage>
+    

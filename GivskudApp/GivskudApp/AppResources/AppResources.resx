@@ -144,6 +144,9 @@
   <data name="AnimalGuidePageHeadline02" xml:space="preserve">
     <value>What would you like to know first about this animal?</value>
   </data>
+  <data name="BtnBuyTickets" xml:space="preserve">
+    <value>Buy Tickets</value>
+  </data>
   <data name="BuyTicketsAdults" xml:space="preserve">
     <value>Adults 2019</value>
   </data>
@@ -153,11 +156,32 @@
   <data name="BuyTicketsChildren" xml:space="preserve">
     <value>Children (3-11 years) 2019</value>
   </data>
+  <data name="BuyTicketsGoBack" xml:space="preserve">
+    <value>Go Back</value>
+  </data>
   <data name="BuyTicketsHeader" xml:space="preserve">
     <value>Buy Tickets</value>
   </data>
   <data name="BuyTicketsNewborns" xml:space="preserve">
     <value>Newborns (0-2 years) 2019</value>
+  </data>
+  <data name="BuyTicketsStep1" xml:space="preserve">
+    <value>Purchase Tickets</value>
+  </data>
+  <data name="BuyTicketsStep2" xml:space="preserve">
+    <value>Your Basket</value>
+  </data>
+  <data name="BuyTicketsToPayAndCollect" xml:space="preserve">
+    <value>Pay And Collect</value>
+  </data>
+  <data name="CheckoutSubtotal" xml:space="preserve">
+    <value>Subtotal</value>
+  </data>
+  <data name="CheckoutTotal" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="CheckoutVAT" xml:space="preserve">
+    <value>VAT (25%)</value>
   </data>
   <data name="ContactUsBtnMap" xml:space="preserve">
     <value>Go To Map</value>
@@ -287,5 +311,11 @@
   </data>
   <data name="SeasonPassValidTo" xml:space="preserve">
     <value>Valid To:</value>
+  </data>
+  <data name="TicketsValidUntil" xml:space="preserve">
+    <value>Ticket valid until</value>
+  </data>
+  <data name="TicketsViewTicket" xml:space="preserve">
+    <value>View ticket</value>
   </data>
 </root>
