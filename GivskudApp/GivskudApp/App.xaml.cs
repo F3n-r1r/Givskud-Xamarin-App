@@ -48,5 +48,16 @@ namespace GivskudApp
             // Handle when your app resumes
         }
 
+        private void ResetCache()
+        {
+            CrossSettings.Current.Remove(ConfigurationManager.RemoteResources.Local.Animals);
+            CrossSettings.Current.Remove(ConfigurationManager.RemoteResources.Local.News);
+            CrossSettings.Current.Remove(ConfigurationManager.RemoteResources.Local.Quizes);
+            CrossSettings.Current.Remove(ConfigurationManager.RemoteResources.Local.Pass);
+            CrossSettings.Current.Remove(ConfigurationManager.RemoteResources.Local.Events);
+            CrossSettings.Current.Remove(ConfigurationManager.AppConfiguration.Tickets);
+            CrossSettings.Current.Remove(ConfigurationManager.AppConfiguration.LanguagePreset);
+        }
+
     }
 }

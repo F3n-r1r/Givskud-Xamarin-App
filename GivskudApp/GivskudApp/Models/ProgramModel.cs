@@ -11,5 +11,10 @@ namespace GivskudApp.Models
         public bool IsBoundToDate { get; set; }
         public DateTime EventDate { get; set; }
         public DateTime EventTime { get; set; }
+        public string EventTimeFormatted {
+            get {
+                return "At " + EventTime.ToString("HH:mm");
+            }
+        }
     }
 }
