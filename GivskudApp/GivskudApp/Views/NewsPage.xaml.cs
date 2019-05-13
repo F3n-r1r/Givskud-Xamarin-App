@@ -31,8 +31,8 @@ namespace GivskudApp.Views
             
             ElementsController.RenderScannerIcon(ApplicationLayoutTopLevel, Navigation);
 
-            ElementsController.RenderNotification(ApplicationLayoutTopLevel, AppResources.AppResources.ResourceManager.GetString("NotificationNoInternet"), "lost-connection-notification", "_VMIsDeviceOfflineNotification", true);
-            ElementsController.RenderNotification(ApplicationLayoutTopLevel, AppResources.AppResources.ResourceManager.GetString("NotificationOutdatedContent"), "cached-content-notification", "_VMIsContentOutdatedNotification", false);
+            ElementsController.RenderNotification(ApplicationLayoutTopLevel, AppResources.AppResources.NotificationNoInternet, "lost-connection-notification", "_VMIsDeviceOfflineNotification", true);
+            ElementsController.RenderNotification(ApplicationLayoutTopLevel, AppResources.AppResources.NotificationOutdatedContent, "cached-content-notification", "_VMIsContentOutdatedNotification", false);
 
             Binding.InitializeService();
 

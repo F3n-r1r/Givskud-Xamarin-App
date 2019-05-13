@@ -113,22 +113,22 @@ namespace GivskudApp.ViewModel
             if (Percentage >= 80)
             {
                 Result.Add("Icon_Game_AwardLevel4.png");
-                Result.Add(AppResources.AppResources.ResourceManager.GetString("QuizEndTitle04"));
+                Result.Add(AppResources.AppResources.QuizEndTitle04);
             }
             else if (Percentage >= 60)
             {
                 Result.Add("Icon_Game_AwardLevel3.png");
-                Result.Add(AppResources.AppResources.ResourceManager.GetString("QuizEndTitle03"));
+                Result.Add(AppResources.AppResources.QuizEndTitle03);
             }
             else if (Percentage >= 40)
             {
                 Result.Add("Icon_Game_AwardLevel2.png");
-                Result.Add(AppResources.AppResources.ResourceManager.GetString("QuizEndTitle02"));
+                Result.Add(AppResources.AppResources.QuizEndTitle02);
             }
             else
             {
                 Result.Add("Icon_Game_AwardLevel1.png");
-                Result.Add(AppResources.AppResources.ResourceManager.GetString("QuizEndTitle01"));
+                Result.Add(AppResources.AppResources.QuizEndTitle01);
             }
 
             OnPropertyChanged(nameof(Result));

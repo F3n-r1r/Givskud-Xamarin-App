@@ -30,14 +30,14 @@ namespace GivskudApp.Views
 
             BindingContext = Binding;
 
-            ElementsController.RenderNotification(ApplicationLayoutTopLevel, AppResources.AppResources.ResourceManager.GetString("NotificationNoInternet"), "lost-connection-notification", "_VMIsDeviceOfflineNotification", true);
-            ElementsController.RenderNotification(ApplicationLayoutTopLevel, AppResources.AppResources.ResourceManager.GetString("NotificationOutdatedContent"), "cached-content-notification", "_VMIsContentOutdatedNotification", false);
+            ElementsController.RenderNotification(ApplicationLayoutTopLevel, AppResources.AppResources.NotificationNoInternet, "lost-connection-notification", "_VMIsDeviceOfflineNotification", true);
+            ElementsController.RenderNotification(ApplicationLayoutTopLevel, AppResources.AppResources.NotificationOutdatedContent, "cached-content-notification", "_VMIsContentOutdatedNotification", false);
 
             ElementsController.RenderScannerIcon(ApplicationLayoutTopLevel, Navigation);
             
             Binding.InitializeService();
 
-            GuiInstanceController.AnnaGuiInstance AnnaOverlay = new GuiInstanceController.AnnaGuiInstance(ApplicationLayoutTopLevel, AppResources.AppResources.ResourceManager.GetString("AnimalGuidePageHeadline01") + " " + Binding.AnimalData.Name + ". " + AppResources.AppResources.ResourceManager.GetString("AnimalGuidePageHeadline02"));
+            GuiInstanceController.AnnaGuiInstance AnnaOverlay = new GuiInstanceController.AnnaGuiInstance(ApplicationLayoutTopLevel, AppResources.AppResources.AnimalGuidePageHeadline01 + " " + Binding.AnimalData.Name + ". " + AppResources.AppResources.AnimalGuidePageHeadline02);
 
         }
         async void BtnClicked(object sender, EventArgs e)

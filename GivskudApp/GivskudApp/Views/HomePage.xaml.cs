@@ -41,23 +41,10 @@ namespace GivskudApp.Views
             // Save cache value
             CrossSettings.Current.AddOrUpdateValue(ConfigurationManager.AppConfiguration.LanguagePreset, languageId);
 
-            // Pop navigation
-            await PopAllModals();
+            Application.Current.MainPage = new MainPage();
 
         }
-        public async Task<Page> PopAllModals()
-        {
-            Page root = null;
 
-            if (Navigation.ModalStack.Count() == 0)
-                return null;
-
-            for (var i = 0; i <= Navigation.ModalStack.Count(); i++)
-            {
-                root = await Navigation.PopModalAsync(false);
-            }
-            return root;
-        }
         // Handle button click -> Push new page
         async void Button_Clicked(object sender, EventArgs e)
         {

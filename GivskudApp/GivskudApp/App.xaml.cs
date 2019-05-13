@@ -17,17 +17,17 @@ namespace GivskudApp
         public App()
         {
             InitializeComponent();
-
-            // Initiate language plugin
-            AppResources.AppResources.Culture = CrossMultilingual.Current.DeviceCultureInfo;
             
             // Load store culture if available
             string StoredCulture = CrossSettings.Current.GetValueOrDefault(ConfigurationManager.AppConfiguration.LanguagePreset, null);
-
+            
             if(!String.IsNullOrEmpty(StoredCulture))
             {
                 CrossMultilingual.Current.CurrentCultureInfo = new CultureInfo(StoredCulture);
             }
+
+            // Initiate language plugin
+            AppResources.AppResources.Culture = CrossMultilingual.Current.DeviceCultureInfo;
 
             // Start app
             MainPage = new MainPage();

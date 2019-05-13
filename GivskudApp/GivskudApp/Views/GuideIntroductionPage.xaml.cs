@@ -21,7 +21,7 @@ namespace GivskudApp.Views
 		{
 
 			InitializeComponent ();
-            AnnaOverlay = new GuiInstanceController.AnnaGuiInstance(ApplicationLayoutTopLevel, AppResources.AppResources.ResourceManager.GetString("GuidedTourIntroduction"));
+            AnnaOverlay = new GuiInstanceController.AnnaGuiInstance(ApplicationLayoutTopLevel, AppResources.AppResources.GuidedTourIntroduction);
 
         }
 
