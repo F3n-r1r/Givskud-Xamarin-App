@@ -255,6 +255,34 @@ namespace GivskudApp.ViewModel
         }
 
     }
+    class ProgramViewModel : RemoteContentViewModel
+    {
+
+        public List<ProgramModel> Data { get; private set; }
+
+        public PViewModel(string Local, string Virtual, bool ShowNotifications = true) : base(Local, Virtual, ShowNotifications)
+        {
+        }
+        public override void Get(string Local, string Virtual)
+        {
+
+            string DataResponse = GetFromContentService(Local, Virtual);
+
+            try
+            {
+                Data = JsonConvert.DeserializeObject<List<ProgramModel>>(DataResponse);
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(e.Message);
+                Data = new List<ProgramModel>();
+            }
+
+            OnPropertyChanged(nameof(Data));
+
+        }
+
+    }
     public abstract class RemoteContentViewModel : INotifyPropertyChanged
     {
 

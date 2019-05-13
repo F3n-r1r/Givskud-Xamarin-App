@@ -14,6 +14,7 @@ namespace GivskudApp.Resources
                 public const string News = "/news/get";
                 public const string Quizes = "/quiz/get";
                 public const string Pass = "/seasonpass/get";
+                public const string Events = "/events/get";
             }
             public class Local
             {
@@ -21,12 +22,13 @@ namespace GivskudApp.Resources
                 public const string News = "applicationResourceCacheNews";
                 public const string Quizes = "applicationResourceCacheQuiz";
                 public const string Pass = "applicationResourceCachePass";
+                public const string Events = "applicationResourceCacheEvents";
             }
         }
         public class ApiConfiguration
         {
             // public const string ApiRoot = "https://givskud-app-admin20190504114828.azurewebsites.net/umbraco/api";
-            public const string ApiRoot = "https://860d3a86.ngrok.io/umbraco/api";
+            public const string ApiRoot = "https://a150a6d2.ngrok.io/umbraco/api";
             public const string ApiAuth = "C4oILgIT7dTqLye9LJZ0Hr9Xedp7RleQAxw5NVHE";
         }
         public class AppConfiguration

@@ -18,7 +18,7 @@
                 </StackLayout>
 
                 <StackLayout VerticalOptions="FillAndExpand" Padding="0,0,0,70">
-                    <ListView x:Name="ProgramList" VerticalOptions="FillAndExpand" HasUnevenRows="True" SeparatorVisibility="None">
+                    <ListView x:Name="ProgramList" ItemsSource="{Binding Data}" VerticalOptions="FillAndExpand" HasUnevenRows="True" SeparatorVisibility="None">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -31,7 +31,7 @@
                                                 <Image Source="Icon_Uncategorized_Pinpoint.png" WidthRequest="20" HeightRequest="20" Aspect="AspectFit" />
                                             </Frame>
                                             <StackLayout Spacing="0" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Padding="0,0,45,0">
-                                                <Label TextColor="Black" Text="Time of the event" />
+                                                <Label TextColor="Black" Text="{Binding EventTime, StringFormat={}{0:hh:mm:ss} }" />
                                                 <Label TextColor="Black" Text="{Binding Title}" MaxLines="1" FontAttributes="Bold" FontSize="Large" />
                                             </StackLayout>
                                         </AbsoluteLayout>
