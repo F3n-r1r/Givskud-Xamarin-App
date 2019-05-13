@@ -260,7 +260,7 @@ namespace GivskudApp.ViewModel
 
         public List<ProgramModel> Data { get; private set; }
 
-        public PViewModel(string Local, string Virtual, bool ShowNotifications = true) : base(Local, Virtual, ShowNotifications)
+        public ProgramViewModel(string Local, string Virtual, bool ShowNotifications = true) : base(Local, Virtual, ShowNotifications)
         {
         }
         public override void Get(string Local, string Virtual)
